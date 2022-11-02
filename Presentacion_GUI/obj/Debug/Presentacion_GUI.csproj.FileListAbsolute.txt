@@ -1,0 +1,65 @@
+C:\Users\GianFranco\Desktop\Proyecto Sistema de ventas Passion Drummers\ProyectoSistemaDeVentas\Presentacion_GUI\bin\Debug\Presentacion_GUI.exe.config
+C:\Users\GianFranco\Desktop\Proyecto Sistema de ventas Passion Drummers\ProyectoSistemaDeVentas\Presentacion_GUI\bin\Debug\Presentacion_GUI.exe
+C:\Users\GianFranco\Desktop\Proyecto Sistema de ventas Passion Drummers\ProyectoSistemaDeVentas\Presentacion_GUI\bin\Debug\Presentacion_GUI.pdb
+C:\Users\GianFranco\Desktop\Proyecto Sistema de ventas Passion Drummers\ProyectoSistemaDeVentas\Presentacion_GUI\bin\Debug\Entidades.dll
+C:\Users\GianFranco\Desktop\Proyecto Sistema de ventas Passion Drummers\ProyectoSistemaDeVentas\Presentacion_GUI\bin\Debug\FontAwesome.Sharp.dll
+C:\Users\GianFranco\Desktop\Proyecto Sistema de ventas Passion Drummers\ProyectoSistemaDeVentas\Presentacion_GUI\bin\Debug\Logica.dll
+C:\Users\GianFranco\Desktop\Proyecto Sistema de ventas Passion Drummers\ProyectoSistemaDeVentas\Presentacion_GUI\bin\Debug\Datos.dll
+C:\Users\GianFranco\Desktop\Proyecto Sistema de ventas Passion Drummers\ProyectoSistemaDeVentas\Presentacion_GUI\bin\Debug\Entidades.pdb
+C:\Users\GianFranco\Desktop\Proyecto Sistema de ventas Passion Drummers\ProyectoSistemaDeVentas\Presentacion_GUI\bin\Debug\Logica.pdb
+C:\Users\GianFranco\Desktop\Proyecto Sistema de ventas Passion Drummers\ProyectoSistemaDeVentas\Presentacion_GUI\bin\Debug\Datos.pdb
+C:\Users\GianFranco\Desktop\Proyecto Sistema de ventas Passion Drummers\ProyectoSistemaDeVentas\Presentacion_GUI\obj\Debug\Presentacion_GUI.csproj.AssemblyReference.cache
+C:\Users\GianFranco\Desktop\Proyecto Sistema de ventas Passion Drummers\ProyectoSistemaDeVentas\Presentacion_GUI\obj\Debug\Presentacion_GUI.csproj.SuggestedBindingRedirects.cache
+C:\Users\GianFranco\Desktop\Proyecto Sistema de ventas Passion Drummers\ProyectoSistemaDeVentas\Presentacion_GUI\obj\Debug\Presentacion_GUI.Formularios.AcercaDe.resources
+C:\Users\GianFranco\Desktop\Proyecto Sistema de ventas Passion Drummers\ProyectoSistemaDeVentas\Presentacion_GUI\obj\Debug\Presentacion_GUI.Formularios.Clientes.resources
+C:\Users\GianFranco\Desktop\Proyecto Sistema de ventas Passion Drummers\ProyectoSistemaDeVentas\Presentacion_GUI\obj\Debug\Presentacion_GUI.Formularios.Compras.resources
+C:\Users\GianFranco\Desktop\Proyecto Sistema de ventas Passion Drummers\ProyectoSistemaDeVentas\Presentacion_GUI\obj\Debug\Presentacion_GUI.Formularios.Inicio.resources
+C:\Users\GianFranco\Desktop\Proyecto Sistema de ventas Passion Drummers\ProyectoSistemaDeVentas\Presentacion_GUI\obj\Debug\Presentacion_GUI.Formularios.Login.resources
+C:\Users\GianFranco\Desktop\Proyecto Sistema de ventas Passion Drummers\ProyectoSistemaDeVentas\Presentacion_GUI\obj\Debug\Presentacion_GUI.Formularios.Productos.resources
+C:\Users\GianFranco\Desktop\Proyecto Sistema de ventas Passion Drummers\ProyectoSistemaDeVentas\Presentacion_GUI\obj\Debug\Presentacion_GUI.Formularios.Proveedores.resources
+C:\Users\GianFranco\Desktop\Proyecto Sistema de ventas Passion Drummers\ProyectoSistemaDeVentas\Presentacion_GUI\obj\Debug\Presentacion_GUI.Formularios.Reportes.resources
+C:\Users\GianFranco\Desktop\Proyecto Sistema de ventas Passion Drummers\ProyectoSistemaDeVentas\Presentacion_GUI\obj\Debug\Presentacion_GUI.Formularios.Usuarios.resources
+C:\Users\GianFranco\Desktop\Proyecto Sistema de ventas Passion Drummers\ProyectoSistemaDeVentas\Presentacion_GUI\obj\Debug\Presentacion_GUI.Formularios.Categorias.resources
+C:\Users\GianFranco\Desktop\Proyecto Sistema de ventas Passion Drummers\ProyectoSistemaDeVentas\Presentacion_GUI\obj\Debug\Presentacion_GUI.Formularios.Ventas.resources
+C:\Users\GianFranco\Desktop\Proyecto Sistema de ventas Passion Drummers\ProyectoSistemaDeVentas\Presentacion_GUI\obj\Debug\Presentacion_GUI.Properties.Resources.resources
+C:\Users\GianFranco\Desktop\Proyecto Sistema de ventas Passion Drummers\ProyectoSistemaDeVentas\Presentacion_GUI\obj\Debug\Presentacion_GUI.csproj.GenerateResource.cache
+C:\Users\GianFranco\Desktop\Proyecto Sistema de ventas Passion Drummers\ProyectoSistemaDeVentas\Presentacion_GUI\obj\Debug\Presentacion_GUI.csproj.CoreCompileInputs.cache
+C:\Users\GianFranco\Desktop\Proyecto Sistema de ventas Passion Drummers\ProyectoSistemaDeVentas\Presentacion_GUI\obj\Debug\Presentacion_GUI.csproj.CopyComplete
+C:\Users\GianFranco\Desktop\Proyecto Sistema de ventas Passion Drummers\ProyectoSistemaDeVentas\Presentacion_GUI\obj\Debug\Presentacion_GUI.exe
+C:\Users\GianFranco\Desktop\Proyecto Sistema de ventas Passion Drummers\ProyectoSistemaDeVentas\Presentacion_GUI\obj\Debug\Presentacion_GUI.pdb
+D:\Ingeniería de Sistemas\Programación III 2022\SistemaVentaPD\Presentacion_GUI\bin\Debug\Presentacion_GUI.exe.config
+D:\Ingeniería de Sistemas\Programación III 2022\SistemaVentaPD\Presentacion_GUI\bin\Debug\Presentacion_GUI.exe
+D:\Ingeniería de Sistemas\Programación III 2022\SistemaVentaPD\Presentacion_GUI\bin\Debug\Presentacion_GUI.pdb
+D:\Ingeniería de Sistemas\Programación III 2022\SistemaVentaPD\Presentacion_GUI\bin\Debug\Entidades.dll
+D:\Ingeniería de Sistemas\Programación III 2022\SistemaVentaPD\Presentacion_GUI\bin\Debug\FontAwesome.Sharp.dll
+D:\Ingeniería de Sistemas\Programación III 2022\SistemaVentaPD\Presentacion_GUI\bin\Debug\Logica.dll
+D:\Ingeniería de Sistemas\Programación III 2022\SistemaVentaPD\Presentacion_GUI\bin\Debug\Datos.dll
+D:\Ingeniería de Sistemas\Programación III 2022\SistemaVentaPD\Presentacion_GUI\bin\Debug\Entidades.pdb
+D:\Ingeniería de Sistemas\Programación III 2022\SistemaVentaPD\Presentacion_GUI\bin\Debug\Logica.pdb
+D:\Ingeniería de Sistemas\Programación III 2022\SistemaVentaPD\Presentacion_GUI\bin\Debug\Datos.pdb
+D:\Ingeniería de Sistemas\Programación III 2022\SistemaVentaPD\Presentacion_GUI\obj\Debug\Presentacion_GUI.csproj.AssemblyReference.cache
+D:\Ingeniería de Sistemas\Programación III 2022\SistemaVentaPD\Presentacion_GUI\obj\Debug\Presentacion_GUI.csproj.SuggestedBindingRedirects.cache
+D:\Ingeniería de Sistemas\Programación III 2022\SistemaVentaPD\Presentacion_GUI\obj\Debug\Presentacion_GUI.Formularios.AcercaDe.resources
+D:\Ingeniería de Sistemas\Programación III 2022\SistemaVentaPD\Presentacion_GUI\obj\Debug\Presentacion_GUI.Formularios.Clientes.resources
+D:\Ingeniería de Sistemas\Programación III 2022\SistemaVentaPD\Presentacion_GUI\obj\Debug\Presentacion_GUI.Formularios.Compras.resources
+D:\Ingeniería de Sistemas\Programación III 2022\SistemaVentaPD\Presentacion_GUI\obj\Debug\Presentacion_GUI.Formularios.Inicio.resources
+D:\Ingeniería de Sistemas\Programación III 2022\SistemaVentaPD\Presentacion_GUI\obj\Debug\Presentacion_GUI.Formularios.Login.resources
+D:\Ingeniería de Sistemas\Programación III 2022\SistemaVentaPD\Presentacion_GUI\obj\Debug\Presentacion_GUI.Formularios.Productos.resources
+D:\Ingeniería de Sistemas\Programación III 2022\SistemaVentaPD\Presentacion_GUI\obj\Debug\Presentacion_GUI.Formularios.Proveedores.resources
+D:\Ingeniería de Sistemas\Programación III 2022\SistemaVentaPD\Presentacion_GUI\obj\Debug\Presentacion_GUI.Formularios.Reportes.resources
+D:\Ingeniería de Sistemas\Programación III 2022\SistemaVentaPD\Presentacion_GUI\obj\Debug\Presentacion_GUI.Formularios.Usuarios.resources
+D:\Ingeniería de Sistemas\Programación III 2022\SistemaVentaPD\Presentacion_GUI\obj\Debug\Presentacion_GUI.Formularios.Categorias.resources
+D:\Ingeniería de Sistemas\Programación III 2022\SistemaVentaPD\Presentacion_GUI\obj\Debug\Presentacion_GUI.Formularios.Ventas.resources
+D:\Ingeniería de Sistemas\Programación III 2022\SistemaVentaPD\Presentacion_GUI\obj\Debug\Presentacion_GUI.Properties.Resources.resources
+D:\Ingeniería de Sistemas\Programación III 2022\SistemaVentaPD\Presentacion_GUI\obj\Debug\Presentacion_GUI.csproj.GenerateResource.cache
+D:\Ingeniería de Sistemas\Programación III 2022\SistemaVentaPD\Presentacion_GUI\obj\Debug\Presentacion_GUI.csproj.CoreCompileInputs.cache
+D:\Ingeniería de Sistemas\Programación III 2022\SistemaVentaPD\Presentacion_GUI\obj\Debug\Presentacion_GUI.csproj.CopyComplete
+D:\Ingeniería de Sistemas\Programación III 2022\SistemaVentaPD\Presentacion_GUI\obj\Debug\Presentacion_GUI.exe
+D:\Ingeniería de Sistemas\Programación III 2022\SistemaVentaPD\Presentacion_GUI\obj\Debug\Presentacion_GUI.pdb
+D:\Ingeniería de Sistemas\Programación III 2022\SistemaVentaPD\Presentacion_GUI\bin\Debug\ClosedXML.dll
+D:\Ingeniería de Sistemas\Programación III 2022\SistemaVentaPD\Presentacion_GUI\bin\Debug\DocumentFormat.OpenXml.dll
+D:\Ingeniería de Sistemas\Programación III 2022\SistemaVentaPD\Presentacion_GUI\bin\Debug\ExcelNumberFormat.dll
+D:\Ingeniería de Sistemas\Programación III 2022\SistemaVentaPD\Presentacion_GUI\bin\Debug\ClosedXML.pdb
+D:\Ingeniería de Sistemas\Programación III 2022\SistemaVentaPD\Presentacion_GUI\bin\Debug\ClosedXML.xml
+D:\Ingeniería de Sistemas\Programación III 2022\SistemaVentaPD\Presentacion_GUI\bin\Debug\DocumentFormat.OpenXml.xml
+D:\Ingeniería de Sistemas\Programación III 2022\SistemaVentaPD\Presentacion_GUI\bin\Debug\ExcelNumberFormat.xml
