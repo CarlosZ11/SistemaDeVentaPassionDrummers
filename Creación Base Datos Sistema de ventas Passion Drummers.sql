@@ -529,3 +529,11 @@ end
 
 go
 
+SELECT IdCliente,Documento,NombreCompleto,Correo,Telefono,Estado FROM CLIENTE
+INSERT INTO CLIENTE(Documento,NombreCompleto,Correo,Telefono,Estado) VALUES ('1143249417','Loraine Zambranio','lorainez@gmail.com','3023815235',1)
+SELECT *FROM CLIENTE
+
+--Consulta para reiniciar el IdUsuario en caso de borrar un usuario
+--DBCC CHECKIDENT ([CLIENTE], RESEED, 1)
+--Consulta para ver que numero tiene el IdUduario
+--DBCC CHECKIDENT (CLIENTE, NORESEED)

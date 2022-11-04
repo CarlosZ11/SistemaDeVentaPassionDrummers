@@ -10,7 +10,7 @@ namespace Entidades
     {
         public int IdCliente { get; set; }
         public String Documento { get; set; }
-        public String NombreCOmpleto { get; set; }
+        public String NombreCompleto { get; set; }
         public String Correo { get; set; }
         public String Telefono { get; set; }
         public bool Estado { get; set; }
