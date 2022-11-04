@@ -28,8 +28,6 @@ namespace Presentacion_GUI.Formularios
             cboEstado.ValueMember = "valor";
             cboEstado.SelectedIndex = 0;
 
-            List<Rol> listaRol = new CL_Rol().Listar();
-
             foreach (DataGridViewColumn columna in dgvData.Columns)
             {
                 if (columna.Visible == true && columna.Name != "btnSeleccionar")

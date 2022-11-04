@@ -44,6 +44,7 @@
     <Compile Include="CL_Categoria.cs" />
     <Compile Include="CL_Cliente.cs" />
     <Compile Include="CL_Producto.cs" />
+    <Compile Include="CL_Proveedor.cs" />
     <Compile Include="CL_Rol.cs" />
     <Compile Include="CL_Usuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

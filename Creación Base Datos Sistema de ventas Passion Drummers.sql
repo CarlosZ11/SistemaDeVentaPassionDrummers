@@ -533,7 +533,7 @@ SELECT IdCliente,Documento,NombreCompleto,Correo,Telefono,Estado FROM CLIENTE
 INSERT INTO CLIENTE(Documento,NombreCompleto,Correo,Telefono,Estado) VALUES ('1143249417','Loraine Zambranio','lorainez@gmail.com','3023815235',1)
 SELECT *FROM CLIENTE
 
---Consulta para reiniciar el IdUsuario en caso de borrar un usuario
+--Consulta para reiniciar el IdCliente en caso de borrar un cliente
 --DBCC CHECKIDENT ([CLIENTE], RESEED, 1)
 --Consulta para ver que numero tiene el IdUduario
 --DBCC CHECKIDENT (CLIENTE, NORESEED)
@@ -605,11 +605,11 @@ go
 
 CREATE PROC SP_EliminarProveedor(
 @IdProveedor int,
-@Redultado bit output,
+@Resultado bit output,
 @Mensaje varchar(500) output
 )as
 begin
-	SET @Redultado = 1
+	SET @Resultado = 1
 	IF NOT EXISTS (
 	SELECT *FROM PROVEEDOR p
 	INNER JOIN COMPRA c ON p.IdProveedor = c.IdProveedor
@@ -620,9 +620,21 @@ begin
 	end
 	ELSE
 	begin
-		SET @Redultado = 0
+		SET @Resultado = 0
 		SET @Mensaje = 'El proveedor se encuentra relacionado a una compra'
 	end
 end
+
+go
+
+SELECT IdProveedor,Documento,RazonSocial,Correo,Telefono,Estado FROM PROVEEDOR
+INSERT INTO PROVEEDOR(Documento,RazonSocial,Correo,Telefono,Estado) VALUES ('3201595','Yamaha','yamaha@gmail.com','5808481',1)
+
+SELECT *FROM PROVEEDOR
+
+--Consulta para reiniciar el IdProveedor en caso de borrar un proveedor
+--DBCC CHECKIDENT (PROVEEDOR, RESEED, 2)
+--Consulta para ver que numero tiene el IdUduario
+--DBCC CHECKIDENT (PROVEEDOR, NORESEED)
 
 go
