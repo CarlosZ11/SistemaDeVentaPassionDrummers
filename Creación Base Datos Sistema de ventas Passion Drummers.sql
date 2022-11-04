@@ -464,3 +464,68 @@ go
 
 SELECT IdProducto, Codigo, Nombre, p.Descripcion, c.IdCategoria, c.Descripcion[DescripcionCategoria], Stock, PrecioCompra, PrecioVenta, p.Estado FROM PRODUCTO p
 inner join CATEGORIA c ON c.IdCategoria = p.IdCategoria 
+
+go
+
+--PROCEDIMIENTOS PARA CLIENTES----------------------------------------------------------------------------------------------
+--PROCEDIMIENTO PARA REGISTRAR CLIENTES-------------------------------------------------------------------------------------
+
+CREATE PROC SP_RegistrarCliente(
+@Documento varchar(50),
+@NombreCompleto varchar(50),
+@Correo varchar(50),
+@Telefono varchar(50),
+@Estado bit,
+@Resultado int output,
+@Mensaje varchar(500) output
+)as
+begin
+	SET @Resultado = 0
+	DECLARE @IDPERSONA INT
+	IF NOT EXISTS (SELECT *FROM CLIENTE WHERE Documento = @Documento)
+	BEGIN
+		INSERT INTO CLIENTE(Documento,NombreCompleto,Correo,Telefono,Estado) VALUES (
+		@Documento,@NombreCompleto,@Correo,@Telefono,@Estado)
+
+		SET @Resultado = SCOPE_IDENTITY()
+	END
+	ELSE
+		SET @Mensaje = 'El número de documento ya existe'
+end
+
+go
+
+--PROCEDIMIENTO PARA MODIFICAR CLIENTES-------------------------------------------------------------------------------------
+
+CREATE PROC SP_ModificarCliente(
+@IdCliente int,
+@Documento varchar(50),
+@NombreCompleto varchar(50),
+@Correo varchar(50),
+@Telefono varchar(50),
+@Estado bit,
+@Resultado bit output,
+@Mensaje varchar(500) output
+)as
+begin
+	SET @Resultado = 1
+	DECLARE @IDPERSONA INT
+	IF NOT EXISTS (SELECT *FROM CLIENTE WHERE Documento = @Documento AND IdCliente != @IdCliente)
+	begin
+		UPDATE CLIENTE SET
+		Documento = @Documento,
+		NombreCompleto = @NombreCompleto,
+		Correo = @Correo,
+		Telefono = @Telefono,
+		Estado = @Estado
+		WHERE IdCliente = @IdCliente
+	end
+	ELSE
+	BEGIN
+		SET @Resultado = 0
+		SET @Mensaje = 'El número de documento ya existe'
+	END
+end
+
+go
+
