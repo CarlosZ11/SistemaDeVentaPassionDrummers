@@ -409,7 +409,7 @@ begin
 		Codigo = @Codigo,
 		Nombre = @Nombre,
 		Descripcion = @Descripcion,
-		IdCategoria = @IdCategoria
+		IdCategoria = @IdCategoria,
 		Estado = @Estado
 		WHERE IdProducto = @IdProducto
 	ELSE
