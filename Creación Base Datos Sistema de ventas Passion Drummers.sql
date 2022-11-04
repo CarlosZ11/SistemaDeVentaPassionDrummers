@@ -537,3 +537,92 @@ SELECT *FROM CLIENTE
 --DBCC CHECKIDENT ([CLIENTE], RESEED, 1)
 --Consulta para ver que numero tiene el IdUduario
 --DBCC CHECKIDENT (CLIENTE, NORESEED)
+
+
+--PROCEDIMIENTOS PARA PROVEEDORES----------------------------------------------------------------------------------------------
+--PROCEDIMIENTO PARA REGISTRAR PROVEEDORES-------------------------------------------------------------------------------------
+
+CREATE PROC SP_RegistrarProveedor(
+@Documento varchar(50),
+@RazonSocial varchar(50),
+@Correo varchar(50),
+@Telefono varchar(50),
+@Estado bit,
+@Resultado int output,
+@Mensaje varchar(500) output
+)as
+begin
+	SET @Resultado = 0
+	DECLARE @IDPERSONA INT
+	IF NOT EXISTS (SELECT *FROM PROVEEDOR WHERE Documento = @Documento)
+	begin
+		INSERT INTO PROVEEDOR(Documento,RazonSocial,Correo,Telefono,Estado) VALUES (
+		@Documento,@RazonSocial,@Correo,@Telefono,@Estado)
+
+		SET @Resultado = SCOPE_IDENTITY()
+	end
+	ELSE
+		SET @Mensaje = 'El número de documento ya existe'
+end
+
+go
+
+--PROCEDIMIENTO PARA MODIFICAR PROVEEDOR-------------------------------------------------------------------------------------
+
+CREATE PROC SP_ModificarProveedor(
+@IdProveedor int,
+@Documento varchar(50),
+@RazonSocial varchar(50),
+@Correo varchar(50),
+@Telefono varchar(50),
+@Estado bit,
+@Resultado bit output,
+@Mensaje varchar(500) output
+)as
+begin
+	SET @Resultado = 1
+	DECLARE @IDPERSONA INT
+	IF NOT EXISTS (SELECT *FROM PROVEEDOR WHERE Documento = @Documento AND IdProveedor != @IdProveedor)
+	begin
+		UPDATE PROVEEDOR SET
+		Documento = @Documento,
+		RazonSocial = @RazonSocial,
+		Correo = @Correo,
+		Telefono = @Telefono,
+		Estado = @Estado
+		WHERE IdProveedor = @IdProveedor
+	end
+	ELSE
+	begin
+		SET @Resultado = 0
+		SET @Mensaje = 'El número de documento ya existe'
+	end
+end
+
+go
+
+--PROCEDIMIENTO PARA ELIMINAR PROVEEDOR-------------------------------------------------------------------------------------
+
+CREATE PROC SP_EliminarProveedor(
+@IdProveedor int,
+@Redultado bit output,
+@Mensaje varchar(500) output
+)as
+begin
+	SET @Redultado = 1
+	IF NOT EXISTS (
+	SELECT *FROM PROVEEDOR p
+	INNER JOIN COMPRA c ON p.IdProveedor = c.IdProveedor
+	WHERE p.IdProveedor = @IdProveedor
+	)
+	begin
+		DELETE TOP(1) FROM PROVEEDOR WHERE IdProveedor = @IdProveedor
+	end
+	ELSE
+	begin
+		SET @Redultado = 0
+		SET @Mensaje = 'El proveedor se encuentra relacionado a una compra'
+	end
+end
+
+go
