@@ -5,12 +5,21 @@ using System.Data.SqlClient;
 using System.Data;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace Datos
 {
-    public class CD_Rol
+    public class RepositorioRol : ICrudBaseDatos<Rol>
     {
+        public bool Editar(Rol obj, out string Mensaje)
+        {
+            throw new NotImplementedException();
+        }
+
+        public bool Eliminar(Rol obj, out string Mensaje)
+        {
+            throw new NotImplementedException();
+        }
+
         public List<Rol> Listar()
         {
             List<Rol> lista = new List<Rol>();
@@ -45,7 +54,11 @@ namespace Datos
                 }
             }
             return lista;
+        }
 
+        public int Registrar(Rol obj, out string Mensaje)
+        {
+            throw new NotImplementedException();
         }
     }
 }

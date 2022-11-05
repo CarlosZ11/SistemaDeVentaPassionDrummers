@@ -30,7 +30,7 @@ namespace Presentacion_GUI.Formularios
             cboEstado.ValueMember = "valor";
             cboEstado.SelectedIndex = 0;
 
-            List<Rol> listaRol = new CL_Rol().Listar();
+            List<Rol> listaRol = new ServicioRoles().Listar();
 
             foreach (Rol item in listaRol)
             {

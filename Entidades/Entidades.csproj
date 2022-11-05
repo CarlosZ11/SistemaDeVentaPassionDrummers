@@ -56,7 +56,7 @@
     <Compile Include="Venta.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="DiagramaEntidades.cd" />
+    <None Include="DiagramaPersona.cd" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

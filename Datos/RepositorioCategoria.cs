@@ -5,12 +5,75 @@ using System.Data.SqlClient;
 using System.Data;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace Datos
 {
-    public class CD_Categoria
+    public class RepositorioCategoria : ICrudBaseDatos<Categoria>
     {
+        public bool Editar(Categoria obj, out string Mensaje)
+        {
+            bool Respuesta = false;
+            Mensaje = String.Empty;
+
+            try
+            {
+                using (SqlConnection oconexion = new SqlConnection(Conexion.cadena))
+                {
+                    SqlCommand cmd = new SqlCommand("SP_EditarCategoria", oconexion);
+                    cmd.Parameters.AddWithValue("IdCategoria", obj.IdCategoria);
+                    cmd.Parameters.AddWithValue("Descripcion", obj.Descripcion);
+                    cmd.Parameters.AddWithValue("Estado", obj.Estado);
+                    cmd.Parameters.Add("Resultado", SqlDbType.Int).Direction = ParameterDirection.Output;
+                    cmd.Parameters.Add("Mensaje", SqlDbType.VarChar, 500).Direction = ParameterDirection.Output;
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    oconexion.Open();
+
+                    cmd.ExecuteNonQuery();
+
+                    Respuesta = Convert.ToBoolean(cmd.Parameters["Resultado"].Value);
+                    Mensaje = cmd.Parameters["Mensaje"].Value.ToString();
+                }
+            }
+            catch (Exception ex)
+            {
+                Respuesta = false;
+                Mensaje = ex.Message;
+            }
+
+            return Respuesta;
+        }
+
+        public bool Eliminar(Categoria obj, out string Mensaje)
+        {
+            bool Respuesta = false;
+            Mensaje = String.Empty;
+
+            try
+            {
+                using (SqlConnection oconexion = new SqlConnection(Conexion.cadena))
+                {
+                    SqlCommand cmd = new SqlCommand("SP_EliminarCategoria", oconexion);
+                    cmd.Parameters.AddWithValue("IdCategoria", obj.IdCategoria);
+                    cmd.Parameters.Add("Resultado", SqlDbType.Int).Direction = ParameterDirection.Output;
+                    cmd.Parameters.Add("Mensaje", SqlDbType.VarChar, 500).Direction = ParameterDirection.Output;
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    oconexion.Open();
+
+                    cmd.ExecuteNonQuery();
+
+                    Respuesta = Convert.ToBoolean(cmd.Parameters["Resultado"].Value);
+                    Mensaje = cmd.Parameters["Mensaje"].Value.ToString();
+                }
+            }
+            catch (Exception ex)
+            {
+                Respuesta = false;
+                Mensaje = ex.Message;
+            }
+
+            return Respuesta;
+        }
+
         public List<Categoria> Listar()
         {
             List<Categoria> lista = new List<Categoria>();
@@ -49,8 +112,7 @@ namespace Datos
             return lista;
         }
 
-
-        public int Registrar(Categoria obj, out String Mensaje)
+        public int Registrar(Categoria obj, out string Mensaje)
         {
             int idCategoriagenerado = 0;
             Mensaje = String.Empty;
@@ -80,72 +142,6 @@ namespace Datos
             }
 
             return idCategoriagenerado;
-        }
-
-
-        public bool Editar(Categoria obj, out String Mensaje)
-        {
-            bool Respuesta = false;
-            Mensaje = String.Empty;
-
-            try
-            {
-                using (SqlConnection oconexion = new SqlConnection(Conexion.cadena))
-                {
-                    SqlCommand cmd = new SqlCommand("SP_EditarCategoria", oconexion);
-                    cmd.Parameters.AddWithValue("IdCategoria", obj.IdCategoria);
-                    cmd.Parameters.AddWithValue("Descripcion", obj.Descripcion);
-                    cmd.Parameters.AddWithValue("Estado", obj.Estado);
-                    cmd.Parameters.Add("Resultado", SqlDbType.Int).Direction = ParameterDirection.Output;
-                    cmd.Parameters.Add("Mensaje", SqlDbType.VarChar, 500).Direction = ParameterDirection.Output;
-                    cmd.CommandType = CommandType.StoredProcedure;
-                    oconexion.Open();
-
-                    cmd.ExecuteNonQuery();
-
-                    Respuesta = Convert.ToBoolean(cmd.Parameters["Resultado"].Value);
-                    Mensaje = cmd.Parameters["Mensaje"].Value.ToString();
-                }
-            }
-            catch (Exception ex)
-            {
-                Respuesta = false;
-                Mensaje = ex.Message;
-            }
-
-            return Respuesta;
-        }
-
-
-        public bool Eliminar(Categoria obj, out String Mensaje)
-        {
-            bool Respuesta = false;
-            Mensaje = String.Empty;
-
-            try
-            {
-                using (SqlConnection oconexion = new SqlConnection(Conexion.cadena))
-                {
-                    SqlCommand cmd = new SqlCommand("SP_EliminarCategoria", oconexion);
-                    cmd.Parameters.AddWithValue("IdCategoria", obj.IdCategoria);
-                    cmd.Parameters.Add("Resultado", SqlDbType.Int).Direction = ParameterDirection.Output;
-                    cmd.Parameters.Add("Mensaje", SqlDbType.VarChar, 500).Direction = ParameterDirection.Output;
-                    cmd.CommandType = CommandType.StoredProcedure;
-                    oconexion.Open();
-
-                    cmd.ExecuteNonQuery();
-
-                    Respuesta = Convert.ToBoolean(cmd.Parameters["Resultado"].Value);
-                    Mensaje = cmd.Parameters["Mensaje"].Value.ToString();
-                }
-            }
-            catch (Exception ex)
-            {
-                Respuesta = false;
-                Mensaje = ex.Message;
-            }
-
-            return Respuesta;
         }
     }
 }

@@ -10,6 +10,8 @@ namespace Presentacion_GUI.Formularios
 {
     public partial class Categorias : Form
     {
+        ServicioCategorias servicioCategorias = new ServicioCategorias();
+
         public Categorias()
         {
             InitializeComponent();
@@ -35,8 +37,8 @@ namespace Presentacion_GUI.Formularios
             cboBusqueda.ValueMember = "valor";
             cboBusqueda.SelectedIndex = 0;
 
-            //Mostrar todos los usuarios
-            List<Categoria> lista = new CL_Categoria().Listar();
+            //Mostrar todas las categorias
+            List<Categoria> lista = servicioCategorias.Listar();
 
             foreach (Entidades.Categoria item in lista)
             {
@@ -61,7 +63,7 @@ namespace Presentacion_GUI.Formularios
 
             if (obj.IdCategoria == 0)
             {
-                int IdGenerado = new CL_Categoria().Registrar(obj, out mensaje);
+                int IdGenerado = servicioCategorias.Registrar(obj, out mensaje);
 
                 if (IdGenerado != 0)
                 {
@@ -79,7 +81,7 @@ namespace Presentacion_GUI.Formularios
             }
             else
             {
-                bool resultado = new CL_Categoria().Editar(obj, out mensaje);
+                bool resultado = servicioCategorias.Editar(obj, out mensaje);
 
                 if (resultado == true)
                 {
@@ -163,7 +165,7 @@ namespace Presentacion_GUI.Formularios
                         IdCategoria = Convert.ToInt32(txtId.Text)
                     };
 
-                    bool respuesta = new CL_Categoria().Eliminar(obj, out mensaje);
+                    bool respuesta = servicioCategorias.Eliminar(obj, out mensaje);
 
                     if (respuesta == true)
                     {

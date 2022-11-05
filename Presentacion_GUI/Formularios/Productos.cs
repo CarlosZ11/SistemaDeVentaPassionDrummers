@@ -16,6 +16,8 @@ namespace Presentacion_GUI.Formularios
 {
     public partial class Productos : Form
     {
+        ServicioProductos servicioProductos = new ServicioProductos();  
+
         public Productos()
         {
             InitializeComponent();
@@ -29,7 +31,7 @@ namespace Presentacion_GUI.Formularios
             cboEstado.ValueMember = "valor";
             cboEstado.SelectedIndex = 0;
 
-            List<Categoria> listaCategoria = new CL_Categoria().Listar();
+            List<Categoria> listaCategoria = new ServicioCategorias().Listar();
 
             foreach (Categoria item in listaCategoria)
             {
@@ -51,7 +53,7 @@ namespace Presentacion_GUI.Formularios
             cboBusqueda.SelectedIndex = 0;
 
             //Mostrar todos los usuarios
-            List<Producto> listaProductos = new CL_Producto().Listar();
+            List<Producto> listaProductos = servicioProductos.Listar();
 
             foreach (Producto item in listaProductos)
             {
@@ -88,7 +90,7 @@ namespace Presentacion_GUI.Formularios
 
             if (obj.IdProducto == 0)
             {
-                int Idgenerado = new CL_Producto().Registrar(obj, out mensaje);
+                int Idgenerado = servicioProductos.Registrar(obj, out mensaje);
 
                 if (Idgenerado != 0)
                 {
@@ -116,7 +118,7 @@ namespace Presentacion_GUI.Formularios
             }
             else
             {
-                bool resultado = new CL_Producto().Editar(obj, out mensaje);
+                bool resultado = servicioProductos.Editar(obj, out mensaje);
 
                 if (resultado == true)
                 {
@@ -219,7 +221,7 @@ namespace Presentacion_GUI.Formularios
                         IdProducto = Convert.ToInt32(txtId.Text)
                     };
 
-                    bool respuesta = new CL_Producto().Eliminar(obj, out mensaje);
+                    bool respuesta = servicioProductos.Eliminar(obj, out mensaje);
 
                     if (respuesta == true)
                     {
