@@ -17,6 +17,7 @@ namespace Presentacion_GUI.Formularios
 {
     public partial class Login : Form
     {
+
         public Login()
         {
             InitializeComponent();
@@ -31,8 +32,11 @@ namespace Presentacion_GUI.Formularios
 
         private void btnIngresar_Click(object sender, EventArgs e)
         {
-            List<Usuario> TEST = new CL_Usuario().Listar();
-            Usuario ousuario = new CL_Usuario().Listar().Where(u => u.Documento == txtDocumento.Text && u.Clave == txtPass.Text).FirstOrDefault();
+            //List<Usuario> TEST = new CL_Usuario().Listar();
+            //Usuario ousuario = new CL_Usuario().Listar().Where(u => u.Documento == txtDocumento.Text && u.Clave == txtPass.Text).FirstOrDefault();
+            
+            List<Usuario> TEST = new ServicioUsuarios().Listar();
+            Usuario ousuario = new ServicioUsuarios().Listar().Where(u => u.Documento == txtDocumento.Text && u.Clave == txtPass.Text).FirstOrDefault();
 
             if (ousuario != null)
             {
@@ -63,8 +67,11 @@ namespace Presentacion_GUI.Formularios
 
         private void txtPass_KeyPress(object sender, KeyPressEventArgs e)
         {
-            List<Usuario> TEST = new CL_Usuario().Listar();
-            Usuario ousuario = new CL_Usuario().Listar().Where(u => u.Documento == txtDocumento.Text && u.Clave == txtPass.Text).FirstOrDefault();
+            //List<Usuario> TEST = new CL_Usuario().Listar();
+            //Usuario ousuario = new CL_Usuario().Listar().Where(u => u.Documento == txtDocumento.Text && u.Clave == txtPass.Text).FirstOrDefault();
+
+            List<Usuario> TEST = new ServicioUsuarios().Listar();
+            Usuario ousuario = new ServicioUsuarios().Listar().Where(u => u.Documento == txtDocumento.Text && u.Clave == txtPass.Text).FirstOrDefault();
 
             if (e.KeyChar == Convert.ToChar(Keys.Enter))
             {

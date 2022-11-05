@@ -4,50 +4,14 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace Logica
 {
-    public class CL_Proveedor
+    public class ServicioProveedores : IServicios<Proveedor>
     {
-        private CD_Proveedor objdc_Proveedor = new CD_Proveedor();
+        private RepositorioProveedor repositorioProveedor = new RepositorioProveedor();
 
-        public List<Proveedor> Listar()
-        {
-            return objdc_Proveedor.Listar();
-        }
-
-        public int Registrar(Proveedor obj, out String Mensaje)
-        {
-            Mensaje = String.Empty;
-
-            if (obj.Documento == "")
-            {
-                Mensaje += "Es necesario el documento del Proveedor\n";
-            }
-
-            if (obj.RazonSocial == "")
-            {
-                Mensaje += "Es necesaria la razon social del Proveedor\n";
-            }
-
-            if (obj.Correo == "")
-            {
-                Mensaje += "Es necesario el correo del Proveedor\n";
-            }
-
-            if (Mensaje != String.Empty)
-            {
-                return 0;
-            }
-            else
-            {
-                return objdc_Proveedor.Registrar(obj, out Mensaje);
-            }
-
-        }
-
-        public bool Editar(Proveedor obj, out String Mensaje)
+        public bool Editar(Proveedor obj, out string Mensaje)
         {
             Mensaje = String.Empty;
 
@@ -72,15 +36,47 @@ namespace Logica
             }
             else
             {
-                return objdc_Proveedor.Editar(obj, out Mensaje);
+                return repositorioProveedor.Editar(obj, out Mensaje);
             }
-
-
         }
 
-        public bool Eliminar(Proveedor obj, out String Mensaje)
+        public bool Eliminar(Proveedor obj, out string Mensaje)
         {
-            return objdc_Proveedor.Eliminar(obj, out Mensaje);
+            return repositorioProveedor.Eliminar(obj, out Mensaje);
+        }
+
+        public List<Proveedor> Listar()
+        {
+            return repositorioProveedor.Listar();
+        }
+
+        public int Registrar(Proveedor obj, out string Mensaje)
+        {
+            Mensaje = String.Empty;
+
+            if (obj.Documento == "")
+            {
+                Mensaje += "Es necesario el documento del Proveedor\n";
+            }
+
+            if (obj.RazonSocial == "")
+            {
+                Mensaje += "Es necesaria la razon social del Proveedor\n";
+            }
+
+            if (obj.Correo == "")
+            {
+                Mensaje += "Es necesario el correo del Proveedor\n";
+            }
+
+            if (Mensaje != String.Empty)
+            {
+                return 0;
+            }
+            else
+            {
+                return repositorioProveedor.Registrar(obj, out Mensaje);
+            }
         }
     }
 }

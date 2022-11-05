@@ -15,6 +15,8 @@ namespace Presentacion_GUI.Formularios
 {
     public partial class Proveedores : Form
     {
+        ServicioProveedores servicioProveedores = new ServicioProveedores();
+
         public Proveedores()
         {
             InitializeComponent();
@@ -40,11 +42,11 @@ namespace Presentacion_GUI.Formularios
             cboBusqueda.SelectedIndex = 0;
 
             //Mostrar todos los proveedores
-            List<Proveedor> lista = new CL_Proveedor().Listar();
+            List<Proveedor> lista = servicioProveedores.Listar();
 
             foreach (Proveedor item in lista)
             {
-                dgvData.Rows.Add(new object[] {"",item.IdProveedor,item.Documento,item.RazonSocial,item.Correo,item.Telefono,
+                dgvData.Rows.Add(new object[] {"",item.Id,item.Documento,item.RazonSocial,item.Correo,item.Telefono,
                     item.Estado == true ? 1 : 0,
                     item.Estado == true ? "Activo" : "No Activo"
                 });
@@ -57,7 +59,7 @@ namespace Presentacion_GUI.Formularios
 
             Proveedor obj = new Proveedor()
             {
-                IdProveedor = Convert.ToInt32(txtId.Text),
+                Id = Convert.ToInt32(txtId.Text),
                 Documento = txtDocumento.Text,
                 RazonSocial = txtRazonSocial.Text,
                 Correo = txtCorreo.Text,
@@ -65,9 +67,9 @@ namespace Presentacion_GUI.Formularios
                 Estado = Convert.ToInt32(((OpcionCombo)cboEstado.SelectedItem).valor) == 1 ? true : false
             };
 
-            if (obj.IdProveedor == 0)
+            if (obj.Id == 0)
             {
-                int Idgenerado = new CL_Proveedor().Registrar(obj, out mensaje);
+                int Idgenerado = servicioProveedores.Registrar(obj, out mensaje);
 
                 if (Idgenerado != 0)
                 {
@@ -85,7 +87,7 @@ namespace Presentacion_GUI.Formularios
             }
             else
             {
-                bool resultado = new CL_Proveedor().Editar(obj, out mensaje);
+                bool resultado = servicioProveedores.Editar(obj, out mensaje);
 
                 if (resultado == true)
                 {
@@ -173,10 +175,10 @@ namespace Presentacion_GUI.Formularios
                     String mensaje = String.Empty;
                     Proveedor obj = new Proveedor()
                     {
-                        IdProveedor = Convert.ToInt32(txtId.Text)
+                        Id = Convert.ToInt32(txtId.Text)
                     };
 
-                    bool respuesta = new CL_Proveedor().Eliminar(obj, out mensaje);
+                    bool respuesta = servicioProveedores.Eliminar(obj, out mensaje);
 
                     if (respuesta == true)
                     {

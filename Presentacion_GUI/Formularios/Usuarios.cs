@@ -15,6 +15,8 @@ namespace Presentacion_GUI.Formularios
 {
     public partial class Usuarios : Form
     {
+        ServicioUsuarios servicioUsuarios = new ServicioUsuarios();
+
         public Usuarios()
         {
             InitializeComponent();
@@ -50,11 +52,11 @@ namespace Presentacion_GUI.Formularios
             cboBusqueda.SelectedIndex = 0;
 
             //Mostrar todos los usuarios
-            List<Usuario> listaUsuario = new CL_Usuario().Listar();
+            List<Usuario> listaUsuario = servicioUsuarios.Listar();
 
             foreach (Usuario item in listaUsuario)
             {
-                dgvData.Rows.Add(new object[] {"",item.IdUsuario,item.Documento,item.NombreCompleto,item.Correo,item.Clave,
+                dgvData.Rows.Add(new object[] {"",item.Id,item.Documento,item.NombreCompleto,item.Correo,item.Clave,
                     item.oRol.IdRol,
                     item.oRol.Descripcion,
                     item.Estado == true ? 1 : 0,
@@ -69,7 +71,7 @@ namespace Presentacion_GUI.Formularios
 
             Usuario objusuario = new Usuario()
             {
-                IdUsuario = Convert.ToInt32(txtId.Text),
+                Id = Convert.ToInt32(txtId.Text),
                 Documento = txtDocumento.Text,
                 NombreCompleto = txtNombreCompleto.Text,
                 Correo = txtCorreo.Text,
@@ -78,9 +80,9 @@ namespace Presentacion_GUI.Formularios
                 Estado = Convert.ToInt32(((OpcionCombo)cboEstado.SelectedItem).valor) == 1 ? true : false
             };
 
-            if(objusuario.IdUsuario == 0)
+            if(objusuario.Id == 0)
             {
-                int Idusuariogenerado = new CL_Usuario().Registrar(objusuario, out mensaje);
+                int Idusuariogenerado = servicioUsuarios.Registrar(objusuario, out mensaje);
 
                 if (Idusuariogenerado != 0)
                 {
@@ -100,7 +102,7 @@ namespace Presentacion_GUI.Formularios
             }
             else
             {
-                bool resultado = new CL_Usuario().Editar(objusuario, out mensaje);
+                bool resultado = servicioUsuarios.Editar(objusuario, out mensaje);
 
                 if (resultado == true)
                 {
@@ -206,10 +208,11 @@ namespace Presentacion_GUI.Formularios
                     String mensaje = String.Empty;
                     Usuario objusuario = new Usuario()
                     {
-                        IdUsuario = Convert.ToInt32(txtId.Text)
+                        Id = Convert.ToInt32(txtId.Text)
                     };
 
-                    bool respuesta = new CL_Usuario().Eliminar(objusuario, out mensaje);
+                    //bool respuesta = new CL_Usuario().Eliminar(objusuario, out mensaje);
+                    bool respuesta = servicioUsuarios.Eliminar(objusuario, out mensaje);
 
                     if (respuesta == true)
                     {

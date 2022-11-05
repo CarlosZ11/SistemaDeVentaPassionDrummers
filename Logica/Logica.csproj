@@ -42,12 +42,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CL_Categoria.cs" />
-    <Compile Include="CL_Cliente.cs" />
     <Compile Include="CL_Producto.cs" />
-    <Compile Include="CL_Proveedor.cs" />
     <Compile Include="CL_Rol.cs" />
-    <Compile Include="CL_Usuario.cs" />
+    <Compile Include="IServicios.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ServicioClientes.cs" />
+    <Compile Include="ServicioProveedores.cs" />
+    <Compile Include="ServicioUsuarios.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Datos\Datos.csproj">
@@ -58,6 +59,9 @@
       <Project>{dd72f350-3978-417e-b660-1d65a6bc9cea}</Project>
       <Name>Entidades</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="DiagramaLogico.cd" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

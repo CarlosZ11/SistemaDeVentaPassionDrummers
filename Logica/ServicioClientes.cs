@@ -4,50 +4,14 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace Logica
 {
-    public class CL_Cliente
+    public class ServicioClientes : IServicios<Cliente>
     {
-        private CD_Cliente objdc_Cliente = new CD_Cliente();
+        private RepositorioCliente repositorioCliente = new RepositorioCliente();
 
-        public List<Cliente> Listar()
-        {
-            return objdc_Cliente.Listar();
-        }
-
-        public int Registrar(Cliente obj, out String Mensaje)
-        {
-            Mensaje = String.Empty;
-
-            if (obj.Documento == "")
-            {
-                Mensaje += "Es necesario el documento del Cliente\n";
-            }
-
-            if (obj.NombreCompleto == "")
-            {
-                Mensaje += "Es necesario el nombre del Cliente\n";
-            }
-
-            if (obj.Correo == "")
-            {
-                Mensaje += "Es necesario el correo del Cliente\n";
-            }
-
-            if (Mensaje != String.Empty)
-            {
-                return 0;
-            }
-            else
-            {
-                return objdc_Cliente.Registrar(obj, out Mensaje);
-            }
-
-        }
-
-        public bool Editar(Cliente obj, out String Mensaje)
+        public bool Editar(Cliente obj, out string Mensaje)
         {
             Mensaje = String.Empty;
 
@@ -72,15 +36,47 @@ namespace Logica
             }
             else
             {
-                return objdc_Cliente.Editar(obj, out Mensaje);
+                return repositorioCliente.Editar(obj, out Mensaje);
             }
-
-
         }
 
-        public bool Eliminar(Cliente obj, out String Mensaje)
+        public bool Eliminar(Cliente obj, out string Mensaje)
         {
-            return objdc_Cliente.Eliminar(obj, out Mensaje);
+            return repositorioCliente.Eliminar(obj, out Mensaje);
+        }
+
+        public List<Cliente> Listar()
+        {
+            return repositorioCliente.Listar();
+        }
+
+        public int Registrar(Cliente obj, out string Mensaje)
+        {
+            Mensaje = String.Empty;
+
+            if (obj.Documento == "")
+            {
+                Mensaje += "Es necesario el documento del Cliente\n";
+            }
+
+            if (obj.NombreCompleto == "")
+            {
+                Mensaje += "Es necesario el nombre del Cliente\n";
+            }
+
+            if (obj.Correo == "")
+            {
+                Mensaje += "Es necesario el correo del Cliente\n";
+            }
+
+            if (Mensaje != String.Empty)
+            {
+                return 0;
+            }
+            else
+            {
+                return repositorioCliente.Registrar(obj, out Mensaje);
+            }
         }
     }
 }

@@ -15,6 +15,8 @@ namespace Presentacion_GUI.Formularios
 {
     public partial class Clientes : Form
     {
+        ServicioClientes servicioClientes = new ServicioClientes();
+
         public Clientes()
         {
             InitializeComponent();
@@ -40,11 +42,11 @@ namespace Presentacion_GUI.Formularios
             cboBusqueda.SelectedIndex = 0;
 
             //Mostrar todos los clientes
-            List<Cliente> lista = new CL_Cliente().Listar();
+            List<Cliente> lista = servicioClientes.Listar();
 
             foreach (Cliente item in lista)
             {
-                dgvData.Rows.Add(new object[] {"",item.IdCliente,item.Documento,item.NombreCompleto,item.Correo,item.Telefono,
+                dgvData.Rows.Add(new object[] {"",item.Id,item.Documento,item.NombreCompleto,item.Correo,item.Telefono,
                     item.Estado == true ? 1 : 0,
                     item.Estado == true ? "Activo" : "No Activo"
                 });
@@ -57,7 +59,7 @@ namespace Presentacion_GUI.Formularios
 
             Cliente obj = new Cliente()
             {
-                IdCliente = Convert.ToInt32(txtId.Text),
+                Id = Convert.ToInt32(txtId.Text),
                 Documento = txtDocumento.Text,
                 NombreCompleto = txtNombreCompleto.Text,
                 Correo = txtCorreo.Text,
@@ -65,9 +67,9 @@ namespace Presentacion_GUI.Formularios
                 Estado = Convert.ToInt32(((OpcionCombo)cboEstado.SelectedItem).valor) == 1 ? true : false
             };
 
-            if (obj.IdCliente == 0)
+            if (obj.Id == 0)
             {
-                int Idgenerado = new CL_Cliente().Registrar(obj, out mensaje);
+                int Idgenerado = servicioClientes.Registrar(obj, out mensaje);
 
                 if (Idgenerado != 0)
                 {
@@ -85,7 +87,7 @@ namespace Presentacion_GUI.Formularios
             }
             else
             {
-                bool resultado = new CL_Cliente().Editar(obj, out mensaje);
+                bool resultado = servicioClientes.Editar(obj, out mensaje);
 
                 if (resultado == true)
                 {
@@ -173,10 +175,10 @@ namespace Presentacion_GUI.Formularios
                     String mensaje = String.Empty;
                     Cliente obj = new Cliente()
                     {
-                        IdCliente = Convert.ToInt32(txtId.Text)
+                        Id = Convert.ToInt32(txtId.Text)
                     };
 
-                    bool respuesta = new CL_Cliente().Eliminar(obj, out mensaje);
+                    bool respuesta = servicioClientes.Eliminar(obj, out mensaje);
 
                     if (respuesta == true)
                     {
