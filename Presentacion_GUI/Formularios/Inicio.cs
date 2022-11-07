@@ -37,6 +37,8 @@ namespace Presentacion_GUI.Formularios
                 btnAdministracion.Visible = false;
                 //btnReportes.Enabled = false;
                 btnReportes.Visible = false;
+                btnEmpresa.Visible = false;
+                
             }
 
             PersonalizarDiseño();
