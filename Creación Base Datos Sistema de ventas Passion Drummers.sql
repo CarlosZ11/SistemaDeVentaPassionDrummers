@@ -638,3 +638,17 @@ SELECT *FROM PROVEEDOR
 --DBCC CHECKIDENT (PROVEEDOR, NORESEED)
 
 go
+
+CREATE TABLE NEGOCIO(
+IdNegocio int primary key,
+Nombre varchar(60),
+RUC varchar(60),
+Direccion varchar(60),
+Logo varbinary(max) null
+)
+
+go
+
+SELECT *FROM NEGOCIO
+
+INSERT INTO NEGOCIO(IdNegocio,Nombre,RUC,Direccion) VALUES (1, 'Passion Drummers', '318294', 'Carrera 19 #13-35')

@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.panelMenu = new System.Windows.Forms.Panel();
-            this.btnAcercaDe = new FontAwesome.Sharp.IconButton();
+            this.btnEmpresa = new FontAwesome.Sharp.IconButton();
             this.btnUsuarios = new FontAwesome.Sharp.IconButton();
             this.btnReportes = new FontAwesome.Sharp.IconButton();
             this.panelSubmenuCompras = new System.Windows.Forms.Panel();
@@ -75,7 +75,7 @@
             // 
             this.panelMenu.AutoScroll = true;
             this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(222)))), ((int)(((byte)(255)))));
-            this.panelMenu.Controls.Add(this.btnAcercaDe);
+            this.panelMenu.Controls.Add(this.btnEmpresa);
             this.panelMenu.Controls.Add(this.btnUsuarios);
             this.panelMenu.Controls.Add(this.btnReportes);
             this.panelMenu.Controls.Add(this.panelSubmenuCompras);
@@ -94,28 +94,28 @@
             this.panelMenu.Size = new System.Drawing.Size(200, 692);
             this.panelMenu.TabIndex = 2;
             // 
-            // btnAcercaDe
+            // btnEmpresa
             // 
-            this.btnAcercaDe.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnAcercaDe.FlatAppearance.BorderSize = 0;
-            this.btnAcercaDe.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAcercaDe.Font = new System.Drawing.Font("Eras Demi ITC", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAcercaDe.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(7)))), ((int)(((byte)(76)))));
-            this.btnAcercaDe.IconChar = FontAwesome.Sharp.IconChar.CircleInfo;
-            this.btnAcercaDe.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(7)))), ((int)(((byte)(76)))));
-            this.btnAcercaDe.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnAcercaDe.IconSize = 32;
-            this.btnAcercaDe.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAcercaDe.Location = new System.Drawing.Point(0, 641);
-            this.btnAcercaDe.Name = "btnAcercaDe";
-            this.btnAcercaDe.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
-            this.btnAcercaDe.Size = new System.Drawing.Size(200, 45);
-            this.btnAcercaDe.TabIndex = 20;
-            this.btnAcercaDe.Text = "Acerca de";
-            this.btnAcercaDe.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAcercaDe.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnAcercaDe.UseVisualStyleBackColor = true;
-            this.btnAcercaDe.Click += new System.EventHandler(this.btnAcercaDe_Click);
+            this.btnEmpresa.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnEmpresa.FlatAppearance.BorderSize = 0;
+            this.btnEmpresa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEmpresa.Font = new System.Drawing.Font("Eras Demi ITC", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEmpresa.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(7)))), ((int)(((byte)(76)))));
+            this.btnEmpresa.IconChar = FontAwesome.Sharp.IconChar.CircleInfo;
+            this.btnEmpresa.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(7)))), ((int)(((byte)(76)))));
+            this.btnEmpresa.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnEmpresa.IconSize = 32;
+            this.btnEmpresa.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnEmpresa.Location = new System.Drawing.Point(0, 641);
+            this.btnEmpresa.Name = "btnEmpresa";
+            this.btnEmpresa.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
+            this.btnEmpresa.Size = new System.Drawing.Size(200, 45);
+            this.btnEmpresa.TabIndex = 20;
+            this.btnEmpresa.Text = "Empresa";
+            this.btnEmpresa.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnEmpresa.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnEmpresa.UseVisualStyleBackColor = true;
+            this.btnEmpresa.Click += new System.EventHandler(this.btnAcercaDe_Click);
             // 
             // btnUsuarios
             // 
@@ -640,7 +640,7 @@
         #endregion
 
         private System.Windows.Forms.Panel panelMenu;
-        private FontAwesome.Sharp.IconButton btnAcercaDe;
+        private FontAwesome.Sharp.IconButton btnEmpresa;
         private FontAwesome.Sharp.IconButton btnUsuarios;
         private FontAwesome.Sharp.IconButton btnReportes;
         private System.Windows.Forms.Panel panelSubmenuCompras;

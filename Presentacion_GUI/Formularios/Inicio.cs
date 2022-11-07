@@ -238,7 +238,7 @@ namespace Presentacion_GUI.Formularios
         {
             OcultarSubMenu();
             ActivarBoton(sender, RGBColors.color8);
-            OpenChildForm(new AcercaDe());
+            OpenChildForm(new NegocioPD());
         }
 
         //Arrastrar formulario

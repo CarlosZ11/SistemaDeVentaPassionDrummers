@@ -39,7 +39,6 @@ D:\Ingeniería de Sistemas\Programación III 2022\SistemaVentaPD\Presentacion_GU
 D:\Ingeniería de Sistemas\Programación III 2022\SistemaVentaPD\Presentacion_GUI\bin\Debug\Datos.pdb
 D:\Ingeniería de Sistemas\Programación III 2022\SistemaVentaPD\Presentacion_GUI\obj\Debug\Presentacion_GUI.csproj.AssemblyReference.cache
 D:\Ingeniería de Sistemas\Programación III 2022\SistemaVentaPD\Presentacion_GUI\obj\Debug\Presentacion_GUI.csproj.SuggestedBindingRedirects.cache
-D:\Ingeniería de Sistemas\Programación III 2022\SistemaVentaPD\Presentacion_GUI\obj\Debug\Presentacion_GUI.Formularios.AcercaDe.resources
 D:\Ingeniería de Sistemas\Programación III 2022\SistemaVentaPD\Presentacion_GUI\obj\Debug\Presentacion_GUI.Formularios.Clientes.resources
 D:\Ingeniería de Sistemas\Programación III 2022\SistemaVentaPD\Presentacion_GUI\obj\Debug\Presentacion_GUI.Formularios.Compras.resources
 D:\Ingeniería de Sistemas\Programación III 2022\SistemaVentaPD\Presentacion_GUI\obj\Debug\Presentacion_GUI.Formularios.Inicio.resources
@@ -99,3 +98,4 @@ C:\Users\GianFranco\Desktop\Proyecto Sistema de venta Passion Drummers\SistemaDe
 C:\Users\GianFranco\Desktop\Proyecto Sistema de venta Passion Drummers\SistemaDeVentaPassionDrummers\Presentacion_GUI\obj\Debug\Presentacion_GUI.csproj.CopyComplete
 C:\Users\GianFranco\Desktop\Proyecto Sistema de venta Passion Drummers\SistemaDeVentaPassionDrummers\Presentacion_GUI\obj\Debug\Presentacion_GUI.exe
 C:\Users\GianFranco\Desktop\Proyecto Sistema de venta Passion Drummers\SistemaDeVentaPassionDrummers\Presentacion_GUI\obj\Debug\Presentacion_GUI.pdb
+D:\Ingeniería de Sistemas\Programación III 2022\SistemaVentaPD\Presentacion_GUI\obj\Debug\Presentacion_GUI.Formularios.NegocioPD.resources
