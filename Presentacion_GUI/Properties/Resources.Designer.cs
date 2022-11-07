@@ -133,6 +133,16 @@ namespace Presentacion_GUI.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_más_45 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-más-45", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_microsoft_excel_2019_15 {
             get {
                 object obj = ResourceManager.GetObject("icons8-microsoft-excel-2019-15", resourceCulture);

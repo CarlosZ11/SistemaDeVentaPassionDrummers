@@ -16,5 +16,6 @@ namespace Presentacion_GUI.Formularios
         {
             InitializeComponent();
         }
+
     }
 }

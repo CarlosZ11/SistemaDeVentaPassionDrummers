@@ -21,6 +21,9 @@ namespace Presentacion_GUI.Formularios
         public Login()
         {
             InitializeComponent();
+            txtDocumento.Text = "1235340177";
+            txtPass.Text = "2312";
+            txtPass.Select();
         }
 
         private void LimpiarCampos()
@@ -34,7 +37,9 @@ namespace Presentacion_GUI.Formularios
         {
             //List<Usuario> TEST = new CL_Usuario().Listar();
             //Usuario ousuario = new CL_Usuario().Listar().Where(u => u.Documento == txtDocumento.Text && u.Clave == txtPass.Text).FirstOrDefault();
+
             
+
             List<Usuario> TEST = new ServicioUsuarios().Listar();
             Usuario ousuario = new ServicioUsuarios().Listar().Where(u => u.Documento == txtDocumento.Text && u.Clave == txtPass.Text).FirstOrDefault();
 
@@ -69,6 +74,7 @@ namespace Presentacion_GUI.Formularios
         {
             //List<Usuario> TEST = new CL_Usuario().Listar();
             //Usuario ousuario = new CL_Usuario().Listar().Where(u => u.Documento == txtDocumento.Text && u.Clave == txtPass.Text).FirstOrDefault();
+
 
             List<Usuario> TEST = new ServicioUsuarios().Listar();
             Usuario ousuario = new ServicioUsuarios().Listar().Where(u => u.Documento == txtDocumento.Text && u.Clave == txtPass.Text).FirstOrDefault();

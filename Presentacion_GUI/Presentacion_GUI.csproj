@@ -243,5 +243,8 @@
   <ItemGroup>
     <None Include="Recursos\icons8-escoba-15.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Recursos\icons8-más-45.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
