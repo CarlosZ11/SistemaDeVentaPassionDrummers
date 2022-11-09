@@ -55,5 +55,25 @@ namespace Presentacion_GUI.Formularios
                 }
             }
         }
+
+        private void btnBuscarProducto_Click(object sender, EventArgs e)
+        {
+            using (var modal = new mdProducto())
+            {
+                var result = modal.ShowDialog();
+
+                if (result == DialogResult.OK)
+                {
+                    txtIdProducto.Text = modal._Producto.IdProducto.ToString();
+                    txtCodProducto.Text = modal._Producto.Codigo;
+                    txtProducto.Text = modal._Producto.Nombre;
+                    txtPrecioCompra.Select();
+                }
+                else
+                {
+                    txtCodProducto.Select();
+                }
+            }
+        }
     }
 }
