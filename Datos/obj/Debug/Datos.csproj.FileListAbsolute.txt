@@ -7,15 +7,6 @@ C:\Users\GianFranco\Desktop\Proyecto Sistema de ventas Passion Drummers\Proyecto
 C:\Users\GianFranco\Desktop\Proyecto Sistema de ventas Passion Drummers\ProyectoSistemaDeVentas\Datos\obj\Debug\Datos.csproj.CopyComplete
 C:\Users\GianFranco\Desktop\Proyecto Sistema de ventas Passion Drummers\ProyectoSistemaDeVentas\Datos\obj\Debug\Datos.dll
 C:\Users\GianFranco\Desktop\Proyecto Sistema de ventas Passion Drummers\ProyectoSistemaDeVentas\Datos\obj\Debug\Datos.pdb
-D:\Ingeniería de Sistemas\Programación III 2022\SistemaVentaPD\Datos\bin\Debug\Datos.dll
-D:\Ingeniería de Sistemas\Programación III 2022\SistemaVentaPD\Datos\bin\Debug\Datos.pdb
-D:\Ingeniería de Sistemas\Programación III 2022\SistemaVentaPD\Datos\bin\Debug\Entidades.dll
-D:\Ingeniería de Sistemas\Programación III 2022\SistemaVentaPD\Datos\bin\Debug\Entidades.pdb
-D:\Ingeniería de Sistemas\Programación III 2022\SistemaVentaPD\Datos\obj\Debug\Datos.csproj.AssemblyReference.cache
-D:\Ingeniería de Sistemas\Programación III 2022\SistemaVentaPD\Datos\obj\Debug\Datos.csproj.CoreCompileInputs.cache
-D:\Ingeniería de Sistemas\Programación III 2022\SistemaVentaPD\Datos\obj\Debug\Datos.csproj.CopyComplete
-D:\Ingeniería de Sistemas\Programación III 2022\SistemaVentaPD\Datos\obj\Debug\Datos.dll
-D:\Ingeniería de Sistemas\Programación III 2022\SistemaVentaPD\Datos\obj\Debug\Datos.pdb
 C:\Users\GianFranco\Desktop\Proyecto Sistema de venta Passion Drummers\SistemaDeVentaPassionDrummers\Datos\bin\Debug\Datos.dll
 C:\Users\GianFranco\Desktop\Proyecto Sistema de venta Passion Drummers\SistemaDeVentaPassionDrummers\Datos\bin\Debug\Datos.pdb
 C:\Users\GianFranco\Desktop\Proyecto Sistema de venta Passion Drummers\SistemaDeVentaPassionDrummers\Datos\bin\Debug\Entidades.dll
@@ -25,3 +16,12 @@ C:\Users\GianFranco\Desktop\Proyecto Sistema de venta Passion Drummers\SistemaDe
 C:\Users\GianFranco\Desktop\Proyecto Sistema de venta Passion Drummers\SistemaDeVentaPassionDrummers\Datos\obj\Debug\Datos.csproj.CopyComplete
 C:\Users\GianFranco\Desktop\Proyecto Sistema de venta Passion Drummers\SistemaDeVentaPassionDrummers\Datos\obj\Debug\Datos.dll
 C:\Users\GianFranco\Desktop\Proyecto Sistema de venta Passion Drummers\SistemaDeVentaPassionDrummers\Datos\obj\Debug\Datos.pdb
+D:\Ingeniería de Sistemas\Programación III 2022\SistemaVentaPD\Datos\bin\Debug\Datos.dll
+D:\Ingeniería de Sistemas\Programación III 2022\SistemaVentaPD\Datos\bin\Debug\Datos.pdb
+D:\Ingeniería de Sistemas\Programación III 2022\SistemaVentaPD\Datos\bin\Debug\Entidades.dll
+D:\Ingeniería de Sistemas\Programación III 2022\SistemaVentaPD\Datos\bin\Debug\Entidades.pdb
+D:\Ingeniería de Sistemas\Programación III 2022\SistemaVentaPD\Datos\obj\Debug\Datos.csproj.AssemblyReference.cache
+D:\Ingeniería de Sistemas\Programación III 2022\SistemaVentaPD\Datos\obj\Debug\Datos.csproj.CoreCompileInputs.cache
+D:\Ingeniería de Sistemas\Programación III 2022\SistemaVentaPD\Datos\obj\Debug\Datos.csproj.CopyComplete
+D:\Ingeniería de Sistemas\Programación III 2022\SistemaVentaPD\Datos\obj\Debug\Datos.dll
+D:\Ingeniería de Sistemas\Programación III 2022\SistemaVentaPD\Datos\obj\Debug\Datos.pdb

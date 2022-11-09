@@ -52,7 +52,7 @@ namespace Presentacion_GUI.Formularios
             cboBusqueda.ValueMember = "valor";
             cboBusqueda.SelectedIndex = 0;
 
-            //Mostrar todos los usuarios
+            //Mostrar todos los productos
             List<Producto> listaProductos = servicioProductos.Listar();
 
             foreach (Producto item in listaProductos)
