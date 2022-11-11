@@ -531,7 +531,7 @@ go
 
 SELECT IdCliente,Documento,NombreCompleto,Correo,Telefono,Estado FROM CLIENTE
 INSERT INTO CLIENTE(Documento,NombreCompleto,Correo,Telefono,Estado) VALUES ('1143249417','Loraine Zambranio','lorainez@gmail.com','3023815235',1)
-SELECT *FROM CLIENTE
+ 
 
 --Consulta para reiniciar el IdCliente en caso de borrar un cliente
 --DBCC CHECKIDENT ([CLIENTE], RESEED, 1)
@@ -651,4 +651,67 @@ go
 
 SELECT *FROM NEGOCIO
 
+go
+
 INSERT INTO NEGOCIO(IdNegocio,Nombre,RUC,Direccion) VALUES (1, 'Passion Drummers', '318294', 'Carrera 19 #13-35')
+
+go
+
+--PROCESOS PARA REGISTRAR UNA COMPRA-------------------------------------------------------------------------------------
+
+CREATE TYPE [dbo].[EDetalle_Compra] AS TABLE(
+	[IdProducto] int null,
+	[PrecioCompra] decimal(18,2) null,
+	[PrecioVenta] decimal (18,2) null,
+	[Cantidad] int null,
+	[MontoTotal] decimal(18,2) null
+)
+
+GO
+
+
+
+CREATE PROC SP_RegistrarCompra(
+@IdUsuario int,
+@IdProveedor int,
+@TipoDocumento varchar(500),
+@NumeroDocumento varchar(500),
+@MontoTotal  decimal(18,2),
+@DetalleCompra [EDetalle_Compra] READONLY,
+@Resultado bit output,
+@Mensaje varchar(500) output
+)
+as
+begin
+	begin try
+		declare @IdCompra int = 0
+		set @Resultado = 1
+		set @Mensaje = ''
+
+		begin transaction registro
+
+			insert into COMPRA(IdUsuario,IdProveedor,TipoDocumento,NumeroDocumento,MontoTotal)
+			values (@IdUsuario,@IdProveedor,@TipoDocumento,@NumeroDocumento,@MontoTotal)
+
+			set @IdCompra = SCOPE_IDENTITY()
+
+			insert into DETALLE_COMPRA(IdCompra,IdProducto,PrecioCompra,PrecioVenta,Cantidad,MontoTotal)
+			select @IdCompra,IdProducto,PrecioCompra,PrecioVenta,Cantidad,MontoTotal from @DetalleCompra
+
+			update p set p.Stock = p.Stock + dc.Cantidad,
+			p.PrecioCompra = dc.PrecioCompra,
+			p.PrecioVenta = dc.PrecioVenta
+			from PRODUCTO p
+			inner join @DetalleCompra dc on dc.IdProducto = p.IdProducto
+
+		commit transaction registro
+
+	end try
+	begin catch
+		
+		set @Resultado = 0
+		set @Mensaje = ERROR_MESSAGE()
+		rollback transaction registro
+
+	end catch
+end
