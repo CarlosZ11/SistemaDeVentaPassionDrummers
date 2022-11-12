@@ -143,6 +143,46 @@ namespace Presentacion_GUI.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_exportar_pdf_20 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-exportar-pdf-20", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_exportar_pdf_201 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-exportar-pdf-201", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_exportar_pdf_202 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-exportar-pdf-202", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_exportar_pdf_25 {
+            get {
+                object obj = ResourceManager.GetObject("icons8_exportar_pdf_25", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_más_45 {
             get {
                 object obj = ResourceManager.GetObject("icons8-más-45", resourceCulture);

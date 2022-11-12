@@ -155,6 +155,9 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utilidades\OpcionCombo.cs" />
+    <EmbeddedResource Include="Formularios\DetalleCompra.resx">
+      <DependentUpon>DetalleCompra.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\NegocioPD.resx">
       <DependentUpon>NegocioPD.cs</DependentUpon>
     </EmbeddedResource>
@@ -266,6 +269,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Recursos\icons8-basura-25.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Recursos\icons8-exportar-pdf-25.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Recursos\icons8-exportar-pdf-20.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

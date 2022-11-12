@@ -146,8 +146,8 @@ namespace Presentacion_GUI.Formularios
                     txtProducto.Text,
                     precioCompra.ToString("0.00"),
                     precioVenta.ToString("0.00"),
-                    txtCantidad.Value.ToString(),
-                    (txtCantidad.Value * precioCompra).ToString("0.00")
+                    NumericCantidad.Value.ToString(),
+                    (NumericCantidad.Value * precioCompra).ToString("0.00")
                 });
                 calcularTotal();
                 limpiarProducto();
@@ -163,7 +163,7 @@ namespace Presentacion_GUI.Formularios
             txtProducto.Text = "";
             txtPrecioCompra.Text = "";
             txtPrecioVenta.Text = "";
-            txtCantidad.Value = 1;
+            NumericCantidad.Value = 1;
         }
 
         private void calcularTotal()
@@ -207,6 +207,7 @@ namespace Presentacion_GUI.Formularios
                 {
                     dgvData.Rows.RemoveAt(indice);
                     calcularTotal();
+                    txtTotalPagar.Text = "0";
                 }
             }
         }

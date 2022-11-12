@@ -715,3 +715,23 @@ begin
 
 	end catch
 end
+
+go
+
+--CONSULTA PARA VER DETALLE COMPRA-------------------------------------------------------------------------------------
+SELECT c.IdCompra,
+u.NombreCompleto,
+pr.Documento, pr.RazonSocial,
+c.TipoDocumento, c.NumeroDocumento, c.MontoTotal, convert(char(10),c.FechaRegistro,103)[FechaRegistro]
+FROM COMPRA c
+INNER JOIN USUARIO u ON u.IdUsuario = c.IdUsuario
+INNER JOIN PROVEEDOR pr ON pr.IdProveedor = c.IdProveedor
+WHERE c.NumeroDocumento = '00001'
+
+go
+
+--CONSULTA PARA SABER TODOS LOS PRODUCTOS RELACIONADOS EN UNA COMPRA-----------------------------------------------------
+SELECT p.Nombre, dc.PrecioCompra, dc.Cantidad, dc.MontoTotal
+FROM DETALLE_COMPRA dc
+INNER JOIN PRODUCTO p ON p.IdProducto = dc.IdProducto
+WHERE dc.IdCompra = 1

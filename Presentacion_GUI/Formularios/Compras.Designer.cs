@@ -46,7 +46,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.txtCantidad = new System.Windows.Forms.NumericUpDown();
+            this.NumericCantidad = new System.Windows.Forms.NumericUpDown();
             this.label11 = new System.Windows.Forms.Label();
             this.txtPrecioVenta = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
@@ -73,7 +73,7 @@
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.txtCantidad)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NumericCantidad)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvData)).BeginInit();
             this.SuspendLayout();
             // 
@@ -148,6 +148,7 @@
             // 
             this.txtFecha.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
+            this.txtFecha.Enabled = false;
             this.txtFecha.Location = new System.Drawing.Point(15, 37);
             this.txtFecha.Name = "txtFecha";
             this.txtFecha.Size = new System.Drawing.Size(117, 23);
@@ -274,7 +275,7 @@
             this.groupBox3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox3.BackColor = System.Drawing.Color.White;
-            this.groupBox3.Controls.Add(this.txtCantidad);
+            this.groupBox3.Controls.Add(this.NumericCantidad);
             this.groupBox3.Controls.Add(this.label11);
             this.groupBox3.Controls.Add(this.txtPrecioVenta);
             this.groupBox3.Controls.Add(this.label9);
@@ -294,24 +295,24 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Información del Producto";
             // 
-            // txtCantidad
+            // NumericCantidad
             // 
-            this.txtCantidad.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtCantidad.Location = new System.Drawing.Point(519, 43);
-            this.txtCantidad.Maximum = new decimal(new int[] {
+            this.NumericCantidad.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.NumericCantidad.Location = new System.Drawing.Point(519, 43);
+            this.NumericCantidad.Maximum = new decimal(new int[] {
             1000,
             0,
             0,
             0});
-            this.txtCantidad.Minimum = new decimal(new int[] {
+            this.NumericCantidad.Minimum = new decimal(new int[] {
             1,
             0,
             0,
             0});
-            this.txtCantidad.Name = "txtCantidad";
-            this.txtCantidad.Size = new System.Drawing.Size(56, 23);
-            this.txtCantidad.TabIndex = 57;
-            this.txtCantidad.Value = new decimal(new int[] {
+            this.NumericCantidad.Name = "NumericCantidad";
+            this.NumericCantidad.Size = new System.Drawing.Size(56, 23);
+            this.NumericCantidad.TabIndex = 57;
+            this.NumericCantidad.Value = new decimal(new int[] {
             1,
             0,
             0,
@@ -551,11 +552,12 @@
             // txtTotalPagar
             // 
             this.txtTotalPagar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtTotalPagar.Enabled = false;
             this.txtTotalPagar.Location = new System.Drawing.Point(659, 359);
             this.txtTotalPagar.Name = "txtTotalPagar";
             this.txtTotalPagar.Size = new System.Drawing.Size(81, 20);
             this.txtTotalPagar.TabIndex = 58;
-            this.txtTotalPagar.Text = "0";
+            this.txtTotalPagar.Text = "0.00";
             // 
             // btnRegistrar
             // 
@@ -621,7 +623,7 @@
             this.groupBox2.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.txtCantidad)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NumericCantidad)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvData)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -653,7 +655,7 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txtIdProducto;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.NumericUpDown txtCantidad;
+        private System.Windows.Forms.NumericUpDown NumericCantidad;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox txtPrecioVenta;
         private System.Windows.Forms.Label label9;
