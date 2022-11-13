@@ -37,7 +37,6 @@ namespace Presentacion_GUI.Formularios
                 txtUsuario.Text = oCompra.oUsuario.NombreCompleto;
                 txtDocProveedor.Text = oCompra.oProveedor.Documento;
                 txtNombreProveedor.Text = oCompra.oProveedor.RazonSocial;
-
                 dgvData.Rows.Clear();
 
                 foreach (Detalle_Compra dc in oCompra.oDetalleCompra)
@@ -166,7 +165,6 @@ namespace Presentacion_GUI.Formularios
                     pdfDoc.Close();
                     stream.Close();
                     MessageBox.Show("Documento Generado", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
                 }
             }
         }
