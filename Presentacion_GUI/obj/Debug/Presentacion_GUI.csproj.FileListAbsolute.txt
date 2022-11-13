@@ -103,3 +103,7 @@ D:\Ingeniería de Sistemas\Programación III 2022\SistemaVentaPD\Presentacion_GU
 D:\Ingeniería de Sistemas\Programación III 2022\SistemaVentaPD\Presentacion_GUI\obj\Debug\Presentacion_GUI.exe
 D:\Ingeniería de Sistemas\Programación III 2022\SistemaVentaPD\Presentacion_GUI\obj\Debug\Presentacion_GUI.pdb
 D:\Ingeniería de Sistemas\Programación III 2022\SistemaVentaPD\Presentacion_GUI\obj\Debug\Presentacion_GUI.Formularios.DetalleCompra.resources
+D:\Ingeniería de Sistemas\Programación III 2022\SistemaVentaPD\Presentacion_GUI\bin\Debug\BouncyCastle.Crypto.dll
+D:\Ingeniería de Sistemas\Programación III 2022\SistemaVentaPD\Presentacion_GUI\bin\Debug\itextsharp.dll
+D:\Ingeniería de Sistemas\Programación III 2022\SistemaVentaPD\Presentacion_GUI\bin\Debug\itextsharp.xmlworker.dll
+D:\Ingeniería de Sistemas\Programación III 2022\SistemaVentaPD\Presentacion_GUI\bin\Debug\itextsharp.xml
