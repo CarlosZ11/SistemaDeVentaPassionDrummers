@@ -43,5 +43,75 @@ namespace Presentacion_GUI.Modales
                 }
             }
         }
+
+        private void dgvData_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int iRow = e.RowIndex;
+            int iColum = e.ColumnIndex;
+
+            if (iRow >= 0 && iColum >= 0)
+            {
+                _Cliente = new Cliente()
+                {
+                    Documento = dgvData.Rows[iRow].Cells["Documento"].Value.ToString(),
+                    NombreCompleto = dgvData.Rows[iRow].Cells["NombreCompleto"].Value.ToString(),
+                };
+                this.DialogResult = DialogResult.OK;
+                this.Close();
+            }
+        }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            String columnaFiltro = ((OpcionCombo)cboBusqueda.SelectedItem).valor.ToString();
+
+            if (dgvData.Rows.Count > 0)
+            {
+                foreach (DataGridViewRow row in dgvData.Rows)
+                {
+                    if (row.Cells[columnaFiltro].Value.ToString().Trim().ToUpper().Contains(txtBusqueda.Text.Trim().ToUpper()))
+                    {
+                        row.Visible = true;
+                    }
+                    else
+                    {
+                        row.Visible = false;
+                    }
+                }
+            }
+        }
+
+        private void btnLimpiarBuscador_Click(object sender, EventArgs e)
+        {
+            txtBusqueda.Text = "";
+
+            foreach (DataGridViewRow row in dgvData.Rows)
+            {
+                row.Visible = true;
+            }
+        }
+
+        private void txtBusqueda_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == Convert.ToChar(Keys.Enter))
+            {
+                String columnaFiltro = ((OpcionCombo)cboBusqueda.SelectedItem).valor.ToString();
+
+                if (dgvData.Rows.Count > 0)
+                {
+                    foreach (DataGridViewRow row in dgvData.Rows)
+                    {
+                        if (row.Cells[columnaFiltro].Value.ToString().Trim().ToUpper().Contains(txtBusqueda.Text.Trim().ToUpper()))
+                        {
+                            row.Visible = true;
+                        }
+                        else
+                        {
+                            row.Visible = false;
+                        }
+                    }
+                }
+            }
+        }
     }
 }

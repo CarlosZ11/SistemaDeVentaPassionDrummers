@@ -107,3 +107,10 @@ D:\Ingeniería de Sistemas\Programación III 2022\SistemaVentaPD\Presentacion_GU
 D:\Ingeniería de Sistemas\Programación III 2022\SistemaVentaPD\Presentacion_GUI\bin\Debug\itextsharp.dll
 D:\Ingeniería de Sistemas\Programación III 2022\SistemaVentaPD\Presentacion_GUI\bin\Debug\itextsharp.xmlworker.dll
 D:\Ingeniería de Sistemas\Programación III 2022\SistemaVentaPD\Presentacion_GUI\bin\Debug\itextsharp.xml
+C:\Users\GianFranco\Desktop\Proyecto Sistema de venta Passion Drummers\SistemaDeVentaPassionDrummers\Presentacion_GUI\bin\Debug\BouncyCastle.Crypto.dll
+C:\Users\GianFranco\Desktop\Proyecto Sistema de venta Passion Drummers\SistemaDeVentaPassionDrummers\Presentacion_GUI\bin\Debug\itextsharp.dll
+C:\Users\GianFranco\Desktop\Proyecto Sistema de venta Passion Drummers\SistemaDeVentaPassionDrummers\Presentacion_GUI\bin\Debug\itextsharp.xmlworker.dll
+C:\Users\GianFranco\Desktop\Proyecto Sistema de venta Passion Drummers\SistemaDeVentaPassionDrummers\Presentacion_GUI\bin\Debug\itextsharp.xml
+C:\Users\GianFranco\Desktop\Proyecto Sistema de venta Passion Drummers\SistemaDeVentaPassionDrummers\Presentacion_GUI\obj\Debug\Presentacion_GUI.Formularios.DetalleCompra.resources
+C:\Users\GianFranco\Desktop\Proyecto Sistema de venta Passion Drummers\SistemaDeVentaPassionDrummers\Presentacion_GUI\obj\Debug\Presentacion_GUI.Modales.mdCliente.resources
+C:\Users\GianFranco\Desktop\Proyecto Sistema de venta Passion Drummers\SistemaDeVentaPassionDrummers\Presentacion_GUI\obj\Debug\Presentacion_GUI.Modales.mdProducto.resources

@@ -1,4 +1,6 @@
-﻿using Presentacion_GUI.Utilidades;
+﻿using Entidades;
+using Presentacion_GUI.Modales;
+using Presentacion_GUI.Utilidades;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,8 +15,10 @@ namespace Presentacion_GUI.Formularios
 {
     public partial class Ventas : Form
     {
-        public Ventas()
+        private Usuario _Usuario;
+        public Ventas(Usuario oUsuario = null)
         {
+
             InitializeComponent();
         }
 
@@ -27,8 +31,26 @@ namespace Presentacion_GUI.Formularios
             cboTipoDocumento.SelectedIndex = 0;
 
             txtFecha.Text = DateTime.Now.ToString("dd/MM/yyyy");
-            txtIdProveedor.Text = "0";
             txtIdProducto.Text = "0";
+        }
+
+        private void btnBuscarCliente_Click(object sender, EventArgs e)
+        {
+            using (var modal = new mdCliente())
+            {
+                var result = modal.ShowDialog();
+
+                if (result == DialogResult.OK)
+                {
+                    txtDocCliente.Text = modal._Cliente.Documento;
+                    txtNombreCliente.Text = modal._Cliente.NombreCompleto;
+                    txtCodProducto.Select();
+                }
+                else
+                {
+                    txtDocCliente.Select();
+                }
+            }
         }
     }
 }
