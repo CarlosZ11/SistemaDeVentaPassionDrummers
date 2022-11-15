@@ -276,7 +276,7 @@ namespace Presentacion_GUI.Formularios
         private void btnSubMenuRegistrarVenta_Click(object sender, EventArgs e)
         {
             OcultarSubMenu();
-            AbrirFormulario(btnVentas, new Ventas());
+            AbrirFormulario(btnVentas, new Ventas(usuarioActual));
             TituloFormulario.Text = btnSubMenuRegistrarVenta.Text;
             iconFormulario.IconChar = btnSubMenuRegistrarVenta.IconChar;
         }

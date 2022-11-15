@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label10 = new System.Windows.Forms.Label();
             this.lblBuscdorUsuarios = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
@@ -37,7 +37,7 @@
             this.label11 = new System.Windows.Forms.Label();
             this.txtStock = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.txtPrecioCompra = new System.Windows.Forms.TextBox();
+            this.txtPrecio = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.txtProducto = new System.Windows.Forms.TextBox();
             this.btnBuscarProducto = new FontAwesome.Sharp.IconButton();
@@ -47,7 +47,6 @@
             this.label7 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.txtNombreCliente = new System.Windows.Forms.TextBox();
-            this.txtIdProveedor = new System.Windows.Forms.TextBox();
             this.btnBuscarCliente = new FontAwesome.Sharp.IconButton();
             this.txtDocCliente = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -60,18 +59,18 @@
             this.label1 = new System.Windows.Forms.Label();
             this.btnAgregarProducto = new System.Windows.Forms.Button();
             this.dgvData = new System.Windows.Forms.DataGridView();
-            this.btnRegistrar = new FontAwesome.Sharp.IconButton();
-            this.txtTotalPagar = new System.Windows.Forms.TextBox();
-            this.label12 = new System.Windows.Forms.Label();
             this.IdProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Producto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SubTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnEliminar = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.btnRegistrar = new FontAwesome.Sharp.IconButton();
+            this.txtTotalPagar = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtPagaCon = new System.Windows.Forms.TextBox();
+            this.txtCambio = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.NumericCantidad)).BeginInit();
@@ -118,7 +117,7 @@
             this.groupBox3.Controls.Add(this.label11);
             this.groupBox3.Controls.Add(this.txtStock);
             this.groupBox3.Controls.Add(this.label9);
-            this.groupBox3.Controls.Add(this.txtPrecioCompra);
+            this.groupBox3.Controls.Add(this.txtPrecio);
             this.groupBox3.Controls.Add(this.label8);
             this.groupBox3.Controls.Add(this.txtProducto);
             this.groupBox3.Controls.Add(this.btnBuscarProducto);
@@ -190,13 +189,14 @@
             this.label9.TabIndex = 55;
             this.label9.Text = "Stock:";
             // 
-            // txtPrecioCompra
+            // txtPrecio
             // 
-            this.txtPrecioCompra.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtPrecioCompra.Location = new System.Drawing.Point(361, 43);
-            this.txtPrecioCompra.Name = "txtPrecioCompra";
-            this.txtPrecioCompra.Size = new System.Drawing.Size(86, 23);
-            this.txtPrecioCompra.TabIndex = 52;
+            this.txtPrecio.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtPrecio.Enabled = false;
+            this.txtPrecio.Location = new System.Drawing.Point(333, 43);
+            this.txtPrecio.Name = "txtPrecio";
+            this.txtPrecio.Size = new System.Drawing.Size(115, 23);
+            this.txtPrecio.TabIndex = 52;
             // 
             // label8
             // 
@@ -204,7 +204,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(358, 23);
+            this.label8.Location = new System.Drawing.Point(332, 23);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(45, 15);
             this.label8.TabIndex = 53;
@@ -214,9 +214,10 @@
             // 
             this.txtProducto.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtProducto.Enabled = false;
             this.txtProducto.Location = new System.Drawing.Point(166, 43);
             this.txtProducto.Name = "txtProducto";
-            this.txtProducto.Size = new System.Drawing.Size(186, 23);
+            this.txtProducto.Size = new System.Drawing.Size(160, 23);
             this.txtProducto.TabIndex = 49;
             // 
             // btnBuscarProducto
@@ -236,6 +237,7 @@
             this.btnBuscarProducto.Size = new System.Drawing.Size(32, 24);
             this.btnBuscarProducto.TabIndex = 49;
             this.btnBuscarProducto.UseVisualStyleBackColor = false;
+            this.btnBuscarProducto.Click += new System.EventHandler(this.btnBuscarProducto_Click);
             // 
             // txtCodProducto
             // 
@@ -243,6 +245,7 @@
             this.txtCodProducto.Name = "txtCodProducto";
             this.txtCodProducto.Size = new System.Drawing.Size(103, 23);
             this.txtCodProducto.TabIndex = 51;
+            this.txtCodProducto.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtCodProducto_KeyDown);
             // 
             // label6
             // 
@@ -283,7 +286,6 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox2.BackColor = System.Drawing.Color.White;
             this.groupBox2.Controls.Add(this.txtNombreCliente);
-            this.groupBox2.Controls.Add(this.txtIdProveedor);
             this.groupBox2.Controls.Add(this.btnBuscarCliente);
             this.groupBox2.Controls.Add(this.txtDocCliente);
             this.groupBox2.Controls.Add(this.label4);
@@ -305,14 +307,6 @@
             this.txtNombreCliente.Size = new System.Drawing.Size(155, 23);
             this.txtNombreCliente.TabIndex = 49;
             // 
-            // txtIdProveedor
-            // 
-            this.txtIdProveedor.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtIdProveedor.Location = new System.Drawing.Point(330, 12);
-            this.txtIdProveedor.Name = "txtIdProveedor";
-            this.txtIdProveedor.Size = new System.Drawing.Size(20, 23);
-            this.txtIdProveedor.TabIndex = 48;
-            // 
             // btnBuscarCliente
             // 
             this.btnBuscarCliente.Anchor = System.Windows.Forms.AnchorStyles.Left;
@@ -330,6 +324,7 @@
             this.btnBuscarCliente.Size = new System.Drawing.Size(32, 24);
             this.btnBuscarCliente.TabIndex = 48;
             this.btnBuscarCliente.UseVisualStyleBackColor = false;
+            this.btnBuscarCliente.Click += new System.EventHandler(this.btnBuscarCliente_Click);
             // 
             // txtDocCliente
             // 
@@ -456,6 +451,7 @@
             this.btnAgregarProducto.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnAgregarProducto.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnAgregarProducto.UseVisualStyleBackColor = false;
+            this.btnAgregarProducto.Click += new System.EventHandler(this.btnAgregarProducto_Click);
             // 
             // dgvData
             // 
@@ -463,15 +459,15 @@
             this.dgvData.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle7.Padding = new System.Windows.Forms.Padding(2);
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvData.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.Padding = new System.Windows.Forms.Padding(2);
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvData.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvData.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.IdProducto,
@@ -485,54 +481,14 @@
             this.dgvData.Name = "dgvData";
             this.dgvData.ReadOnly = true;
             this.dgvData.RowHeadersWidth = 51;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.Black;
-            this.dgvData.RowsDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black;
+            this.dgvData.RowsDefaultCellStyle = dataGridViewCellStyle6;
             this.dgvData.RowTemplate.Height = 28;
             this.dgvData.Size = new System.Drawing.Size(588, 152);
             this.dgvData.TabIndex = 81;
-            // 
-            // btnRegistrar
-            // 
-            this.btnRegistrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnRegistrar.BackColor = System.Drawing.Color.White;
-            this.btnRegistrar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnRegistrar.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnRegistrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRegistrar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(7)))), ((int)(((byte)(76)))));
-            this.btnRegistrar.IconChar = FontAwesome.Sharp.IconChar.Tag;
-            this.btnRegistrar.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(7)))), ((int)(((byte)(76)))));
-            this.btnRegistrar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnRegistrar.IconSize = 16;
-            this.btnRegistrar.Location = new System.Drawing.Point(659, 385);
-            this.btnRegistrar.Name = "btnRegistrar";
-            this.btnRegistrar.Size = new System.Drawing.Size(81, 24);
-            this.btnRegistrar.TabIndex = 85;
-            this.btnRegistrar.Text = "Registrar";
-            this.btnRegistrar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnRegistrar.UseVisualStyleBackColor = false;
-            // 
-            // txtTotalPagar
-            // 
-            this.txtTotalPagar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtTotalPagar.Enabled = false;
-            this.txtTotalPagar.Location = new System.Drawing.Point(658, 262);
-            this.txtTotalPagar.Name = "txtTotalPagar";
-            this.txtTotalPagar.Size = new System.Drawing.Size(81, 20);
-            this.txtTotalPagar.TabIndex = 83;
-            this.txtTotalPagar.Text = "0.00";
-            // 
-            // label12
-            // 
-            this.label12.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.label12.AutoSize = true;
-            this.label12.BackColor = System.Drawing.Color.White;
-            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(656, 244);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(83, 15);
-            this.label12.TabIndex = 84;
-            this.label12.Text = "Total a Pagar:";
+            this.dgvData.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvData_CellContentClick);
+            this.dgvData.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.dgvData_CellPainting);
             // 
             // IdProducto
             // 
@@ -583,6 +539,48 @@
             this.btnEliminar.ReadOnly = true;
             this.btnEliminar.Width = 40;
             // 
+            // btnRegistrar
+            // 
+            this.btnRegistrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnRegistrar.BackColor = System.Drawing.Color.White;
+            this.btnRegistrar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnRegistrar.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnRegistrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRegistrar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(7)))), ((int)(((byte)(76)))));
+            this.btnRegistrar.IconChar = FontAwesome.Sharp.IconChar.Tag;
+            this.btnRegistrar.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(7)))), ((int)(((byte)(76)))));
+            this.btnRegistrar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnRegistrar.IconSize = 16;
+            this.btnRegistrar.Location = new System.Drawing.Point(659, 385);
+            this.btnRegistrar.Name = "btnRegistrar";
+            this.btnRegistrar.Size = new System.Drawing.Size(81, 24);
+            this.btnRegistrar.TabIndex = 85;
+            this.btnRegistrar.Text = "Registrar";
+            this.btnRegistrar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnRegistrar.UseVisualStyleBackColor = false;
+            // 
+            // txtTotalPagar
+            // 
+            this.txtTotalPagar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtTotalPagar.Enabled = false;
+            this.txtTotalPagar.Location = new System.Drawing.Point(658, 262);
+            this.txtTotalPagar.Name = "txtTotalPagar";
+            this.txtTotalPagar.Size = new System.Drawing.Size(81, 20);
+            this.txtTotalPagar.TabIndex = 83;
+            this.txtTotalPagar.Text = "0.00";
+            // 
+            // label12
+            // 
+            this.label12.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.label12.AutoSize = true;
+            this.label12.BackColor = System.Drawing.Color.White;
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(656, 244);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(83, 15);
+            this.label12.TabIndex = 84;
+            this.label12.Text = "Total a Pagar:";
+            // 
             // label13
             // 
             this.label13.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
@@ -595,23 +593,25 @@
             this.label13.TabIndex = 86;
             this.label13.Text = "Paga con:";
             // 
-            // textBox1
+            // txtPagaCon
             // 
-            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox1.Location = new System.Drawing.Point(659, 307);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(80, 20);
-            this.textBox1.TabIndex = 87;
+            this.txtPagaCon.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtPagaCon.Location = new System.Drawing.Point(659, 307);
+            this.txtPagaCon.Name = "txtPagaCon";
+            this.txtPagaCon.Size = new System.Drawing.Size(80, 20);
+            this.txtPagaCon.TabIndex = 87;
+            this.txtPagaCon.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtPagaCon_KeyDown);
+            this.txtPagaCon.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPagaCon_KeyPress);
             // 
-            // textBox2
+            // txtCambio
             // 
-            this.textBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox2.Enabled = false;
-            this.textBox2.Location = new System.Drawing.Point(659, 350);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(80, 20);
-            this.textBox2.TabIndex = 89;
-            this.textBox2.Text = "0.00";
+            this.txtCambio.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtCambio.Enabled = false;
+            this.txtCambio.Location = new System.Drawing.Point(659, 350);
+            this.txtCambio.Name = "txtCambio";
+            this.txtCambio.Size = new System.Drawing.Size(80, 20);
+            this.txtCambio.TabIndex = 89;
+            this.txtCambio.Text = "0.00";
             // 
             // label14
             // 
@@ -630,9 +630,9 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.txtCambio);
             this.Controls.Add(this.label14);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtPagaCon);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.btnRegistrar);
             this.Controls.Add(this.txtTotalPagar);
@@ -670,7 +670,7 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox txtStock;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox txtPrecioCompra;
+        private System.Windows.Forms.TextBox txtPrecio;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox txtProducto;
         private FontAwesome.Sharp.IconButton btnBuscarProducto;
@@ -680,7 +680,6 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.TextBox txtNombreCliente;
-        private System.Windows.Forms.TextBox txtIdProveedor;
         private FontAwesome.Sharp.IconButton btnBuscarCliente;
         private System.Windows.Forms.TextBox txtDocCliente;
         private System.Windows.Forms.Label label4;
@@ -703,8 +702,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn SubTotal;
         private System.Windows.Forms.DataGridViewButtonColumn btnEliminar;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtPagaCon;
+        private System.Windows.Forms.TextBox txtCambio;
         private System.Windows.Forms.Label label14;
     }
 }
