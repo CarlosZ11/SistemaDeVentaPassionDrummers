@@ -132,5 +132,98 @@ namespace Datos
             return Respuesta;
         }
 
+        public Venta ObtenerVenta(String numero)
+        {
+            Venta obj = new Venta();
+
+            using (SqlConnection oconexion = new SqlConnection(Conexion.cadena))
+            {
+                try
+                {
+                    oconexion.Open();
+                    StringBuilder query = new StringBuilder();
+                    query.AppendLine("SELECT V.IdVenta, u.NombreCompleto,");
+                    query.AppendLine("v.DocumentoCliente, v.NombreCliente,");
+                    query.AppendLine("v.TipoDocumento, v.NumeroDocumento,");
+                    query.AppendLine("v.MontoPago, v.MontoCambio, v.MontoTotal,");
+                    query.AppendLine("convert(char(10),v.FechaRegistro,103)[FechaRegistro]");
+                    query.AppendLine("FROM VENTA v");
+                    query.AppendLine("INNER JOIN USUARIO u ON u.IdUsuario = v.IdUsuario");
+                    query.AppendLine("WHERE v.NumeroDocumento = @numero");
+
+                    SqlCommand cmd = new SqlCommand(query.ToString(), oconexion);
+                    cmd.Parameters.AddWithValue("@numero", numero);
+                    cmd.CommandType = CommandType.Text;
+                    //oconexion.Open();
+
+                    using (SqlDataReader dr = cmd.ExecuteReader())
+                    {
+                        while (dr.Read())
+                        {
+                            obj = new Venta()
+                            {
+                                IdVenta = Convert.ToInt32(dr["IdVenta"]),
+                                oUsuario = new Usuario() { NombreCompleto = dr["NombreCompleto"].ToString() },
+                                DocumentoCLiente = dr["DocumentoCliente"].ToString(),
+                                NombreCliente = dr["NombreCliente"].ToString(),
+                                TipoDocumento = dr["TipoDocumento"].ToString(),
+                                NumeroDocumento = dr["NumeroDocumento"].ToString(),
+                                MontoPago = Convert.ToDecimal(dr["MontoPago"].ToString()),
+                                MontoCambio = Convert.ToDecimal(dr["MontoCambio"].ToString()),
+                                MontoTotal = Convert.ToDecimal(dr["MontoTotal"].ToString()),
+                                FechaRegistro = dr["FechaRegistro"].ToString()
+                            };
+                        }
+                    }
+
+                }
+                catch (Exception ex)
+                {
+                    obj = new Venta();
+                }
+            }
+            return obj;
+        }
+
+        public List<Detalle_Venta> ObtenerDetalleVenta(int idventa)
+        {
+            List<Detalle_Venta> oLista = new List<Detalle_Venta>();
+            try
+            {
+                using (SqlConnection oconexion = new SqlConnection(Conexion.cadena))
+                {
+                    oconexion.Open();
+                    StringBuilder query = new StringBuilder();
+
+                    query.AppendLine("SELECT p.Nombre, dv.PrecioVenta, dv.Cantidad, dv.SubTotal FROM DETALLE_VENTA dv");
+                    query.AppendLine("INNER JOIN PRODUCTO p ON p.IdProducto = dv.IdProducto");
+                    query.AppendLine("where dv.IdVenta = @idventa");
+
+                    SqlCommand cmd = new SqlCommand(query.ToString(), oconexion);
+                    cmd.Parameters.AddWithValue("@idventa", idventa);
+                    cmd.CommandType = System.Data.CommandType.Text;
+
+                    using (SqlDataReader dr = cmd.ExecuteReader())
+                    {
+                        while (dr.Read())
+                        {
+                            oLista.Add(new Detalle_Venta()
+                            {
+                                oProducto = new Producto() { Nombre = dr["Nombre"].ToString() },
+                                PrecioVenta = Convert.ToDecimal(dr["PrecioVenta"].ToString()),
+                                Cantidad = Convert.ToInt32(dr["Cantidad"].ToString()),
+                                SubTotal = Convert.ToDecimal(dr["SubTotal"].ToString()),
+                            });
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                oLista = new List<Detalle_Venta>();
+            }
+            return oLista;
+        }
+
     }
 }

@@ -796,4 +796,19 @@ END
 
 GO
 
+SELECT V.IdVenta, u.NombreCompleto,
+v.DocumentoCliente, v.NombreCliente,
+v.TipoDocumento, v.NumeroDocumento,
+v.MontoPago, v.MontoCambio, v.MontoTotal,
+convert(char(10),v.FechaRegistro,103)[FechaRegistro]
+FROM VENTA v
+INNER JOIN USUARIO u ON u.IdUsuario = v.IdUsuario
+WHERE v.NumeroDocumento = '00001'
+
+
+SELECT p.Nombre, dv.PrecioVenta, dv.Cantidad, dv.SubTotal FROM DETALLE_VENTA dv
+INNER JOIN PRODUCTO p ON p.IdProducto = dv.IdProducto
+where dv.IdVenta = 1
+
+
 SELECT *FROM VENTA
