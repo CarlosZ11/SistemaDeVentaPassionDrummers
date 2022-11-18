@@ -325,7 +325,7 @@ namespace Presentacion_GUI.Formularios
         {
             Size = new Size(1163, 631);
             MostrarSubMenu(panelSubmenuVentas);
-            OpenChildForm(new Ventas());
+            OpenChildForm(new Ventas(usuarioActual));
             TituloFormulario.Text = btnSubMenuRegistrarVenta.Text;
             ActivarBoton(btnVentas, RGBColors.color3);
             iconFormulario.IconChar = btnSubMenuRegistrarVenta.IconChar;

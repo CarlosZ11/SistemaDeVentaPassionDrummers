@@ -735,3 +735,65 @@ SELECT p.Nombre, dc.PrecioCompra, dc.Cantidad, dc.MontoTotal
 FROM DETALLE_COMPRA dc
 INNER JOIN PRODUCTO p ON p.IdProducto = dc.IdProducto
 WHERE dc.IdCompra = 1
+
+go
+
+
+--PROCESOS PARA REGISTRAR UNA VENTA-------------------------------------------------------------------------------------
+
+CREATE TYPE [dbo].[EDetalle_Venta] AS TABLE(
+	[IdProducto] int null,
+	[PrecioVenta] decimal(18,2) null,
+	[Cantidad] int null,
+	[SubTotal] decimal(18,2) null
+)
+
+GO
+
+CREATE PROC SP_RegistrarVenta(
+@IdUsuario int,
+@TipoDocumento varchar(500),
+@NumeroDocumento varchar(500),
+@DocumentoCliente varchar(500),
+@NombreCliente varchar(500),
+@MontoPago decimal(18,2),
+@MontoCambio decimal(18,2),
+@MontoTotal decimal(18,2),
+@DetalleVenta [EDetalle_Venta] READONLY,
+@Resultado bit output,
+@Mensaje varchar(500) output
+)
+AS
+BEGIN
+	BEGIN TRY
+		
+		DECLARE @idventa int = 0
+		SET @Resultado = 1
+		SET @Mensaje = ''
+
+		BEGIN TRANSACTION registrto
+			
+			INSERT INTO VENTA(IdUsuario,TipoDocumento,NumeroDocumento,DocumentoCliente,NombreCliente,MontoPago,MontoCambio,MontoTotal)
+			VALUES(@IdUsuario,@TipoDocumento,@NumeroDocumento,@DocumentoCliente,@NombreCliente,@MontoPago,@MontoCambio,@MontoTotal)
+
+			SET @idventa =  SCOPE_IDENTITY()
+
+			INSERT INTO DETALLE_VENTA(IdVenta,IdProducto,PrecioVenta,Cantidad,SubTotal)
+			SELECT @idventa, IdProducto, PrecioVenta, Cantidad, SubTotal FROM @DetalleVenta
+
+		COMMIT TRANSACTION registro
+
+	END TRY
+	BEGIN CATCH
+
+		SET @Resultado = 0
+		SET @Mensaje = ERROR_MESSAGE()
+		ROLLBACK TRANSACTION registro
+
+	END CATCH
+
+END
+
+GO
+
+SELECT *FROM VENTA
