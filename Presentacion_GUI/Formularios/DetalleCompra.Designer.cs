@@ -68,7 +68,7 @@
             this.label1.BackColor = System.Drawing.Color.White;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(7)))), ((int)(((byte)(76)))));
-            this.label1.Location = new System.Drawing.Point(66, 33);
+            this.label1.Location = new System.Drawing.Point(68, 33);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(147, 25);
             this.label1.TabIndex = 47;
@@ -93,7 +93,7 @@
             // txtBusqueda
             // 
             this.txtBusqueda.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtBusqueda.Location = new System.Drawing.Point(401, 64);
+            this.txtBusqueda.Location = new System.Drawing.Point(403, 64);
             this.txtBusqueda.Name = "txtBusqueda";
             this.txtBusqueda.Size = new System.Drawing.Size(121, 20);
             this.txtBusqueda.TabIndex = 50;
@@ -106,7 +106,7 @@
             this.lblNumeroDocumento.BackColor = System.Drawing.Color.White;
             this.lblNumeroDocumento.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNumeroDocumento.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(7)))), ((int)(((byte)(76)))));
-            this.lblNumeroDocumento.Location = new System.Drawing.Point(273, 66);
+            this.lblNumeroDocumento.Location = new System.Drawing.Point(275, 66);
             this.lblNumeroDocumento.Name = "lblNumeroDocumento";
             this.lblNumeroDocumento.Size = new System.Drawing.Size(122, 15);
             this.lblNumeroDocumento.TabIndex = 49;
@@ -387,7 +387,7 @@
             this.btnLimpiarBuscador.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(7)))), ((int)(((byte)(76)))));
             this.btnLimpiarBuscador.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnLimpiarBuscador.IconSize = 18;
-            this.btnLimpiarBuscador.Location = new System.Drawing.Point(633, 62);
+            this.btnLimpiarBuscador.Location = new System.Drawing.Point(635, 62);
             this.btnLimpiarBuscador.Name = "btnLimpiarBuscador";
             this.btnLimpiarBuscador.Size = new System.Drawing.Size(92, 22);
             this.btnLimpiarBuscador.TabIndex = 52;
@@ -409,7 +409,7 @@
             this.btnBuscar.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(7)))), ((int)(((byte)(76)))));
             this.btnBuscar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnBuscar.IconSize = 14;
-            this.btnBuscar.Location = new System.Drawing.Point(534, 62);
+            this.btnBuscar.Location = new System.Drawing.Point(536, 62);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(92, 22);
             this.btnBuscar.TabIndex = 51;

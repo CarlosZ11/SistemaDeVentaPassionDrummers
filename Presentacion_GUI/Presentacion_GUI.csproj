@@ -173,6 +173,9 @@
     <EmbeddedResource Include="Formularios\DetalleCompra.resx">
       <DependentUpon>DetalleCompra.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\DetalleVenta.resx">
+      <DependentUpon>DetalleVenta.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\NegocioPD.resx">
       <DependentUpon>NegocioPD.cs</DependentUpon>
     </EmbeddedResource>
