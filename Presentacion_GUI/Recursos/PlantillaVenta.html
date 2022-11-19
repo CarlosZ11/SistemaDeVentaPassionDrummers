@@ -53,20 +53,20 @@
 
     <table border="0" style="width:100%">
         <tr>
-            <td style="width:20%"><label style="font-size:12px;font-weight:bold">Documento Proveedor:</label></td>
-			<td style="width:20%"><label style="font-size:12px;">@docproveedor</label></td>
+            <td style="width:20%"><label style="font-size:12px;font-weight:bold">Documento Cliente:</label></td>
+			<td style="width:20%"><label style="font-size:12px;">@doccliente</label></td>
         </tr>
 		<tr>
-			<td style="width:20%"><label style="font-size:12px;font-weight:bold">Nombre Proveedor:</label></td>
-			<td style="width:20%"><label style="font-size:12px;">@nombreproveedor</label></td>
+			<td style="width:20%"><label style="font-size:12px;font-weight:bold">Nombre Cliente:</label></td>
+			<td style="width:20%"><label style="font-size:12px;">@nombrecliente</label></td>
 		</tr>
 		<tr>
 			<td style="width:20%"><label style="font-size:12px;font-weight:bold">Fecha Registro:</label></td>
             <td style="width:20%"><label style="font-size:12px;">@fecharegistro</label></td>
         </tr>
         <tr>
-            <td style="width:20%"><label style="font-size:12px;font-weight:bold">Usuario Comprador:</label></td>
-            <td style="width:20%"><label style="font-size:12px;">@usuariocomprador</label></td>
+            <td style="width:20%"><label style="font-size:12px;font-weight:bold">Usuario Vendedor:</label></td>
+            <td style="width:20%"><label style="font-size:12px;">@usuariovendedor</label></td>
         </tr>
 
 
@@ -76,7 +76,7 @@
         <thead>
             <tr style="background-color:#CACACA">
                 <th>Producto</th>
-                <th>Precio Compra</th>
+				<th>Precio</th>
                 <th>Cantidad</th>
                 <th>Sub Total</th>
             </tr>
@@ -87,14 +87,20 @@
     </table>
 
     <div style="height:15px !important"></div>
-    <table style="width:20%;font-size:12px;" class="border">
+    <table style="width:35%;font-size:12px;" class="border">
         <thead>
             <tr style="background-color:#CACACA">
                 <th>Monto Total</th>
+                <th>Pago Con</th>
+                <th>Cambio</th>
             </tr>
         </thead>
         <tbody>
-            <tr><td>@montototal</td></tr>
+            <tr>
+                <td>@montototal</td>
+                <td>@pagocon</td>
+                <td>@cambio</td>
+            </tr>
         </tbody>
     </table>
 </body>

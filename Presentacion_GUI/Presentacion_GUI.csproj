@@ -300,5 +300,8 @@
   <ItemGroup>
     <None Include="Recursos\PlantillaCompra.html" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Recursos\PlantillaVenta.html" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

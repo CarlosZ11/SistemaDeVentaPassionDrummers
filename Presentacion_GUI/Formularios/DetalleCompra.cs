@@ -25,6 +25,11 @@ namespace Presentacion_GUI.Formularios
             InitializeComponent();
         }
 
+        private void DetalleCompra_Load(object sender, EventArgs e)
+        {
+            txtBusqueda.Select();
+        }
+
         private void btnBuscar_Click(object sender, EventArgs e)
         {
             Compra oCompra = new CL_Compra().ObtenerCompra(txtBusqueda.Text);
@@ -118,7 +123,7 @@ namespace Presentacion_GUI.Formularios
             Texto_Html = Texto_Html.Replace("@docproveedor", txtDocProveedor.Text);
             Texto_Html = Texto_Html.Replace("@nombreproveedor", txtNombreProveedor.Text);
             Texto_Html = Texto_Html.Replace("@fecharegistro", txtFecha.Text);
-            Texto_Html = Texto_Html.Replace("@usuariovendedor", txtUsuario.Text);
+            Texto_Html = Texto_Html.Replace("@usuariocomprador", txtUsuario.Text);
 
             String filas =  String.Empty;
             foreach (DataGridViewRow row in dgvData.Rows)
