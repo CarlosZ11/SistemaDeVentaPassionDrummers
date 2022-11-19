@@ -74,6 +74,7 @@ namespace Presentacion_GUI.Formularios
             panelSubmenuAdmin.Visible = false;
             panelSubmenuVentas.Visible = false;
             panelSubmenuCompras.Visible = false;
+            panelSubmenuReportes.Visible = false;
         }
 
         public void OcultarSubMenu()
@@ -89,6 +90,10 @@ namespace Presentacion_GUI.Formularios
             if (panelSubmenuCompras.Visible == true)
             {
                 panelSubmenuCompras.Visible = false;
+            }
+            if (panelSubmenuReportes.Visible == true)
+            {
+                panelSubmenuReportes.Visible = false;
             }
         }
 
@@ -223,9 +228,9 @@ namespace Presentacion_GUI.Formularios
 
         private void btnReportes_Click(object sender, EventArgs e)
         {
-            OcultarSubMenu();
+            MostrarSubMenu(panelSubmenuReportes);
             ActivarBoton(sender, RGBColors.color7);
-            OpenChildForm(new Reportes());
+            TituloFormulario.Text = btnReportes.Text;
         }
 
         private void btnUsuarios_Click(object sender, EventArgs e)
@@ -321,6 +326,22 @@ namespace Presentacion_GUI.Formularios
             iconFormulario.IconChar = btnSubMenuVerDetalleCompra.IconChar;
         }
 
+        private void btnSubMenuReporteCompras_Click(object sender, EventArgs e)
+        {
+            OcultarSubMenu();
+            AbrirFormulario(btnReportes, new ReporteCompras());
+            TituloFormulario.Text = btnSubMenuReporteCompras.Text;
+            iconFormulario.IconChar = btnSubMenuReporteCompras.IconChar;
+        }
+
+        private void btnSubMenuReporteVentas_Click(object sender, EventArgs e)
+        {
+            OcultarSubMenu();
+            AbrirFormulario(btnReportes, new ReporteVentas());
+            TituloFormulario.Text = btnSubMenuReporteVentas.Text;
+            iconFormulario.IconChar = btnSubMenuReporteVentas.IconChar;
+        }
+
         private void Inicio_Load(object sender, EventArgs e)
         {
             Size = new Size(1163, 631);
@@ -331,6 +352,21 @@ namespace Presentacion_GUI.Formularios
             iconFormulario.IconChar = btnSubMenuRegistrarVenta.IconChar;
             lblUsuario.Text = usuarioActual.NombreCompleto;
             //btnMaximize.Visible = false;
+        }
+
+        private void btnUsuarios_Click_1(object sender, EventArgs e)
+        {
+            OcultarSubMenu();
+            ActivarBoton(sender, RGBColors.color1);
+            //OpenChildForm(new Usuarios());
+            AbrirFormulario((IconButton)sender, new Usuarios());
+        }
+
+        private void btnEmpresa_Click(object sender, EventArgs e)
+        {
+            OcultarSubMenu();
+            ActivarBoton(sender, RGBColors.color8);
+            OpenChildForm(new NegocioPD());
         }
     }
 }
