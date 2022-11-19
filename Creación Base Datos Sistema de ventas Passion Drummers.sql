@@ -812,3 +812,75 @@ where dv.IdVenta = 1
 
 
 SELECT *FROM VENTA
+
+GO
+
+SELECT *FROM COMPRA
+
+GO
+
+SELECT 
+CONVERT(char(10),c.FechaRegistro,103)[FechaRegistro],c.TipoDocumento,c.NumeroDocumento,c.MontoTotal,
+u.NombreCompleto[UsuarioComprador],
+pr.Documento[DocumentoProveedor],pr.RazonSocial,
+p.Codigo[CodigoProducto],p.Nombre[NombreProducto],ca.Descripcion[Categoria],dc.PrecioCompra,dc.PrecioVenta,dc.Cantidad,dc.MontoTotal[SubTotal]
+FROM COMPRA c
+INNER JOIN USUARIO u ON u.IdUsuario = c.IdUsuario
+INNER JOIN PROVEEDOR pr ON pr.IdProveedor = c.IdProveedor
+INNER JOIN DETALLE_COMPRA dc ON dc.IdCompra = c.IdCompra
+INNER JOIN PRODUCTO p ON p.IdProducto = dc.IdProducto
+INNER JOIN CATEGORIA ca ON ca.IdCategoria = p.IdCategoria
+WHERE CONVERT(date,c.FechaRegistro) between '11/11/2022' and '14/11/2022' and pr.IdProveedor = 1
+
+GO
+
+--PROCEDIMIENTO PARA REPORTE DE COMPRAS-------------------------------------------------------------------------------------
+CREATE PROC SP_ReporteCompras(
+@fechainicio varchar(10),
+@fechafin varchar(10),
+@idproveedor int
+)
+as
+begin
+	SET DATEFORMAT dmy;
+	SELECT 
+	CONVERT(char(10),c.FechaRegistro,103)[FechaRegistro],c.TipoDocumento,c.NumeroDocumento,c.MontoTotal,
+	u.NombreCompleto[UsuarioComprador],
+	pr.Documento[DocumentoProveedor],pr.RazonSocial,
+	p.Codigo[CodigoProducto],p.Nombre[NombreProducto],ca.Descripcion[Categoria],dc.PrecioCompra,dc.PrecioVenta,dc.Cantidad,dc.MontoTotal[SubTotal]
+	FROM COMPRA c
+	INNER JOIN USUARIO u ON u.IdUsuario = c.IdUsuario
+	INNER JOIN PROVEEDOR pr ON pr.IdProveedor = c.IdProveedor
+	INNER JOIN DETALLE_COMPRA dc ON dc.IdCompra = c.IdCompra
+	INNER JOIN PRODUCTO p ON p.IdProducto = dc.IdProducto
+	INNER JOIN CATEGORIA ca ON ca.IdCategoria = p.IdCategoria
+	WHERE CONVERT(date,c.FechaRegistro) between @fechainicio and @fechafin
+	and pr.IdProveedor = iif(@idproveedor = 0, pr.IdProveedor, @idproveedor)
+
+end
+
+GO
+
+
+CREATE PROC SP_ReporteVentas(
+@fechainicio varchar(10),
+@fechafin varchar(10)
+)
+as
+begin
+	SET DATEFORMAT dmy;
+	SELECT 
+	CONVERT(char(10),v.FechaRegistro,103)[FechaRegistro],v.TipoDocumento,v.NumeroDocumento,v.MontoTotal,
+	u.NombreCompleto[UsuarioVendedor],
+	v.DocumentoCliente,v.NombreCliente,
+	p.Codigo[CodigoProducto],p.Nombre[NombreProducto],ca.Descripcion[Categoria],dv.PrecioVenta,dv.PrecioVenta,dv.Cantidad,dv.SubTotal
+	FROM VENTA v
+	INNER JOIN USUARIO u ON u.IdUsuario = v.IdUsuario
+	INNER JOIN DETALLE_VENTA dv ON dv.IdVenta = v.IdVenta
+	INNER JOIN PRODUCTO p ON p.IdProducto = dv.IdProducto
+	INNER JOIN CATEGORIA ca ON ca.IdCategoria = p.IdCategoria
+	WHERE CONVERT(date,v.FechaRegistro) between @fechainicio and @fechafin
+
+end
+
+GO
