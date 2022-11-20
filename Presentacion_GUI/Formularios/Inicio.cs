@@ -61,10 +61,11 @@ namespace Presentacion_GUI.Formularios
             public static Color color2 = Color.FromArgb(249, 118, 176);
             public static Color color3 = Color.FromArgb(253, 138, 114);
             public static Color color4 = Color.FromArgb(95, 77, 221);
-            public static Color color5 = Color.FromArgb(249, 88, 155);
+            public static Color color5 = Color.FromArgb(149, 47, 87);
             public static Color color6 = Color.FromArgb(24, 161, 251);
             public static Color color7 = Color.FromArgb(0, 243, 214);
-            public static Color color8 = Color.FromArgb(170, 78, 170);
+            public static Color color8 = Color.FromArgb(248, 222, 126);
+            public static Color color9 = Color.FromArgb(0, 157, 113);
         }
 
         //Métodos
@@ -354,7 +355,7 @@ namespace Presentacion_GUI.Formularios
             //btnMaximize.Visible = false;
         }
 
-        private void btnUsuarios_Click_1(object sender, EventArgs e)
+        private void btnUsuarios_Click_2(object sender, EventArgs e)
         {
             OcultarSubMenu();
             ActivarBoton(sender, RGBColors.color1);
@@ -362,11 +363,19 @@ namespace Presentacion_GUI.Formularios
             AbrirFormulario((IconButton)sender, new Usuarios());
         }
 
-        private void btnEmpresa_Click(object sender, EventArgs e)
+        private void btnEmpresa_Click_1(object sender, EventArgs e)
         {
             OcultarSubMenu();
             ActivarBoton(sender, RGBColors.color8);
             OpenChildForm(new NegocioPD());
+        }
+
+        private void btnGraficas_Click(object sender, EventArgs e)
+        {
+            OcultarSubMenu();
+            ActivarBoton(sender, RGBColors.color9);
+            //OpenChildForm(new Usuarios());
+            AbrirFormulario((IconButton)sender, new Graficas());
         }
     }
 }

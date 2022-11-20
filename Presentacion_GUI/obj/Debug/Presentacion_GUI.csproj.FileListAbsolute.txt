@@ -117,3 +117,5 @@ C:\Users\GianFranco\Desktop\Proyecto Sistema de venta Passion Drummers\SistemaDe
 D:\Ingeniería de Sistemas\Programación III 2022\SistemaVentaPD\Presentacion_GUI\obj\Debug\Presentacion_GUI.Modales.mdCliente.resources
 D:\Ingeniería de Sistemas\Programación III 2022\SistemaVentaPD\Presentacion_GUI\obj\Debug\Presentacion_GUI.Formularios.DetalleVenta.resources
 C:\Users\GianFranco\Desktop\Proyecto Sistema de venta Passion Drummers\SistemaDeVentaPassionDrummers\Presentacion_GUI\obj\Debug\Presentacion_GUI.Formularios.DetalleVenta.resources
+D:\Ingeniería de Sistemas\Programación III 2022\SistemaVentaPD\Presentacion_GUI\obj\Debug\Presentacion_GUI.Formularios.ReporteCompras.resources
+D:\Ingeniería de Sistemas\Programación III 2022\SistemaVentaPD\Presentacion_GUI\obj\Debug\Presentacion_GUI.Formularios.Graficas.resources

@@ -71,6 +71,12 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Formularios\Graficas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Graficas.Designer.cs">
+      <DependentUpon>Graficas.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\NegocioPD.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -188,6 +194,9 @@
     <EmbeddedResource Include="Formularios\DetalleVenta.resx">
       <DependentUpon>DetalleVenta.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Graficas.resx">
+      <DependentUpon>Graficas.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\NegocioPD.resx">
       <DependentUpon>NegocioPD.cs</DependentUpon>
     </EmbeddedResource>
@@ -208,6 +217,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Proveedores.resx">
       <DependentUpon>Proveedores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\ReporteCompras.resx">
+      <DependentUpon>ReporteCompras.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Reportes.resx">
       <DependentUpon>Reportes.cs</DependentUpon>
