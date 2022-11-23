@@ -166,3 +166,5 @@ C:\Users\carlo\Desktop\SistemaVentaPD\Presentacion_GUI\obj\Debug\Presentacion_GU
 C:\Users\carlo\Desktop\SistemaVentaPD\Presentacion_GUI\obj\Debug\Presentacion_GUI.csproj.CopyComplete
 C:\Users\carlo\Desktop\SistemaVentaPD\Presentacion_GUI\obj\Debug\Presentacion_GUI.exe
 C:\Users\carlo\Desktop\SistemaVentaPD\Presentacion_GUI\obj\Debug\Presentacion_GUI.pdb
+C:\Users\GianFranco\Desktop\Proyecto Sistema de venta Passion Drummers\SistemaDeVentaPassionDrummers\Presentacion_GUI\obj\Debug\Presentacion_GUI.Formularios.Graficas.resources
+C:\Users\GianFranco\Desktop\Proyecto Sistema de venta Passion Drummers\SistemaDeVentaPassionDrummers\Presentacion_GUI\obj\Debug\Presentacion_GUI.Formularios.ReporteCompras.resources

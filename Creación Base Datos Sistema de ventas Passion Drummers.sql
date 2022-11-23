@@ -906,7 +906,7 @@ GO
 CREATE PROC SP_ProductosVendidos
 AS
 select p.Nombre,
-sum(cantidad) [Cantidad de productos comprados]
+sum(cantidad) [Cantidad de productos vendidos]
 from DETALLE_VENTA dv
 inner join PRODUCTO p on p.IdProducto = dv.IdProducto
 group by p.Nombre

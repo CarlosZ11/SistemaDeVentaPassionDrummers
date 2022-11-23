@@ -1,4 +1,5 @@
-﻿using Logica;
+﻿using Entidades;
+using Logica;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -36,13 +37,32 @@ namespace Presentacion_GUI.Formularios
 
             //}
 
-            ArrayList listaCliente = new CL_Grafica().ListaCliente();
-            ArrayList numeroProductos = new CL_Grafica().NumeroProducto();
+            //ArrayList listaCliente = new CL_Grafica().ListaCliente();
+            //ArrayList numeroProductos = new CL_Grafica().NumeroProducto();
 
-            chart2.Series[0].Points.DataBindXY(listaCliente, numeroProductos);
-            chart2.ChartAreas[0].AxisX.Title = "Clientes";
-            chart2.ChartAreas[0].AxisY.Title = "Cantidad de productos";
+            List<ComprasPorClientesDTO> listaComprasPorCliente = new CL_Grafica().ObtenerDetalleCompra();
 
+            foreach (ComprasPorClientesDTO item in listaComprasPorCliente)
+            {
+                
+                chrtProductosCompradosPorClientes.Series[0].Points.AddXY(item.NombreCliente, item.NumeroProductos.ToString());
+                chrtProductosCompradosPorClientes.ChartAreas[0].AxisX.Title = "Clientes";
+                chrtProductosCompradosPorClientes.ChartAreas[0].AxisY.Title = "Cantidad de productos";
+            }
+
+            //chrtProductosCompradosPorClientes.Series[0].Points.DataBindXY(listaCliente, numeroProductos);
+            //chrtProductosCompradosPorClientes.ChartAreas[0].AxisX.Title = "Clientes";
+            //chrtProductosCompradosPorClientes.ChartAreas[0].AxisY.Title = "Cantidad de productos";
+
+            //List<InventarioDeProductosDTO> listaInventarioProductos = new CL_Grafica().ObtenerInventarioProductos();
+
+            //foreach (InventarioDeProductosDTO item in listaInventarioProductos)
+            //{
+
+            //    chrtProductosCompradosPorClientes.Series[0].Points.AddXY(item.NombreProducto, item.Stock.ToString());
+            //    chrtProductosCompradosPorClientes.ChartAreas[0].AxisX.Title = "Stock";
+            //    chrtProductosCompradosPorClientes.ChartAreas[0].AxisY.Title = "Nombre producto";
+            //}
 
         }
     }

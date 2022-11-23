@@ -1,4 +1,5 @@
 ﻿using Datos;
+using Entidades;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -18,14 +19,25 @@ namespace Logica
         //    return objcd_Grafica.ConsultarClientesProductos();
         //}
 
-        public ArrayList ListaCliente()
+        //public ArrayList ListaCliente()
+        //{
+        //    return objcd_Grafica.ListaCliente();
+        //}
+
+        //public ArrayList NumeroProducto()
+        //{
+        //    return objcd_Grafica.NumeroProducto();
+        //}
+
+
+        public List<ComprasPorClientesDTO> ObtenerDetalleCompra()
         {
-            return objcd_Grafica.ListaCliente();
+            return objcd_Grafica.ObtenerDetalleCompra();
         }
 
-        public ArrayList NumeroProducto()
+        public List<InventarioDeProductosDTO> ObtenerInventarioProductos()
         {
-            return objcd_Grafica.NumeroProducto();
+            return objcd_Grafica.ObtenerInventarioProductos();
         }
 
     }

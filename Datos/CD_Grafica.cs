@@ -30,7 +30,7 @@ namespace Datos
 
         //            SqlCommand cmd = new SqlCommand(query.ToString(), oconexion);
         //            SqlDataAdapter data = new SqlDataAdapter(cmd);
-                    
+
         //            oconexion.Open();
 
         //            data.Fill(tablaCP);
@@ -45,50 +45,119 @@ namespace Datos
         //    return tablaCP;
         //}
 
-        public ArrayList ListaCliente()
+        //public ArrayList ListaCliente()
+        //{
+        //    ArrayList Cliente = new ArrayList();
+        //    //ArrayList NumeroProductos = new ArrayList();
+
+        //    using (SqlConnection oconexion = new SqlConnection(Conexion.cadena))
+        //    {
+        //        SqlCommand cmd = new SqlCommand("SP_ComprasPorClientes", oconexion);
+        //        cmd.CommandType = CommandType.StoredProcedure;
+        //        oconexion.Open();
+
+        //        using (SqlDataReader dr = cmd.ExecuteReader())
+        //        {
+        //            while (dr.Read())
+        //            {
+        //                Cliente.Add(dr.GetString(0));
+        //                //NumeroProductos.Add(dr.GetInt32(1));
+        //            }
+        //        }
+        //    }
+        //    return Cliente;
+        //}
+
+        //public ArrayList NumeroProducto()
+        //{
+        //    //ArrayList Cliente = new ArrayList();
+        //    ArrayList NumeroProductos = new ArrayList();
+
+        //    using (SqlConnection oconexion = new SqlConnection(Conexion.cadena))
+        //    {
+        //        SqlCommand cmd = new SqlCommand("SP_ComprasPorClientes", oconexion);
+        //        cmd.CommandType = CommandType.StoredProcedure;
+        //        oconexion.Open();
+
+        //        using (SqlDataReader dr = cmd.ExecuteReader())
+        //        {
+        //            while (dr.Read())
+        //            {
+        //                //Cliente.Add(dr.GetString(0));
+        //                NumeroProductos.Add(dr.GetInt32(1));
+        //            }
+        //        }
+        //    }
+        //    return NumeroProductos;
+        //}
+
+        public List<ComprasPorClientesDTO> ObtenerDetalleCompra()
         {
-            ArrayList Cliente = new ArrayList();
-            //ArrayList NumeroProductos = new ArrayList();
+            List<ComprasPorClientesDTO> oLista = new List<ComprasPorClientesDTO>();
 
-            using (SqlConnection oconexion = new SqlConnection(Conexion.cadena))
+            try
             {
-                SqlCommand cmd = new SqlCommand("SP_ComprasPorClientes", oconexion);
-                cmd.CommandType = CommandType.StoredProcedure;
-                oconexion.Open();
-
-                using (SqlDataReader dr = cmd.ExecuteReader())
+                using (SqlConnection oconexion = new SqlConnection(Conexion.cadena))
                 {
-                    while (dr.Read())
+                    oconexion.Open();
+
+                    SqlCommand cmd = new SqlCommand("SP_ComprasPorClientes", oconexion);
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    using (SqlDataReader dr = cmd.ExecuteReader())
                     {
-                        Cliente.Add(dr.GetString(0));
-                        //NumeroProductos.Add(dr.GetInt32(1));
+                        while (dr.Read())
+                        {
+                            oLista.Add(new ComprasPorClientesDTO()
+                            {
+                                NombreCliente = dr.GetString(0),
+                                NumeroProductos = dr.GetInt32(1)
+                            });
+                        }
                     }
                 }
             }
-            return Cliente;
+            catch (Exception ex)
+            {
+                oLista = new List<ComprasPorClientesDTO>();
+            }
+            return oLista;
+
         }
 
-        public ArrayList NumeroProducto()
+        public List<InventarioDeProductosDTO> ObtenerInventarioProductos()
         {
-            //ArrayList Cliente = new ArrayList();
-            ArrayList NumeroProductos = new ArrayList();
+            List<InventarioDeProductosDTO> oLista = new List<InventarioDeProductosDTO>();
 
-            using (SqlConnection oconexion = new SqlConnection(Conexion.cadena))
+            try
             {
-                SqlCommand cmd = new SqlCommand("SP_ComprasPorClientes", oconexion);
-                cmd.CommandType = CommandType.StoredProcedure;
-                oconexion.Open();
-
-                using (SqlDataReader dr = cmd.ExecuteReader())
+                using (SqlConnection oconexion = new SqlConnection(Conexion.cadena))
                 {
-                    while (dr.Read())
+                    oconexion.Open();
+
+                    String query = "SELECT Nombre,Stock FROM PRODUCTO";
+                    SqlCommand cmd = new SqlCommand(query, oconexion);
+
+                    using (SqlDataReader dr = cmd.ExecuteReader())
                     {
-                        //Cliente.Add(dr.GetString(0));
-                        NumeroProductos.Add(dr.GetInt32(1));
+                        while (dr.Read())
+                        {
+                            oLista.Add(new InventarioDeProductosDTO()
+                            {
+                                NombreProducto = dr.GetString(0),
+                                Stock = dr.GetInt32(1)
+                            });
+                        }
                     }
                 }
             }
-            return NumeroProductos;
+            catch (Exception ex)
+            {
+                oLista = new List<InventarioDeProductosDTO>();
+            }
+            return oLista;
+
         }
+
     }
 }
