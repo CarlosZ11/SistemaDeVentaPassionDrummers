@@ -884,3 +884,31 @@ begin
 end
 
 GO
+
+--PROCEDIMIENTO PARA CONSULTAR LAS COMPRAS DE LOS CLIENTES
+CREATE PROC SP_ComprasPorClientes
+AS
+select v.NombreCliente,
+sum(cantidad) [Cantidad de productos comprados]
+from VENTA v
+inner join CLIENTE c on c.NombreCompleto = v.NombreCliente
+inner join DETALLE_VENTA dv on dv.IdVenta = v.IdVenta
+group by v.NombreCliente
+
+GO
+
+--Inventario de productos
+SELECT Nombre,Stock FROM PRODUCTO
+
+GO
+
+--PROCEDIMIENTO PARA CONSULTAR LOS PRODUCTOS VENDIDOS
+CREATE PROC SP_ProductosVendidos
+AS
+select p.Nombre,
+sum(cantidad) [Cantidad de productos comprados]
+from DETALLE_VENTA dv
+inner join PRODUCTO p on p.IdProducto = dv.IdProducto
+group by p.Nombre
+
+GO
