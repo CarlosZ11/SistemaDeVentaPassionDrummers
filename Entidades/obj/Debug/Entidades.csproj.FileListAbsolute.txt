@@ -10,3 +10,9 @@ D:\Ingeniería de Sistemas\Programación III 2022\SistemaVentaPD\Entidades\obj\D
 D:\Ingeniería de Sistemas\Programación III 2022\SistemaVentaPD\Entidades\obj\Debug\Entidades.csproj.CoreCompileInputs.cache
 D:\Ingeniería de Sistemas\Programación III 2022\SistemaVentaPD\Entidades\obj\Debug\Entidades.dll
 D:\Ingeniería de Sistemas\Programación III 2022\SistemaVentaPD\Entidades\obj\Debug\Entidades.pdb
+C:\Users\carlo\Desktop\SistemaVentaPD\Entidades\bin\Debug\Entidades.dll
+C:\Users\carlo\Desktop\SistemaVentaPD\Entidades\bin\Debug\Entidades.pdb
+C:\Users\carlo\Desktop\SistemaVentaPD\Entidades\obj\Debug\Entidades.csproj.AssemblyReference.cache
+C:\Users\carlo\Desktop\SistemaVentaPD\Entidades\obj\Debug\Entidades.csproj.CoreCompileInputs.cache
+C:\Users\carlo\Desktop\SistemaVentaPD\Entidades\obj\Debug\Entidades.dll
+C:\Users\carlo\Desktop\SistemaVentaPD\Entidades\obj\Debug\Entidades.pdb

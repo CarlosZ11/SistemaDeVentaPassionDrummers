@@ -346,6 +346,7 @@ namespace Presentacion_GUI.Formularios
         private void Inicio_Load(object sender, EventArgs e)
         {
             Size = new Size(1163, 631);
+            WindowState = FormWindowState.Maximized;
             MostrarSubMenu(panelSubmenuVentas);
             OpenChildForm(new Ventas(usuarioActual));
             TituloFormulario.Text = btnSubMenuRegistrarVenta.Text;

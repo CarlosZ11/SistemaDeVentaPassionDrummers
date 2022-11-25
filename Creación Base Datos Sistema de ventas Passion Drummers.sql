@@ -1,3 +1,7 @@
+SET LANGUAGE us_english
+
+GO
+
 CREATE DATABASE DBSISTEMA_VENTA
 
 GO
@@ -897,6 +901,16 @@ group by v.NombreCliente
 
 GO
 
+CREATE PROC SP_MontoProductosComprados
+AS
+select v.NombreCliente,
+sum(MontoTotal) [Monto de productos comprados]
+from VENTA v
+inner join CLIENTE c on c.NombreCompleto = v.NombreCliente
+group by v.NombreCliente
+
+GO
+
 --Inventario de productos
 SELECT Nombre,Stock FROM PRODUCTO
 
@@ -904,11 +918,14 @@ GO
 
 --PROCEDIMIENTO PARA CONSULTAR LOS PRODUCTOS VENDIDOS
 CREATE PROC SP_ProductosVendidos
+@fechaInicio Date,
+@fechaFin Date
 AS
 select p.Nombre,
 sum(cantidad) [Cantidad de productos vendidos]
 from DETALLE_VENTA dv
 inner join PRODUCTO p on p.IdProducto = dv.IdProducto
+WHERE dv.FechaRegistro between @fechaInicio and @fechaFin
 group by p.Nombre
 
 GO
