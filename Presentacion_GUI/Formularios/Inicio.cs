@@ -28,6 +28,8 @@ namespace Presentacion_GUI.Formularios
             InitializeComponent();
             usuarioActual = objUsuario;
 
+            btnSalir.Cursor = Cursors.Hand;
+
             //Validar Usuario
             if (usuarioActual.oRol.IdRol != 1)
             {
@@ -191,6 +193,13 @@ namespace Presentacion_GUI.Formularios
 
         }
 
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Desea salir?", "Mensaje", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                this.Close();
+            }
+        }
 
         private void btnVentas_Click(object sender, EventArgs e)
         {

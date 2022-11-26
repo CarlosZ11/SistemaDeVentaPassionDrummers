@@ -215,3 +215,4 @@ C:\Users\carlo\Desktop\Nueva carpeta\SistemaVentaPD\Presentacion_GUI\bin\Debug\D
 C:\Users\carlo\Desktop\Nueva carpeta\SistemaVentaPD\Presentacion_GUI\bin\Debug\ExcelNumberFormat.xml
 C:\Users\carlo\Desktop\Nueva carpeta\SistemaVentaPD\Presentacion_GUI\bin\Debug\itextsharp.xml
 C:\Users\carlo\Desktop\Nueva carpeta\SistemaVentaPD\Presentacion_GUI\obj\Debug\Presentacion_GUI.csproj.CopyComplete
+D:\Ingeniería de Sistemas\Programación III 2022\SistemaVentaPD\Presentacion_GUI\obj\Debug\Presentacion_GUI.Formularios.ReporteVentas.resources

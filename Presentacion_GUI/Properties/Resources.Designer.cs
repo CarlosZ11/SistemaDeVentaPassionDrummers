@@ -243,6 +243,16 @@ namespace Presentacion_GUI.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_salida_45 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-salida-45", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_ventas_totales_48 {
             get {
                 object obj = ResourceManager.GetObject("icons8-ventas-totales-48", resourceCulture);
