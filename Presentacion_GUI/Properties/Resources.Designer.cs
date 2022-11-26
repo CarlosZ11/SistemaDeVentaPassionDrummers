@@ -123,6 +123,16 @@ namespace Presentacion_GUI.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_comportamiento_de_las_ventas_48 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-comportamiento-de-las-ventas-48", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_de_acuerdo_20 {
             get {
                 object obj = ResourceManager.GetObject("icons8_de_acuerdo_20", resourceCulture);
@@ -136,6 +146,26 @@ namespace Presentacion_GUI.Properties {
         internal static System.Drawing.Bitmap icons8_de_acuerdo_24 {
             get {
                 object obj = ResourceManager.GetObject("icons8_de_acuerdo_24", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_done_20 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-done-20", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_done_201 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-done-201", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -183,6 +213,16 @@ namespace Presentacion_GUI.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_futuros_48 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-futuros-48", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_más_45 {
             get {
                 object obj = ResourceManager.GetObject("icons8-más-45", resourceCulture);
@@ -196,6 +236,26 @@ namespace Presentacion_GUI.Properties {
         internal static System.Drawing.Bitmap icons8_microsoft_excel_2019_15 {
             get {
                 object obj = ResourceManager.GetObject("icons8-microsoft-excel-2019-15", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_ventas_totales_48 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-ventas-totales-48", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_ventas_totales_481 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-ventas-totales-481", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -1,9 +1,7 @@
 ﻿using Datos;
 using Entidades;
 using System;
-using System.Collections;
 using System.Collections.Generic;
-using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,33 +10,41 @@ namespace Logica
 {
     public class CL_Grafica
     {
-        private CD_Grafica objcd_Grafica = new CD_Grafica();
+        //private CD_Grafica objcd_grafica = new CD_Grafica();
 
-        //public DataTable ConsultarClientesProductos()
+        //public GraficaDao NumeroClientes()
         //{
-        //    return objcd_Grafica.ConsultarClientesProductos();
+        //    return objcd_grafica.NumeroClientes();
         //}
 
-        //public ArrayList ListaCliente()
+        //public GraficaDao TotalProveedores()
         //{
-        //    return objcd_Grafica.ListaCliente();
+        //    return objcd_grafica.TotalProveedores();
         //}
 
-        //public ArrayList NumeroProducto()
+        //public GraficaDao TotalProductos()
         //{
-        //    return objcd_Grafica.NumeroProducto();
+        //    return objcd_grafica.TotalProductos();  
         //}
 
+        //public GraficaDao NumeroVentas(DateTime fechaInicio, DateTime fechaFin)
+        //{
+        //    return objcd_grafica.NumeroVentas(fechaInicio, fechaFin);
+        //}
 
-        public List<ComprasPorClientesDTO> ObtenerDetalleCompra()
-        {
-            return objcd_Grafica.ObtenerDetalleCompra();
-        }
+        //public GraficaDao TotalIngresos(DateTime fechaInicio, DateTime fechaFin)
+        //{
+        //    return objcd_grafica.TotalIngresos(fechaInicio, fechaFin);  
+        //}
 
-        public List<InventarioDeProductosDTO> ObtenerInventarioProductos()
-        {
-            return objcd_Grafica.ObtenerInventarioProductos();
-        }
+        //public GraficaDao ObtenerAnalisisProductos(DateTime fechaInicio, DateTime fechaFin)
+        //{
+        //    return objcd_grafica.ObtenerAnalisisProductos(fechaInicio, fechaFin);
+        //}
 
+        //public bool CargarDatos(DateTime fechaInicio, DateTime fechaFin)
+        //{
+        //    return objcd_grafica.CargarDatos(fechaInicio, fechaFin);
+        //}
     }
 }
