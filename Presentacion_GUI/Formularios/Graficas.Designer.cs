@@ -49,17 +49,11 @@
             this.btnLast30Days = new System.Windows.Forms.Button();
             this.btnThisMonth = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
-<<<<<<< HEAD
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.lblTotalRevenue = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-=======
-            this.lblTotalRevenue = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
->>>>>>> 7b25627554383924ee2ef43254a644ed2b967505
             this.lblNumOrders = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.chartGrossRevenue = new System.Windows.Forms.DataVisualization.Charting.Chart();
@@ -75,7 +69,6 @@
             this.lblNumCustomers = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.chartTopProducts = new System.Windows.Forms.DataVisualization.Charting.Chart();
-<<<<<<< HEAD
             this.lblStartDate = new System.Windows.Forms.Label();
             this.lblEndDate = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -83,10 +76,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-=======
-            this.panel2.SuspendLayout();
-            this.panel1.SuspendLayout();
->>>>>>> 7b25627554383924ee2ef43254a644ed2b967505
             ((System.ComponentModel.ISupportInitialize)(this.chartGrossRevenue)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUnderstock)).BeginInit();
             this.panel5.SuspendLayout();
@@ -98,10 +87,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-<<<<<<< HEAD
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(7)))), ((int)(((byte)(76)))));
-=======
->>>>>>> 7b25627554383924ee2ef43254a644ed2b967505
             this.label1.Location = new System.Drawing.Point(12, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(218, 31);
@@ -114,20 +100,12 @@
             this.dtpEndDate.Enabled = false;
             this.dtpEndDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpEndDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-<<<<<<< HEAD
             this.dtpEndDate.Location = new System.Drawing.Point(355, 18);
             this.dtpEndDate.MinDate = new System.DateTime(1754, 1, 1, 0, 0, 0, 0);
             this.dtpEndDate.Name = "dtpEndDate";
             this.dtpEndDate.Size = new System.Drawing.Size(110, 20);
             this.dtpEndDate.TabIndex = 4;
             this.dtpEndDate.ValueChanged += new System.EventHandler(this.dtpEndDate_ValueChanged);
-=======
-            this.dtpEndDate.Location = new System.Drawing.Point(376, 18);
-            this.dtpEndDate.MinDate = new System.DateTime(1754, 1, 1, 0, 0, 0, 0);
-            this.dtpEndDate.Name = "dtpEndDate";
-            this.dtpEndDate.Size = new System.Drawing.Size(105, 20);
-            this.dtpEndDate.TabIndex = 4;
->>>>>>> 7b25627554383924ee2ef43254a644ed2b967505
             // 
             // dtpStartDate
             // 
@@ -135,7 +113,6 @@
             this.dtpStartDate.Enabled = false;
             this.dtpStartDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpStartDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-<<<<<<< HEAD
             this.dtpStartDate.Location = new System.Drawing.Point(241, 18);
             this.dtpStartDate.MinDate = new System.DateTime(1754, 1, 1, 0, 0, 0, 0);
             this.dtpStartDate.Name = "dtpStartDate";
@@ -150,28 +127,12 @@
             this.btnOkCustomDate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnOkCustomDate.Image = global::Presentacion_GUI.Properties.Resources.icons8_done_201;
             this.btnOkCustomDate.Location = new System.Drawing.Point(480, 9);
-=======
-            this.dtpStartDate.Location = new System.Drawing.Point(262, 18);
-            this.dtpStartDate.MinDate = new System.DateTime(1754, 1, 1, 0, 0, 0, 0);
-            this.dtpStartDate.Name = "dtpStartDate";
-            this.dtpStartDate.Size = new System.Drawing.Size(105, 20);
-            this.dtpStartDate.TabIndex = 3;
-            // 
-            // btnOkCustomDate
-            // 
-            this.btnOkCustomDate.Location = new System.Drawing.Point(500, 9);
->>>>>>> 7b25627554383924ee2ef43254a644ed2b967505
             this.btnOkCustomDate.Margin = new System.Windows.Forms.Padding(5);
             this.btnOkCustomDate.Name = "btnOkCustomDate";
             this.btnOkCustomDate.Size = new System.Drawing.Size(35, 35);
             this.btnOkCustomDate.TabIndex = 14;
-<<<<<<< HEAD
             this.btnOkCustomDate.Text = "\r\n";
             this.btnOkCustomDate.UseVisualStyleBackColor = false;
-=======
-            this.btnOkCustomDate.Text = "Ok";
-            this.btnOkCustomDate.UseVisualStyleBackColor = true;
->>>>>>> 7b25627554383924ee2ef43254a644ed2b967505
             this.btnOkCustomDate.Visible = false;
             this.btnOkCustomDate.Click += new System.EventHandler(this.btnOkCustomDate_Click);
             // 
@@ -179,7 +140,6 @@
             // 
             this.btnCustomDate.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-<<<<<<< HEAD
             this.btnCustomDate.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(83)))), ((int)(((byte)(255)))));
             this.btnCustomDate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCustomDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -188,12 +148,6 @@
             this.btnCustomDate.Margin = new System.Windows.Forms.Padding(5);
             this.btnCustomDate.Name = "btnCustomDate";
             this.btnCustomDate.Size = new System.Drawing.Size(99, 35);
-=======
-            this.btnCustomDate.Location = new System.Drawing.Point(543, 9);
-            this.btnCustomDate.Margin = new System.Windows.Forms.Padding(5);
-            this.btnCustomDate.Name = "btnCustomDate";
-            this.btnCustomDate.Size = new System.Drawing.Size(84, 35);
->>>>>>> 7b25627554383924ee2ef43254a644ed2b967505
             this.btnCustomDate.TabIndex = 13;
             this.btnCustomDate.Text = "Personalizado";
             this.btnCustomDate.UseVisualStyleBackColor = true;
@@ -202,15 +156,11 @@
             // btnToday
             // 
             this.btnToday.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-<<<<<<< HEAD
             this.btnToday.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(83)))), ((int)(((byte)(255)))));
             this.btnToday.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnToday.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnToday.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(7)))), ((int)(((byte)(76)))));
             this.btnToday.Location = new System.Drawing.Point(613, 9);
-=======
-            this.btnToday.Location = new System.Drawing.Point(632, 9);
->>>>>>> 7b25627554383924ee2ef43254a644ed2b967505
             this.btnToday.Margin = new System.Windows.Forms.Padding(5);
             this.btnToday.Name = "btnToday";
             this.btnToday.Size = new System.Drawing.Size(50, 35);
@@ -222,7 +172,6 @@
             // btnLast7Days
             // 
             this.btnLast7Days.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-<<<<<<< HEAD
             this.btnLast7Days.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(83)))), ((int)(((byte)(255)))));
             this.btnLast7Days.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLast7Days.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -231,12 +180,6 @@
             this.btnLast7Days.Margin = new System.Windows.Forms.Padding(5);
             this.btnLast7Days.Name = "btnLast7Days";
             this.btnLast7Days.Size = new System.Drawing.Size(98, 35);
-=======
-            this.btnLast7Days.Location = new System.Drawing.Point(687, 9);
-            this.btnLast7Days.Margin = new System.Windows.Forms.Padding(5);
-            this.btnLast7Days.Name = "btnLast7Days";
-            this.btnLast7Days.Size = new System.Drawing.Size(84, 35);
->>>>>>> 7b25627554383924ee2ef43254a644ed2b967505
             this.btnLast7Days.TabIndex = 11;
             this.btnLast7Days.Text = "Ultimos 7 días";
             this.btnLast7Days.UseVisualStyleBackColor = true;
@@ -245,7 +188,6 @@
             // btnLast30Days
             // 
             this.btnLast30Days.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-<<<<<<< HEAD
             this.btnLast30Days.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(83)))), ((int)(((byte)(255)))));
             this.btnLast30Days.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLast30Days.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -254,12 +196,6 @@
             this.btnLast30Days.Margin = new System.Windows.Forms.Padding(5);
             this.btnLast30Days.Name = "btnLast30Days";
             this.btnLast30Days.Size = new System.Drawing.Size(107, 35);
-=======
-            this.btnLast30Days.Location = new System.Drawing.Point(776, 9);
-            this.btnLast30Days.Margin = new System.Windows.Forms.Padding(5);
-            this.btnLast30Days.Name = "btnLast30Days";
-            this.btnLast30Days.Size = new System.Drawing.Size(84, 35);
->>>>>>> 7b25627554383924ee2ef43254a644ed2b967505
             this.btnLast30Days.TabIndex = 10;
             this.btnLast30Days.Text = "Ultimos 30 días";
             this.btnLast30Days.UseVisualStyleBackColor = true;
@@ -268,13 +204,10 @@
             // btnThisMonth
             // 
             this.btnThisMonth.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-<<<<<<< HEAD
             this.btnThisMonth.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(83)))), ((int)(((byte)(255)))));
             this.btnThisMonth.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnThisMonth.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnThisMonth.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(7)))), ((int)(((byte)(76)))));
-=======
->>>>>>> 7b25627554383924ee2ef43254a644ed2b967505
             this.btnThisMonth.Location = new System.Drawing.Point(865, 9);
             this.btnThisMonth.Margin = new System.Windows.Forms.Padding(5);
             this.btnThisMonth.Name = "btnThisMonth";
@@ -288,24 +221,17 @@
             // 
             this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-<<<<<<< HEAD
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(58)))), ((int)(((byte)(96)))));
             this.panel2.Controls.Add(this.pictureBox2);
             this.panel2.Controls.Add(this.lblTotalRevenue);
             this.panel2.Controls.Add(this.label4);
             this.panel2.ForeColor = System.Drawing.Color.WhiteSmoke;
-=======
-            this.panel2.BackColor = System.Drawing.Color.White;
-            this.panel2.Controls.Add(this.lblTotalRevenue);
-            this.panel2.Controls.Add(this.label4);
->>>>>>> 7b25627554383924ee2ef43254a644ed2b967505
             this.panel2.Location = new System.Drawing.Point(353, 52);
             this.panel2.Margin = new System.Windows.Forms.Padding(5);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(329, 73);
             this.panel2.TabIndex = 16;
             // 
-<<<<<<< HEAD
             // pictureBox2
             // 
             this.pictureBox2.Image = global::Presentacion_GUI.Properties.Resources.icons8_ventas_totales_481;
@@ -316,16 +242,11 @@
             this.pictureBox2.TabIndex = 3;
             this.pictureBox2.TabStop = false;
             // 
-=======
->>>>>>> 7b25627554383924ee2ef43254a644ed2b967505
             // lblTotalRevenue
             // 
             this.lblTotalRevenue.AutoSize = true;
             this.lblTotalRevenue.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-<<<<<<< HEAD
             this.lblTotalRevenue.ForeColor = System.Drawing.Color.WhiteSmoke;
-=======
->>>>>>> 7b25627554383924ee2ef43254a644ed2b967505
             this.lblTotalRevenue.Location = new System.Drawing.Point(86, 34);
             this.lblTotalRevenue.Name = "lblTotalRevenue";
             this.lblTotalRevenue.Size = new System.Drawing.Size(110, 31);
@@ -345,24 +266,17 @@
             // 
             // panel1
             // 
-<<<<<<< HEAD
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(58)))), ((int)(((byte)(96)))));
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.lblNumOrders);
             this.panel1.Controls.Add(this.label2);
             this.panel1.ForeColor = System.Drawing.Color.WhiteSmoke;
-=======
-            this.panel1.BackColor = System.Drawing.Color.White;
-            this.panel1.Controls.Add(this.lblNumOrders);
-            this.panel1.Controls.Add(this.label2);
->>>>>>> 7b25627554383924ee2ef43254a644ed2b967505
             this.panel1.Location = new System.Drawing.Point(10, 52);
             this.panel1.Margin = new System.Windows.Forms.Padding(5);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(333, 73);
             this.panel1.TabIndex = 15;
             // 
-<<<<<<< HEAD
             // pictureBox1
             // 
             this.pictureBox1.Image = global::Presentacion_GUI.Properties.Resources.icons8_futuros_48;
@@ -373,16 +287,11 @@
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
             // 
-=======
->>>>>>> 7b25627554383924ee2ef43254a644ed2b967505
             // lblNumOrders
             // 
             this.lblNumOrders.AutoSize = true;
             this.lblNumOrders.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-<<<<<<< HEAD
             this.lblNumOrders.ForeColor = System.Drawing.Color.WhiteSmoke;
-=======
->>>>>>> 7b25627554383924ee2ef43254a644ed2b967505
             this.lblNumOrders.Location = new System.Drawing.Point(85, 34);
             this.lblNumOrders.Name = "lblNumOrders";
             this.lblNumOrders.Size = new System.Drawing.Size(110, 31);
@@ -404,7 +313,6 @@
             // 
             this.chartGrossRevenue.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-<<<<<<< HEAD
             this.chartGrossRevenue.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(58)))), ((int)(((byte)(96)))));
             chartArea1.AxisX.IsMarginVisible = false;
             chartArea1.AxisX.LabelStyle.ForeColor = System.Drawing.Color.Silver;
@@ -427,27 +335,17 @@
             legend1.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Top;
             legend1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
             legend1.ForeColor = System.Drawing.Color.DarkTurquoise;
-=======
-            chartArea1.Name = "ChartArea1";
-            this.chartGrossRevenue.ChartAreas.Add(chartArea1);
-            legend1.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Top;
-            legend1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
->>>>>>> 7b25627554383924ee2ef43254a644ed2b967505
             legend1.IsTextAutoFit = false;
             legend1.Name = "Legend1";
             this.chartGrossRevenue.Legends.Add(legend1);
             this.chartGrossRevenue.Location = new System.Drawing.Point(10, 135);
             this.chartGrossRevenue.Margin = new System.Windows.Forms.Padding(5);
             this.chartGrossRevenue.Name = "chartGrossRevenue";
-<<<<<<< HEAD
             series1.BackGradientStyle = System.Windows.Forms.DataVisualization.Charting.GradientStyle.DiagonalLeft;
             series1.BackSecondaryColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(77)))), ((int)(((byte)(221)))));
             series1.BorderColor = System.Drawing.Color.Black;
             series1.ChartArea = "ChartArea1";
             series1.Color = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(118)))), ((int)(((byte)(176)))));
-=======
-            series1.ChartArea = "ChartArea1";
->>>>>>> 7b25627554383924ee2ef43254a644ed2b967505
             series1.Legend = "Legend1";
             series1.MarkerColor = System.Drawing.Color.MediumPurple;
             series1.MarkerSize = 8;
@@ -458,17 +356,13 @@
             this.chartGrossRevenue.Text = "chartGrossRevenue";
             title1.Alignment = System.Drawing.ContentAlignment.TopLeft;
             title1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
-<<<<<<< HEAD
             title1.ForeColor = System.Drawing.Color.WhiteSmoke;
-=======
->>>>>>> 7b25627554383924ee2ef43254a644ed2b967505
             title1.Name = "Title1";
             title1.Text = "Ingresos brutos";
             this.chartGrossRevenue.Titles.Add(title1);
             // 
             // dgvUnderstock
             // 
-<<<<<<< HEAD
             this.dgvUnderstock.AllowUserToAddRows = false;
             this.dgvUnderstock.AllowUserToDeleteRows = false;
             this.dgvUnderstock.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -508,30 +402,16 @@
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
             this.dgvUnderstock.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvUnderstock.Size = new System.Drawing.Size(400, 165);
-=======
-            this.dgvUnderstock.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvUnderstock.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(222)))), ((int)(((byte)(255)))));
-            this.dgvUnderstock.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvUnderstock.Location = new System.Drawing.Point(15, 45);
-            this.dgvUnderstock.Name = "dgvUnderstock";
-            this.dgvUnderstock.Size = new System.Drawing.Size(400, 185);
->>>>>>> 7b25627554383924ee2ef43254a644ed2b967505
             this.dgvUnderstock.TabIndex = 3;
             // 
             // panel5
             // 
             this.panel5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-<<<<<<< HEAD
             this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(58)))), ((int)(((byte)(96)))));
             this.panel5.Controls.Add(this.dgvUnderstock);
             this.panel5.Controls.Add(this.label13);
             this.panel5.ForeColor = System.Drawing.Color.WhiteSmoke;
-=======
-            this.panel5.BackColor = System.Drawing.Color.White;
-            this.panel5.Controls.Add(this.dgvUnderstock);
-            this.panel5.Controls.Add(this.label13);
->>>>>>> 7b25627554383924ee2ef43254a644ed2b967505
             this.panel5.Location = new System.Drawing.Point(250, 400);
             this.panel5.Margin = new System.Windows.Forms.Padding(5);
             this.panel5.Name = "panel5";
@@ -542,10 +422,7 @@
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-<<<<<<< HEAD
             this.label13.ForeColor = System.Drawing.Color.WhiteSmoke;
-=======
->>>>>>> 7b25627554383924ee2ef43254a644ed2b967505
             this.label13.Location = new System.Drawing.Point(10, 10);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(220, 25);
@@ -554,11 +431,7 @@
             // 
             // panel4
             // 
-<<<<<<< HEAD
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(58)))), ((int)(((byte)(96)))));
-=======
-            this.panel4.BackColor = System.Drawing.Color.White;
->>>>>>> 7b25627554383924ee2ef43254a644ed2b967505
             this.panel4.Controls.Add(this.lblNumProducts);
             this.panel4.Controls.Add(this.label9);
             this.panel4.Controls.Add(this.lblNumSuppliers);
@@ -566,10 +439,7 @@
             this.panel4.Controls.Add(this.label7);
             this.panel4.Controls.Add(this.lblNumCustomers);
             this.panel4.Controls.Add(this.label6);
-<<<<<<< HEAD
             this.panel4.ForeColor = System.Drawing.Color.WhiteSmoke;
-=======
->>>>>>> 7b25627554383924ee2ef43254a644ed2b967505
             this.panel4.Location = new System.Drawing.Point(10, 400);
             this.panel4.Margin = new System.Windows.Forms.Padding(5);
             this.panel4.Name = "panel4";
@@ -580,10 +450,7 @@
             // 
             this.lblNumProducts.AutoSize = true;
             this.lblNumProducts.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-<<<<<<< HEAD
             this.lblNumProducts.ForeColor = System.Drawing.Color.WhiteSmoke;
-=======
->>>>>>> 7b25627554383924ee2ef43254a644ed2b967505
             this.lblNumProducts.Location = new System.Drawing.Point(59, 185);
             this.lblNumProducts.Name = "lblNumProducts";
             this.lblNumProducts.Size = new System.Drawing.Size(78, 25);
@@ -605,10 +472,7 @@
             // 
             this.lblNumSuppliers.AutoSize = true;
             this.lblNumSuppliers.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-<<<<<<< HEAD
             this.lblNumSuppliers.ForeColor = System.Drawing.Color.WhiteSmoke;
-=======
->>>>>>> 7b25627554383924ee2ef43254a644ed2b967505
             this.lblNumSuppliers.Location = new System.Drawing.Point(59, 125);
             this.lblNumSuppliers.Name = "lblNumSuppliers";
             this.lblNumSuppliers.Size = new System.Drawing.Size(78, 25);
@@ -630,10 +494,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-<<<<<<< HEAD
             this.label7.ForeColor = System.Drawing.Color.WhiteSmoke;
-=======
->>>>>>> 7b25627554383924ee2ef43254a644ed2b967505
             this.label7.Location = new System.Drawing.Point(10, 10);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(184, 25);
@@ -644,10 +505,7 @@
             // 
             this.lblNumCustomers.AutoSize = true;
             this.lblNumCustomers.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-<<<<<<< HEAD
             this.lblNumCustomers.ForeColor = System.Drawing.Color.WhiteSmoke;
-=======
->>>>>>> 7b25627554383924ee2ef43254a644ed2b967505
             this.lblNumCustomers.Location = new System.Drawing.Point(59, 65);
             this.lblNumCustomers.Name = "lblNumCustomers";
             this.lblNumCustomers.Size = new System.Drawing.Size(78, 25);
@@ -668,7 +526,6 @@
             // chartTopProducts
             // 
             this.chartTopProducts.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-<<<<<<< HEAD
             this.chartTopProducts.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(58)))), ((int)(((byte)(96)))));
             chartArea2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(58)))), ((int)(((byte)(96)))));
             chartArea2.Name = "ChartArea1";
@@ -677,19 +534,12 @@
             legend2.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Bottom;
             legend2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             legend2.ForeColor = System.Drawing.Color.Gainsboro;
-=======
-            chartArea2.Name = "ChartArea1";
-            this.chartTopProducts.ChartAreas.Add(chartArea2);
-            legend2.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Bottom;
-            legend2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
->>>>>>> 7b25627554383924ee2ef43254a644ed2b967505
             legend2.IsTextAutoFit = false;
             legend2.Name = "Legend1";
             this.chartTopProducts.Legends.Add(legend2);
             this.chartTopProducts.Location = new System.Drawing.Point(692, 52);
             this.chartTopProducts.Margin = new System.Windows.Forms.Padding(5);
             this.chartTopProducts.Name = "chartTopProducts";
-<<<<<<< HEAD
             this.chartTopProducts.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.None;
             this.chartTopProducts.PaletteCustomColors = new System.Drawing.Color[] {
         System.Drawing.Color.FromArgb(((int)(((byte)(172)))), ((int)(((byte)(126)))), ((int)(((byte)(241))))),
@@ -700,8 +550,6 @@
         System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(157)))), ((int)(((byte)(113)))))};
             series2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(58)))), ((int)(((byte)(96)))));
             series2.BorderWidth = 5;
-=======
->>>>>>> 7b25627554383924ee2ef43254a644ed2b967505
             series2.ChartArea = "ChartArea1";
             series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
             series2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
@@ -715,7 +563,6 @@
             this.chartTopProducts.Text = "chartTopProducts";
             title2.Alignment = System.Drawing.ContentAlignment.TopLeft;
             title2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-<<<<<<< HEAD
             title2.ForeColor = System.Drawing.Color.WhiteSmoke;
             title2.Name = "Title1";
             title2.Text = "5 Productos más vendidos";
@@ -754,25 +601,16 @@
             this.label3.TabIndex = 22;
             this.label3.Text = "-";
             this.label3.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-=======
-            title2.Name = "Title1";
-            title2.Text = "5 Productos más vendidos";
-            this.chartTopProducts.Titles.Add(title2);
->>>>>>> 7b25627554383924ee2ef43254a644ed2b967505
             // 
             // Graficas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-<<<<<<< HEAD
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(161)))), ((int)(((byte)(205)))));
             this.ClientSize = new System.Drawing.Size(966, 641);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.lblEndDate);
             this.Controls.Add(this.lblStartDate);
-=======
-            this.ClientSize = new System.Drawing.Size(966, 641);
->>>>>>> 7b25627554383924ee2ef43254a644ed2b967505
             this.Controls.Add(this.btnOkCustomDate);
             this.Controls.Add(this.chartTopProducts);
             this.Controls.Add(this.panel5);
@@ -790,7 +628,6 @@
             this.Controls.Add(this.label1);
             this.Name = "Graficas";
             this.Text = "Graficas";
-<<<<<<< HEAD
             this.Load += new System.EventHandler(this.Graficas_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
@@ -798,12 +635,6 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-=======
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
->>>>>>> 7b25627554383924ee2ef43254a644ed2b967505
             ((System.ComponentModel.ISupportInitialize)(this.chartGrossRevenue)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUnderstock)).EndInit();
             this.panel5.ResumeLayout(false);
@@ -845,13 +676,10 @@
         private System.Windows.Forms.Label lblNumCustomers;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.DataVisualization.Charting.Chart chartTopProducts;
-<<<<<<< HEAD
         private System.Windows.Forms.Label lblStartDate;
         private System.Windows.Forms.Label lblEndDate;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
-=======
->>>>>>> 7b25627554383924ee2ef43254a644ed2b967505
     }
 }
