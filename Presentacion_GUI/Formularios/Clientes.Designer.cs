@@ -414,14 +414,17 @@
             this.txtTelefono.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.txtTelefono.Location = new System.Drawing.Point(30, 221);
             this.txtTelefono.Name = "txtTelefono";
+            this.txtTelefono.ShortcutsEnabled = false;
             this.txtTelefono.Size = new System.Drawing.Size(165, 20);
             this.txtTelefono.TabIndex = 60;
+            this.txtTelefono.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTelefono_KeyPress);
             // 
             // txtCorreo
             // 
             this.txtCorreo.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.txtCorreo.Location = new System.Drawing.Point(30, 177);
             this.txtCorreo.Name = "txtCorreo";
+            this.txtCorreo.ShortcutsEnabled = false;
             this.txtCorreo.Size = new System.Drawing.Size(165, 20);
             this.txtCorreo.TabIndex = 59;
             // 
@@ -430,16 +433,20 @@
             this.txtNombreCompleto.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.txtNombreCompleto.Location = new System.Drawing.Point(30, 133);
             this.txtNombreCompleto.Name = "txtNombreCompleto";
+            this.txtNombreCompleto.ShortcutsEnabled = false;
             this.txtNombreCompleto.Size = new System.Drawing.Size(165, 20);
             this.txtNombreCompleto.TabIndex = 58;
+            this.txtNombreCompleto.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombreCompleto_KeyPress);
             // 
             // txtDocumento
             // 
             this.txtDocumento.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.txtDocumento.Location = new System.Drawing.Point(30, 87);
             this.txtDocumento.Name = "txtDocumento";
+            this.txtDocumento.ShortcutsEnabled = false;
             this.txtDocumento.Size = new System.Drawing.Size(165, 20);
             this.txtDocumento.TabIndex = 57;
+            this.txtDocumento.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDocumento_KeyPress);
             // 
             // label5
             // 

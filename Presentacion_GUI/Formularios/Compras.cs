@@ -12,8 +12,11 @@ using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Forms;
+using Clipboard = System.Windows.Forms.Clipboard;
 using Color = System.Drawing.Color;
+using MessageBox = System.Windows.Forms.MessageBox;
 
 namespace Presentacion_GUI.Formularios
 {
@@ -334,6 +337,33 @@ namespace Presentacion_GUI.Formularios
                 MessageBox.Show(mensaje, "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
 
+        }
+
+        private void txtDocProveedor_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((e.KeyChar >= 32 && e.KeyChar <= 47) || (e.KeyChar >= 58 && e.KeyChar <= 255))
+            {
+                e.Handled = true;
+            }
+
+            if (e.KeyChar == Convert.ToChar(Keys.Enter))
+            {
+                using (var modal = new mdProveedor())
+                {
+                    var result = modal.ShowDialog();
+
+                    if (result == DialogResult.OK)
+                    {
+                        txtIdProveedor.Text = modal._Proveedor.Id.ToString();
+                        txtDocProveedor.Text = modal._Proveedor.Documento;
+                        txtNombreProveedor.Text = modal._Proveedor.RazonSocial;
+                    }
+                    else
+                    {
+                        txtDocProveedor.Select();
+                    }
+                }
+            }
         }
     }
 }

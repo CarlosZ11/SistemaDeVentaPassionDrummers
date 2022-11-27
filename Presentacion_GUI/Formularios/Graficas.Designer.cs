@@ -87,7 +87,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(7)))), ((int)(((byte)(76)))));
+            this.label1.ForeColor = System.Drawing.Color.Indigo;
             this.label1.Location = new System.Drawing.Point(12, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(218, 31);
@@ -143,7 +143,7 @@
             this.btnCustomDate.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(83)))), ((int)(((byte)(255)))));
             this.btnCustomDate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCustomDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCustomDate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(7)))), ((int)(((byte)(76)))));
+            this.btnCustomDate.ForeColor = System.Drawing.Color.Indigo;
             this.btnCustomDate.Location = new System.Drawing.Point(515, 9);
             this.btnCustomDate.Margin = new System.Windows.Forms.Padding(5);
             this.btnCustomDate.Name = "btnCustomDate";
@@ -159,7 +159,7 @@
             this.btnToday.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(83)))), ((int)(((byte)(255)))));
             this.btnToday.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnToday.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnToday.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(7)))), ((int)(((byte)(76)))));
+            this.btnToday.ForeColor = System.Drawing.Color.Indigo;
             this.btnToday.Location = new System.Drawing.Point(613, 9);
             this.btnToday.Margin = new System.Windows.Forms.Padding(5);
             this.btnToday.Name = "btnToday";
@@ -175,7 +175,7 @@
             this.btnLast7Days.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(83)))), ((int)(((byte)(255)))));
             this.btnLast7Days.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLast7Days.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLast7Days.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(7)))), ((int)(((byte)(76)))));
+            this.btnLast7Days.ForeColor = System.Drawing.Color.Indigo;
             this.btnLast7Days.Location = new System.Drawing.Point(662, 9);
             this.btnLast7Days.Margin = new System.Windows.Forms.Padding(5);
             this.btnLast7Days.Name = "btnLast7Days";
@@ -191,7 +191,7 @@
             this.btnLast30Days.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(83)))), ((int)(((byte)(255)))));
             this.btnLast30Days.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLast30Days.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLast30Days.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(7)))), ((int)(((byte)(76)))));
+            this.btnLast30Days.ForeColor = System.Drawing.Color.Indigo;
             this.btnLast30Days.Location = new System.Drawing.Point(759, 9);
             this.btnLast30Days.Margin = new System.Windows.Forms.Padding(5);
             this.btnLast30Days.Name = "btnLast30Days";
@@ -207,7 +207,7 @@
             this.btnThisMonth.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(83)))), ((int)(((byte)(255)))));
             this.btnThisMonth.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnThisMonth.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnThisMonth.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(7)))), ((int)(((byte)(76)))));
+            this.btnThisMonth.ForeColor = System.Drawing.Color.Indigo;
             this.btnThisMonth.Location = new System.Drawing.Point(865, 9);
             this.btnThisMonth.Margin = new System.Windows.Forms.Padding(5);
             this.btnThisMonth.Name = "btnThisMonth";

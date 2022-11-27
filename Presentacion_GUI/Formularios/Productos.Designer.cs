@@ -461,6 +461,7 @@
             this.txtDescripcion.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.txtDescripcion.Location = new System.Drawing.Point(20, 177);
             this.txtDescripcion.Name = "txtDescripcion";
+            this.txtDescripcion.ShortcutsEnabled = false;
             this.txtDescripcion.Size = new System.Drawing.Size(165, 20);
             this.txtDescripcion.TabIndex = 59;
             // 
@@ -469,6 +470,7 @@
             this.txtNombre.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.txtNombre.Location = new System.Drawing.Point(20, 133);
             this.txtNombre.Name = "txtNombre";
+            this.txtNombre.ShortcutsEnabled = false;
             this.txtNombre.Size = new System.Drawing.Size(165, 20);
             this.txtNombre.TabIndex = 58;
             // 
@@ -477,6 +479,7 @@
             this.txtCodigo.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.txtCodigo.Location = new System.Drawing.Point(20, 87);
             this.txtCodigo.Name = "txtCodigo";
+            this.txtCodigo.ShortcutsEnabled = false;
             this.txtCodigo.Size = new System.Drawing.Size(165, 20);
             this.txtCodigo.TabIndex = 57;
             // 

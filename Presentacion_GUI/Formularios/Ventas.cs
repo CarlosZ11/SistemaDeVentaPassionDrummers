@@ -380,5 +380,32 @@ namespace Presentacion_GUI.Formularios
             }
 
         }
+
+        private void txtDocCliente_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((e.KeyChar >= 32 && e.KeyChar <= 47) || (e.KeyChar >= 58 && e.KeyChar <= 255))
+            {
+                e.Handled = true;
+            }
+
+            if (e.KeyChar == Convert.ToChar(Keys.Enter))
+            {
+                using (var modal = new mdCliente())
+                {
+                    var result = modal.ShowDialog();
+
+                    if (result == DialogResult.OK)
+                    {
+                        txtDocCliente.Text = modal._Cliente.Documento;
+                        txtNombreCliente.Text = modal._Cliente.NombreCompleto;
+                        txtCodProducto.Select();
+                    }
+                    else
+                    {
+                        txtDocCliente.Select();
+                    }
+                }
+            }
+        }
     }
 }

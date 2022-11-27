@@ -371,7 +371,7 @@
             this.Descripcion.HeaderText = "Descripcion";
             this.Descripcion.Name = "Descripcion";
             this.Descripcion.ReadOnly = true;
-            this.Descripcion.Width = 620;
+            this.Descripcion.Width = 678;
             // 
             // EstadoValor
             // 
@@ -385,7 +385,7 @@
             this.Estado.HeaderText = "Estado";
             this.Estado.Name = "Estado";
             this.Estado.ReadOnly = true;
-            this.Estado.Width = 105;
+            this.Estado.Width = 150;
             // 
             // Categorias
             // 
