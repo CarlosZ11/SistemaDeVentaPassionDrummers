@@ -33,11 +33,8 @@ namespace Presentacion_GUI.Formularios
             //Validar Usuario
             if (usuarioActual.oRol.IdRol != 1)
             {
-                //btnUsuarios.Enabled = false;
                 btnUsuarios.Visible = false;
-                //btnAdministracion.Enabled = false;
                 btnAdministracion.Visible = false;
-                //btnReportes.Enabled = false;
                 btnReportes.Visible = false;
                 btnEmpresa.Visible = false;
                 
@@ -251,7 +248,7 @@ namespace Presentacion_GUI.Formularios
             AbrirFormulario((IconButton)sender, new Usuarios());
         }
 
-        private void btnAcercaDe_Click(object sender, EventArgs e)
+        private void btnEmpresa_Click_1(object sender, EventArgs e)
         {
             OcultarSubMenu();
             ActivarBoton(sender, RGBColors.color8);
@@ -371,13 +368,6 @@ namespace Presentacion_GUI.Formularios
             ActivarBoton(sender, RGBColors.color1);
             //OpenChildForm(new Usuarios());
             AbrirFormulario((IconButton)sender, new Usuarios());
-        }
-
-        private void btnEmpresa_Click_1(object sender, EventArgs e)
-        {
-            OcultarSubMenu();
-            ActivarBoton(sender, RGBColors.color8);
-            OpenChildForm(new NegocioPD());
         }
 
         private void btnGraficas_Click(object sender, EventArgs e)

@@ -42,12 +42,11 @@ namespace Presentacion_GUI.Formularios
                 Inicio form = new Inicio(ousuario);
                 form.Show();
                 this.Hide();
-                //Size = new Size(1170, 631);
                 form.FormClosing += frm_closing;
             }
             else
             {
-                MessageBox.Show("No se encontró el usuario", "Mensaje", (MessageBoxButtons)MessageBoxButton.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("Credenciales incorrectas", "Mensaje", (MessageBoxButtons)MessageBoxButton.OK, MessageBoxIcon.Exclamation);
                 LimpiarCampos();
             }
 
