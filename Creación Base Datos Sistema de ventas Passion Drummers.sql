@@ -18,15 +18,6 @@ FechaRegistro datetime default getdate()
 
 go
 
-CREATE TABLE PERMISO(
-IdPermiso int primary key identity,
-IdRol int references ROL(IdRol),
-NombreMenu varchar(100),
-FechaRegistro datetime default getdate()
-)
-
-go
-
 CREATE TABLE PROVEEDOR(
 IdProveedor int primary key identity,
 Documento varchar(50),
@@ -140,24 +131,19 @@ FechaRegistro datetime default getdate()
 
 go
 
-INSERT INTO ROL(Decripcion) VALUES ('ADMINISTRADOR')
-INSERT INTO ROL(Decripcion) VALUES ('EMPLEADO')
-
-GO
-
-INSERT INTO USUARIO(Documento,NombreCompleto,Correo,Clave,IdRol,Estado)
-VALUES
-('1235340177','Carlos Zambrano','cmiguelzambrano@unicesar.edu.co','2312',1,1)
-
-INSERT INTO USUARIO(Documento,NombreCompleto,Correo,Clave,IdRol,Estado)
-VALUES
-('1006888183','Gian Oñate','gfonate@unicesar.edu.co','1423',2,1)
+CREATE TABLE NEGOCIO(
+IdNegocio int primary key,
+Nombre varchar(60),
+RUC varchar(60),
+Direccion varchar(60),
+Logo varbinary(max) null
+)
 
 go
 
-SELECT *FROM USUARIO
+---------------PROCEDIMIENTOS ALMACENADOS-------------------------------------------------------------------------------------
 
---PROCEDIMIENTOS PARA USUARIO----------------------------------------------------------------------------------------------
+--PROCEDIMIENTOS PARA REGISTRAR USUARIO---------------------------------------------------------------------------------------
 
 create proc SP_REGISTRARUSUARIO(
 @Documento VARCHAR(50),
@@ -188,15 +174,7 @@ end
 
 go
 
-declare @idusuariogenerado int
-declare @mensaje varchar(500)
-
-exec SP_REGISTRARUSUARIO '32751463','Martha Padilla','marthap@gmail.com','1904',1,1,@idusuariogenerado output,@mensaje output
-
-select @idusuariogenerado
-select @mensaje
-
-GO
+--PROCEDIMIENTOS PARA EDITAR USUARIO---------------------------------------------------------------------------------------
 
 create proc SP_EDITARUSUARIO(
 @IdUsuario int,
@@ -234,6 +212,7 @@ end
 
 go
 
+--PROCEDIMIENTOS PARA ELIMINAR USUARIO---------------------------------------------------------------------------------------
 
 create proc SP_ELIMINARUSUARIO(
 @IdUsuario int,
@@ -283,9 +262,12 @@ go
 --DBCC CHECKIDENT ([USUARIO], NORESEED)
 
 
---PROCEDIMIENTOS PARA CATEGORIA-------------------------------------------------------------------------------------------
+--PROCEDIMIENTOS PARA CATEGORIA------------------------------------------------------------------------------------------
 
---PROCEDIMIENTO PARA GUARDAR CATEGORIA
+GO
+
+--PROCEDIMIENTO PARA GUARDAR CATEGORIA-----------------------------------------------------------------------------------
+
 CREATE PROC SP_RegistrarCategoria(
 @Descripcion varchar(50),
 @Estado bit,
@@ -305,7 +287,7 @@ end
 
 go
 
---PROCEDIMIENTO PARA MODIFICAR CATEGORIA
+--PROCEDIMIENTO PARA MODIFICAR CATEGORIA----------------------------------------------------------------------------------
 CREATE PROC SP_EditarCategoria(
 @IdCategoria int,
 @Descripcion varchar(50),
@@ -331,7 +313,7 @@ end
 
 go
 
---PROCEDIMIENTO PARA ELIMINAR CATEGORIA
+--PROCEDIMIENTO PARA ELIMINAR CATEGORIA-----------------------------------------------------------------------------------
 CREATE PROC SP_EliminarCategoria(
 @IdCategoria int,
 @Resultado bit output,
@@ -357,20 +339,8 @@ end
 go
 
 
-SELECT *FROM CATEGORIA
 
-INSERT INTO CATEGORIA(Descripcion,Estado) VALUES ('Accesorios',1)
-INSERT INTO CATEGORIA(Descripcion,Estado) VALUES ('Percusión',1)
-INSERT INTO CATEGORIA(Descripcion,Estado) VALUES ('Teclados',1)
-INSERT INTO CATEGORIA(Descripcion,Estado) VALUES ('Vientos',1)
-INSERT INTO CATEGORIA(Descripcion,Estado) VALUES ('Micrófonos',1)
-INSERT INTO CATEGORIA(Descripcion,Estado) VALUES ('Sistemas de Audio',1)
-INSERT INTO CATEGORIA(Descripcion,Estado) VALUES ('Otros',1)
-
-go
-
---PROCEDIMIENTOS PARA PRODUCTOS----------------------------------------------------------------------------------------------
---PROCEDIMIENTO PARA REGISTRAR PRODUCTOS-
+--PROCEDIMIENTO PARA REGISTRAR PRODUCTOS------------------------------------------------------------------------------------
 
 CREATE PROC SP_RegistrarProducto(
 @Codigo varchar(20),
@@ -394,7 +364,7 @@ end
 
 go
 
---PROCEDIMIENTO PARA MODIFICAR PRODUCTOS-
+--PROCEDIMIENTO PARA MODIFICAR PRODUCTOS---------------------------------------------------------------------------------------
 
 CREATE PROC SP_ModificarProducto(
 @IdProducto int,
@@ -425,7 +395,7 @@ end
 
 go
 
---PROCEDIMIENTO PARA ELIMINAR PRODUCTOS-
+--PROCEDIMIENTO PARA ELIMINAR PRODUCTOS-------------------------------------------------------------------------------------------
 
 CREATE PROC SP_EliminarProduto(
 @IdProducto int,
@@ -466,13 +436,8 @@ end
 
 go
 
-SELECT IdProducto, Codigo, Nombre, p.Descripcion, c.IdCategoria, c.Descripcion[DescripcionCategoria], Stock, PrecioCompra, PrecioVenta, p.Estado FROM PRODUCTO p
-inner join CATEGORIA c ON c.IdCategoria = p.IdCategoria 
 
-go
-
---PROCEDIMIENTOS PARA CLIENTES----------------------------------------------------------------------------------------------
---PROCEDIMIENTO PARA REGISTRAR CLIENTES-------------------------------------------------------------------------------------
+--PROCEDIMIENTO PARA REGISTRAR CLIENTES----------------------------------------------------------------------------------------------
 
 CREATE PROC SP_RegistrarCliente(
 @Documento varchar(50),
@@ -499,7 +464,7 @@ end
 
 go
 
---PROCEDIMIENTO PARA MODIFICAR CLIENTES-------------------------------------------------------------------------------------
+--PROCEDIMIENTO PARA MODIFICAR CLIENTES--------------------------------------------------------------------------------------------
 
 CREATE PROC SP_ModificarCliente(
 @IdCliente int,
@@ -532,19 +497,17 @@ begin
 end
 
 go
-
-SELECT IdCliente,Documento,NombreCompleto,Correo,Telefono,Estado FROM CLIENTE
-INSERT INTO CLIENTE(Documento,NombreCompleto,Correo,Telefono,Estado) VALUES ('1143249417','Loraine Zambranio','lorainez@gmail.com','3023815235',1)
  
-
 --Consulta para reiniciar el IdCliente en caso de borrar un cliente
 --DBCC CHECKIDENT ([CLIENTE], RESEED, 1)
 --Consulta para ver que numero tiene el IdUduario
 --DBCC CHECKIDENT (CLIENTE, NORESEED)
 
+GO
 
---PROCEDIMIENTOS PARA PROVEEDORES----------------------------------------------------------------------------------------------
---PROCEDIMIENTO PARA REGISTRAR PROVEEDORES-------------------------------------------------------------------------------------
+
+
+--PROCEDIMIENTO PARA REGISTRAR PROVEEDORES---------------------------------------------------------------------------------------
 
 CREATE PROC SP_RegistrarProveedor(
 @Documento varchar(50),
@@ -571,7 +534,7 @@ end
 
 go
 
---PROCEDIMIENTO PARA MODIFICAR PROVEEDOR-------------------------------------------------------------------------------------
+--PROCEDIMIENTO PARA MODIFICAR PROVEEDOR--------------------------------------------------------------------------------------
 
 CREATE PROC SP_ModificarProveedor(
 @IdProveedor int,
@@ -605,7 +568,7 @@ end
 
 go
 
---PROCEDIMIENTO PARA ELIMINAR PROVEEDOR-------------------------------------------------------------------------------------
+--PROCEDIMIENTO PARA ELIMINAR PROVEEDOR---------------------------------------------------------------------------------------
 
 CREATE PROC SP_EliminarProveedor(
 @IdProveedor int,
@@ -631,11 +594,6 @@ end
 
 go
 
-SELECT IdProveedor,Documento,RazonSocial,Correo,Telefono,Estado FROM PROVEEDOR
-INSERT INTO PROVEEDOR(Documento,RazonSocial,Correo,Telefono,Estado) VALUES ('3201595','Yamaha','yamaha@gmail.com','5808481',1)
-
-SELECT *FROM PROVEEDOR
-
 --Consulta para reiniciar el IdProveedor en caso de borrar un proveedor
 --DBCC CHECKIDENT (PROVEEDOR, RESEED, 2)
 --Consulta para ver que numero tiene el IdUduario
@@ -643,25 +601,7 @@ SELECT *FROM PROVEEDOR
 
 go
 
-CREATE TABLE NEGOCIO(
-IdNegocio int primary key,
-Nombre varchar(60),
-RUC varchar(60),
-Direccion varchar(60),
-Logo varbinary(max) null
-)
-
-go
-
-SELECT *FROM NEGOCIO
-
-go
-
-INSERT INTO NEGOCIO(IdNegocio,Nombre,RUC,Direccion) VALUES (1, 'Passion Drummers', '318294', 'Carrera 19 #13-35')
-
-go
-
---PROCESOS PARA REGISTRAR UNA COMPRA-------------------------------------------------------------------------------------
+--TYPO DE DATO DETALLE COMPRA----------------------------------------------------------------------------------------
 
 CREATE TYPE [dbo].[EDetalle_Compra] AS TABLE(
 	[IdProducto] int null,
@@ -673,7 +613,7 @@ CREATE TYPE [dbo].[EDetalle_Compra] AS TABLE(
 
 GO
 
-
+--PROCESOS PARA REGISTRAR UNA COMPRA----------------------------------------------------------------------------------------
 
 CREATE PROC SP_RegistrarCompra(
 @IdUsuario int,
@@ -722,28 +662,7 @@ end
 
 go
 
---CONSULTA PARA VER DETALLE COMPRA-------------------------------------------------------------------------------------
-SELECT c.IdCompra,
-u.NombreCompleto,
-pr.Documento, pr.RazonSocial,
-c.TipoDocumento, c.NumeroDocumento, c.MontoTotal, convert(char(10),c.FechaRegistro,103)[FechaRegistro]
-FROM COMPRA c
-INNER JOIN USUARIO u ON u.IdUsuario = c.IdUsuario
-INNER JOIN PROVEEDOR pr ON pr.IdProveedor = c.IdProveedor
-WHERE c.NumeroDocumento = '00001'
-
-go
-
---CONSULTA PARA SABER TODOS LOS PRODUCTOS RELACIONADOS EN UNA COMPRA-----------------------------------------------------
-SELECT p.Nombre, dc.PrecioCompra, dc.Cantidad, dc.MontoTotal
-FROM DETALLE_COMPRA dc
-INNER JOIN PRODUCTO p ON p.IdProducto = dc.IdProducto
-WHERE dc.IdCompra = 1
-
-go
-
-
---PROCESOS PARA REGISTRAR UNA VENTA-------------------------------------------------------------------------------------
+--TYPO DE DATO DETALLE VENTA------------------------------------------------------------------------------------------
 
 CREATE TYPE [dbo].[EDetalle_Venta] AS TABLE(
 	[IdProducto] int null,
@@ -753,6 +672,8 @@ CREATE TYPE [dbo].[EDetalle_Venta] AS TABLE(
 )
 
 GO
+
+--PROCESOS PARA REGISTRAR UNA VENTA-------------------------------------------------------------------------------------
 
 CREATE PROC SP_RegistrarVenta(
 @IdUsuario int,
@@ -800,45 +721,8 @@ END
 
 GO
 
-SELECT V.IdVenta, u.NombreCompleto,
-v.DocumentoCliente, v.NombreCliente,
-v.TipoDocumento, v.NumeroDocumento,
-v.MontoPago, v.MontoCambio, v.MontoTotal,
-convert(char(10),v.FechaRegistro,103)[FechaRegistro]
-FROM VENTA v
-INNER JOIN USUARIO u ON u.IdUsuario = v.IdUsuario
-WHERE v.NumeroDocumento = '00001'
-
-
-SELECT p.Nombre, dv.PrecioVenta, dv.Cantidad, dv.SubTotal FROM DETALLE_VENTA dv
-INNER JOIN PRODUCTO p ON p.IdProducto = dv.IdProducto
-where dv.IdVenta = 1
-
-
-SELECT *FROM VENTA
-
-GO
-
-SELECT *FROM COMPRA
-
-GO
-
-SELECT 
-CONVERT(char(10),c.FechaRegistro,103)[FechaRegistro],c.TipoDocumento,c.NumeroDocumento,c.MontoTotal,
-u.NombreCompleto[UsuarioComprador],
-pr.Documento[DocumentoProveedor],pr.RazonSocial,
-p.Codigo[CodigoProducto],p.Nombre[NombreProducto],ca.Descripcion[Categoria],dc.PrecioCompra,dc.PrecioVenta,dc.Cantidad,dc.MontoTotal[SubTotal]
-FROM COMPRA c
-INNER JOIN USUARIO u ON u.IdUsuario = c.IdUsuario
-INNER JOIN PROVEEDOR pr ON pr.IdProveedor = c.IdProveedor
-INNER JOIN DETALLE_COMPRA dc ON dc.IdCompra = c.IdCompra
-INNER JOIN PRODUCTO p ON p.IdProducto = dc.IdProducto
-INNER JOIN CATEGORIA ca ON ca.IdCategoria = p.IdCategoria
-WHERE CONVERT(date,c.FechaRegistro) between '11/11/2022' and '14/11/2022' and pr.IdProveedor = 1
-
-GO
-
 --PROCEDIMIENTO PARA REPORTE DE COMPRAS-------------------------------------------------------------------------------------
+
 CREATE PROC SP_ReporteCompras(
 @fechainicio varchar(10),
 @fechafin varchar(10),
@@ -865,6 +749,7 @@ end
 
 GO
 
+--PROCEDIMIENTO PARA REPORTE DE VENTAS-------------------------------------------------------------------------------------
 
 CREATE PROC SP_ReporteVentas(
 @fechainicio varchar(10),
@@ -889,43 +774,198 @@ end
 
 GO
 
---PROCEDIMIENTO PARA CONSULTAR LAS COMPRAS DE LOS CLIENTES
-CREATE PROC SP_ComprasPorClientes
-AS
-select v.NombreCliente,
-sum(cantidad) [Cantidad de productos comprados]
-from VENTA v
-inner join CLIENTE c on c.NombreCompleto = v.NombreCliente
-inner join DETALLE_VENTA dv on dv.IdVenta = v.IdVenta
-group by v.NombreCliente
+---------------INSERSIONES-------------------------------------------------------
+
+
+---------------EMPRESA-----------------------------------------------------------
+
+INSERT INTO NEGOCIO(IdNegocio,Nombre,RUC,Direccion) VALUES (1, 'Passion Drummers', '318294', 'Carrera 19 #13-35')
+
+go
+
+---------------ROLES-------------------------------------------------------------
+
+INSERT INTO ROL(Decripcion) VALUES ('ADMINISTRADOR')
+INSERT INTO ROL(Decripcion) VALUES ('EMPLEADO')
 
 GO
 
-CREATE PROC SP_MontoProductosComprados
-AS
-select v.NombreCliente,
-sum(MontoTotal) [Monto de productos comprados]
-from VENTA v
-inner join CLIENTE c on c.NombreCompleto = v.NombreCliente
-group by v.NombreCliente
+---------------USUARIOS-----------------------------------------------------------
+
+INSERT INTO USUARIO(Documento,NombreCompleto,Correo,Clave,IdRol,Estado)
+VALUES('1235340177','Carlos Zambrano','cmiguelzambrano@unicesar.edu.co','2312',1,1)
+INSERT INTO USUARIO(Documento,NombreCompleto,Correo,Clave,IdRol,Estado)
+VALUES('1006888183','Gian Oñate','gfonate@unicesar.edu.co','1423',2,1)
+
+go
+
+---------------CATEGORIAS----------------------------------------------------------
+
+INSERT INTO CATEGORIA(Descripcion,Estado)
+VALUES ('Cuerdas',1) /*1*/
+INSERT INTO CATEGORIA(Descripcion,Estado)
+VALUES ('Teclados',1) /*2*/
+INSERT INTO CATEGORIA(Descripcion,Estado) 
+VALUES ('Vientos',1) /*3*/
+INSERT INTO CATEGORIA(Descripcion,Estado) 
+VALUES ('Percusión',1) /*4*/
+INSERT INTO CATEGORIA(Descripcion,Estado) 
+VALUES ('Micrófonos',1) /*5*/
+INSERT INTO CATEGORIA(Descripcion,Estado) 
+VALUES ('Sistemas de Audio',1) /*6*/
+INSERT INTO CATEGORIA(Descripcion,Estado) 
+VALUES ('Accesorios',1) /*7*/
+INSERT INTO CATEGORIA(Descripcion,Estado) 
+VALUES ('Otros',1) /*8*/
+
+go
+
+---------------PRODUCTOS------------------------------------------------------------
+
+INSERT INTO PRODUCTO(Codigo,Nombre,Descripcion,IdCategoria,Estado)
+VALUES('268833','Bajo 4C Fender','SAP Blanco, Diapason en maple',1,1)
+INSERT INTO PRODUCTO(Codigo,Nombre,Descripcion,IdCategoria,Estado)
+VALUES('295357','Guitarra Electrica Fender','SA Roja, Diapason en laurel',1,1)
+INSERT INTO PRODUCTO(Codigo,Nombre,Descripcion,IdCategoria,Estado)
+VALUES('327384','Guitarra Electrica Fender','MPL Blanco, Diapason en maple',1,1)
+INSERT INTO PRODUCTO(Codigo,Nombre,Descripcion,IdCategoria,Estado)
+VALUES('344486','Viola Cenvini','15 Cremona hva-150',1,1)
+--------------------------------------------------------------------------------------
+INSERT INTO PRODUCTO(Codigo,Nombre,Descripcion,IdCategoria,Estado)
+VALUES('355225','Piano Casio CT-X5000','8 Octavas, negro',2,1)
+INSERT INTO PRODUCTO(Codigo,Nombre,Descripcion,IdCategoria,Estado)
+VALUES('357229','Piano Casio PX-5SWE','9 Octavas, blanco',2,1)
+INSERT INTO PRODUCTO(Codigo,Nombre,Descripcion,IdCategoria,Estado)
+VALUES('399444','Piano Casio GP-510BP','9 Octavas, negro',2,1)
+INSERT INTO PRODUCTO(Codigo,Nombre,Descripcion,IdCategoria,Estado)
+VALUES('424773','Piano Casio CT-X3000','8 Octavas, negro/rojo',2,1)
+--------------------------------------------------------------------------------------
+INSERT INTO PRODUCTO(Codigo,Nombre,Descripcion,IdCategoria,Estado)
+VALUES('425588','Acordeón Horner Rey','VA Rojo',3,1)
+INSERT INTO PRODUCTO(Codigo,Nombre,Descripcion,IdCategoria,Estado)
+VALUES('456586','Acordeón Horner III','Corona besas blanco',3,1)
+INSERT INTO PRODUCTO(Codigo,Nombre,Descripcion,IdCategoria,Estado)
+VALUES('467926','Gaita Corta Milenium','PNHM Blanca',3,1)
+INSERT INTO PRODUCTO(Codigo,Nombre,Descripcion,IdCategoria,Estado)
+VALUES('476784','Trompeta Jinbao','JBTR-300N Plateada',3,1)
+--------------------------------------------------------------------------------------
+INSERT INTO PRODUCTO(Codigo,Nombre,Descripcion,IdCategoria,Estado)
+VALUES('563362','Batería Ludwin Element 5P','5 Piezas, vino',4,1)
+INSERT INTO PRODUCTO(Codigo,Nombre,Descripcion,IdCategoria,Estado)
+VALUES('575777','Batería Ludwin Accent 5P','5 Piezas, roja',4,1)
+INSERT INTO PRODUCTO(Codigo,Nombre,Descripcion,IdCategoria,Estado)
+VALUES('597757','Conga LP Matador','Custom, rojo crema',4,1)
+INSERT INTO PRODUCTO(Codigo,Nombre,Descripcion,IdCategoria,Estado)
+VALUES('599973','Timbal LP Prestige','Karl perrazo, negro',4,1)
+--------------------------------------------------------------------------------------
+INSERT INTO PRODUCTO(Codigo,Nombre,Descripcion,IdCategoria,Estado)
+VALUES('627696','Micrófono Shure PGA58-XLR','Alambrico, negro',5,1)
+INSERT INTO PRODUCTO(Codigo,Nombre,Descripcion,IdCategoria,Estado)
+VALUES('654587','Micrófono Prodipe M850','DPS DUO Inalambrico',5,1)
+INSERT INTO PRODUCTO(Codigo,Nombre,Descripcion,IdCategoria,Estado)
+VALUES('692697','Micrófono Takstar TS6310PP','Solapa-Diadema Inalambrico',5,1)
+INSERT INTO PRODUCTO(Codigo,Nombre,Descripcion,IdCategoria,Estado)
+VALUES('735459','Set Micrófonos Drum Xtuga','7 Piezas, negro',5,1)
+--------------------------------------------------------------------------------------
+INSERT INTO PRODUCTO(Codigo,Nombre,Descripcion,IdCategoria,Estado)
+VALUES('748636','Amplificador QSC','RMX4050A, negro',6,1)
+INSERT INTO PRODUCTO(Codigo,Nombre,Descripcion,IdCategoria,Estado)
+VALUES('748962','Planta Bajo Fender','Rumble 500 V3',6,1)
+INSERT INTO PRODUCTO(Codigo,Nombre,Descripcion,IdCategoria,Estado)
+VALUES('777485','Mixer Kohlt Kmix','10 Canales',6,1)
+INSERT INTO PRODUCTO(Codigo,Nombre,Descripcion,IdCategoria,Estado)
+VALUES('798896','Procesador DBX Driver','Pack PA2',6,1)
+--------------------------------------------------------------------------------------
+INSERT INTO PRODUCTO(Codigo,Nombre,Descripcion,IdCategoria,Estado)
+VALUES('799279','Baqueta Vic Firth','Freestyle 5A Nat',7,1)
+INSERT INTO PRODUCTO(Codigo,Nombre,Descripcion,IdCategoria,Estado)
+VALUES('799753','Cable Linea Fender Original','4.5 Mts Azul',7,1)
+INSERT INTO PRODUCTO(Codigo,Nombre,Descripcion,IdCategoria,Estado)
+VALUES('832299','Afinador Fender Bullet','Tuner modo2399',7,1)
+INSERT INTO PRODUCTO(Codigo,Nombre,Descripcion,IdCategoria,Estado)
+VALUES('857695','Forro Platillo Sabian','24 Pulgadas',7,1)
+--------------------------------------------------------------------------------------
+INSERT INTO PRODUCTO(Codigo,Nombre,Descripcion,IdCategoria,Estado)
+VALUES('867538','Cabeza Mobil Big Dipper','LM70',8,1)
+INSERT INTO PRODUCTO(Codigo,Nombre,Descripcion,IdCategoria,Estado)
+VALUES('898268','Maquina de Humo Pro Dj','F1500 Led',8,1)
+INSERT INTO PRODUCTO(Codigo,Nombre,Descripcion,IdCategoria,Estado)
+VALUES('948873','Combo Presonus P/GRAB','AudioBox 96, 2 monitores',8,1)
+INSERT INTO PRODUCTO(Codigo,Nombre,Descripcion,IdCategoria,Estado)
+VALUES('988326','Auricular Shure SE215','Cl Transparente',8,1)
 
 GO
 
---Inventario de productos
-SELECT Nombre,Stock FROM PRODUCTO
+---------------PROVEEDORES-------------------------------------------------------------
+
+INSERT INTO PROVEEDOR(Documento,RazonSocial,Correo,Telefono,Estado)
+VALUES('228688799','Fender','fendersa@gmail.com','7706450',1)
+INSERT INTO PROVEEDOR(Documento,RazonSocial,Correo,Telefono,Estado)
+VALUES('243933724','Cervini','cervinisa@gmail.com','3474253',1)
+INSERT INTO PROVEEDOR(Documento,RazonSocial,Correo,Telefono,Estado)
+VALUES('264743948','Casio','casiosa@gmail.com','8002278',1)
+INSERT INTO PROVEEDOR(Documento,RazonSocial,Correo,Telefono,Estado)
+VALUES('267979422','Horner','hornersa@gmail.com','2786529',1)
+INSERT INTO PROVEEDOR(Documento,RazonSocial,Correo,Telefono,Estado)
+VALUES('283378963','Milenium','mileniumsa@gmail.com','9332473',1)
+INSERT INTO PROVEEDOR(Documento,RazonSocial,Correo,Telefono,Estado)
+VALUES('323377997','Jinbao','jinbaosa@gmail.com','4273355',1)
+INSERT INTO PROVEEDOR(Documento,RazonSocial,Correo,Telefono,Estado)
+VALUES('365238492','Ludwin','ludwinsa@gmail.com','8392923',1)
+INSERT INTO PROVEEDOR(Documento,RazonSocial,Correo,Telefono,Estado)
+VALUES('422662929','Matador','matadorsa@gmail.com','5466947',1)
+INSERT INTO PROVEEDOR(Documento,RazonSocial,Correo,Telefono,Estado)
+VALUES('497693967','Prestige','prestigesa@gmail.com','3277696',1)
+INSERT INTO PROVEEDOR(Documento,RazonSocial,Correo,Telefono,Estado)
+VALUES('529376748','Shure','shuresa@gmail.com','6647548',1)
+INSERT INTO PROVEEDOR(Documento,RazonSocial,Correo,Telefono,Estado)
+VALUES('637539355','Prodipe','prodipesa@gmail.com','4884457',1)
+INSERT INTO PROVEEDOR(Documento,RazonSocial,Correo,Telefono,Estado)
+VALUES('684483523','Takstar','takstarsa@gmail.com','9357984',1)
+INSERT INTO PROVEEDOR(Documento,RazonSocial,Correo,Telefono,Estado)
+VALUES('734246466','Xtuga','xtugasa@gmail.com','5535726',1)
+INSERT INTO PROVEEDOR(Documento,RazonSocial,Correo,Telefono,Estado)
+VALUES('798336456','Qsc','qscsa@gmail.com','2233562',1)
+INSERT INTO PROVEEDOR(Documento,RazonSocial,Correo,Telefono,Estado)
+VALUES('684483523','Kmix','kmixsa@gmail.com','9626367',1)
+INSERT INTO PROVEEDOR(Documento,RazonSocial,Correo,Telefono,Estado)
+VALUES('823996953','Dbx','dbxsa@gmail.com','6798375',1)
+INSERT INTO PROVEEDOR(Documento,RazonSocial,Correo,Telefono,Estado)
+VALUES('886324523','Vic Firth','vicfirthsa@gmail.com','9357984',1)
+INSERT INTO PROVEEDOR(Documento,RazonSocial,Correo,Telefono,Estado)
+VALUES('942757227','Sabian','sabiansa@gmail.com','8889386',1)
+INSERT INTO PROVEEDOR(Documento,RazonSocial,Correo,Telefono,Estado)
+VALUES('947723565','Dipper','dippersa@gmail.com','9225875',1)
+INSERT INTO PROVEEDOR(Documento,RazonSocial,Correo,Telefono,Estado)
+VALUES('952665382','Pro Dj','prodjsa@gmail.com','9228797',1)
+INSERT INTO PROVEEDOR(Documento,RazonSocial,Correo,Telefono,Estado)
+VALUES('972294892','Presonus','presonussa@gmail.com','9243446',1)
 
 GO
 
---PROCEDIMIENTO PARA CONSULTAR LOS PRODUCTOS VENDIDOS
-CREATE PROC SP_ProductosVendidos
-@fechaInicio Date,
-@fechaFin Date
-AS
-select p.Nombre,
-sum(cantidad) [Cantidad de productos vendidos]
-from DETALLE_VENTA dv
-inner join PRODUCTO p on p.IdProducto = dv.IdProducto
-WHERE dv.FechaRegistro between @fechaInicio and @fechaFin
-group by p.Nombre
+---------------PROVEEDORES-------------------------------------------------------------
+
+INSERT INTO CLIENTE(Documento,NombreCompleto,Correo,Telefono,Estado)
+VALUES ('2573235533','Loraine Zambrano','lorainez@gmail.com','3432756894',1)
+INSERT INTO CLIENTE(Documento,NombreCompleto,Correo,Telefono,Estado)
+VALUES ('2225678839','Fabio Veiga','fabiov@gmail.com','3498844422',1)
+INSERT INTO CLIENTE(Documento,NombreCompleto,Correo,Telefono,Estado)
+VALUES ('2373887655','Angela Llamas','angelall@gmail.com','3733744269',1)
+INSERT INTO CLIENTE(Documento,NombreCompleto,Correo,Telefono,Estado)
+VALUES ('2665889282','Sonia Diez','soniad@gmail.com','3959953475',1)
+INSERT INTO CLIENTE(Documento,NombreCompleto,Correo,Telefono,Estado)
+VALUES ('2859257775','Ursula Maza','lorainez@gmail.com','3446422579',1)
+INSERT INTO CLIENTE(Documento,NombreCompleto,Correo,Telefono,Estado)
+VALUES ('3226437984','Cristiano Ronaldo','cristianor@gmail.com','3537447943',1)
+INSERT INTO CLIENTE(Documento,NombreCompleto,Correo,Telefono,Estado)
+VALUES ('3273453383','Federico Morillo','federicom@gmail.com','3756925955',1)
+INSERT INTO CLIENTE(Documento,NombreCompleto,Correo,Telefono,Estado)
+VALUES ('3384778646','Angel Gutierrez','angelg@gmail.com','3965845734',1)
+INSERT INTO CLIENTE(Documento,NombreCompleto,Correo,Telefono,Estado)
+VALUES ('3747572569','Fernanda Mercado','fernandam@gmail.com','3452269866',1)
+INSERT INTO CLIENTE(Documento,NombreCompleto,Correo,Telefono,Estado)
+VALUES ('4457822237','Felicidad Olivera','felicidado@gmail.com','3543395894',1)
 
 GO
+
+

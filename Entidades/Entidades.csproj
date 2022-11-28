@@ -48,7 +48,6 @@
     <Compile Include="Detalle_Venta.cs" />
     <Compile Include="GraficaDao.cs" />
     <Compile Include="Negocio.cs" />
-    <Compile Include="Permiso.cs" />
     <Compile Include="Persona.cs" />
     <Compile Include="Producto.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
