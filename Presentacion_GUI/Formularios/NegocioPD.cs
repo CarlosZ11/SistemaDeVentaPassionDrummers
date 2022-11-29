@@ -51,7 +51,7 @@ namespace Presentacion_GUI.Formularios
             String mensaje = String.Empty;
 
             OpenFileDialog openFileDialog = new OpenFileDialog();
-            openFileDialog.FileName = "Files|*.jpg;*.jpeg;*.png";
+            openFileDialog.FileName = "LogoEmpresa.png";
 
             if (openFileDialog.ShowDialog() == DialogResult.OK)
             {

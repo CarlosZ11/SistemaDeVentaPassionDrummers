@@ -943,7 +943,7 @@ VALUES('972294892','Presonus','presonussa@gmail.com','9243446',1)
 
 GO
 
----------------PROVEEDORES-------------------------------------------------------------
+---------------CLIENTES-------------------------------------------------------------
 
 INSERT INTO CLIENTE(Documento,NombreCompleto,Correo,Telefono,Estado)
 VALUES ('2573235533','Loraine Zambrano','lorainez@gmail.com','3432756894',1)
